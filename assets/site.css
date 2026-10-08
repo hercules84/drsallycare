@@ -281,3 +281,48 @@ html[dir="rtl"] .stat b{direction:ltr;text-align:right;unicode-bidi:isolate}
   .stat b{font-size:19px}
   .stat span{font-size:11.5px;line-height:1.45;display:block}
 }
+
+/* ===== guides & articles ===== */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.art-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;transition:transform .15s,border-color .15s}
+.art-card:hover{transform:translateY(-2px);border-color:var(--teal)}
+.art-card h3{font-size:18px;margin:2px 0 0}
+.art-card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.6}
+.art-min{margin-top:auto;padding-top:8px;font-size:13px;color:var(--muted)}
+.art-tag{display:inline-block;align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--teal);background:var(--teal-soft);padding:2px 11px;border-radius:999px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips button{border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:14px;padding:6px 14px;border-radius:999px;cursor:pointer;min-height:36px}
+.chips button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:var(--on-accent)}
+.article{max-width:760px}
+.article .back{display:inline-block;margin-top:22px;font-size:14px;text-decoration:none}
+.article h1{font-size:clamp(26px,4.6vw,38px);margin-top:10px}
+.prose{margin-top:20px;font-size:17px}
+.prose h3{font-size:20px;margin:1.4em 0 .4em}
+.prose h3:first-child{margin-top:0}
+.prose ul,.prose ol{padding-inline-start:1.3em;margin:.4em 0 1em}
+.prose li{margin-bottom:.4em}
+.small-note{font-size:13px;color:var(--muted)}
+.tel-link{font-weight:700;text-decoration:none;unicode-bidi:plaintext}
+@media (max-width:820px){.art-grid{grid-template-columns:1fr}}
+
+/* ===== home: services, signs, faq, contact ===== */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.svc{padding:20px}
+.svc .e{font-size:26px;line-height:1;margin-bottom:8px;display:block}
+.svc h3{font-size:17px;margin-bottom:.3em}
+.svc p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.65}
+.signs .card h3{font-size:18px}
+.signs ul{margin:.3em 0 0;padding-inline-start:1.2em}
+.signs li{margin-bottom:.35em;font-size:15px}
+.faq{margin-top:20px;display:grid;gap:10px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:2px 16px}
+.faq summary{cursor:pointer;font-weight:700;padding:12px 0;list-style-position:inside}
+.faq details[open] summary{color:var(--teal)}
+.faq details p{margin:0 0 14px;color:var(--muted)}
+.contact-card{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;text-align:start}
+.contact-card .card{display:flex;flex-direction:column;gap:6px}
+.contact-card .big{font-size:26px;font-weight:800;direction:ltr;unicode-bidi:plaintext;text-align:start}
+.about .portrait.photo{padding:0;border:0;overflow:hidden;background:none}
+.about .portrait.photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius)}
+@media (max-width:820px){.svc-grid{grid-template-columns:1fr 1fr}.contact-card{grid-template-columns:1fr}}
+@media (max-width:520px){.svc-grid{grid-template-columns:1fr}}

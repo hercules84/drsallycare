@@ -16,7 +16,8 @@
 <link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=6">
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Sally Rizqo","alternateName":"د. سالي رزقو","url":"https://drsallycare.com/","image":"https://drsallycare.com/assets/dr-sally.jpg","telephone":"+9647738919655","availableLanguage":["Arabic","Kurdish","English"],"areaServed":["Duhok","Kurdistan Region of Iraq","Online"],"description":"Online consultations and guides for children's and teenagers' emotional wellbeing: autism, ADHD, learning difficulties and adolescence."}</script>
 </head>
 <body>
 <main class="wrap">
@@ -58,6 +59,37 @@
     </div>
   </section>
 
+  <section style="padding-top:0" id="services">
+    <h2 data-i18n="svcTitle"></h2>
+    <p class="lead" data-i18n="svcLead"></p>
+    <div class="svc-grid">
+      <div class="card svc"><span class="e" aria-hidden="true">🧩</span><h3 data-i18n="svc1t"></h3><p data-i18n="svc1p"></p></div>
+      <div class="card svc"><span class="e" aria-hidden="true">⚡</span><h3 data-i18n="svc2t"></h3><p data-i18n="svc2p"></p></div>
+      <div class="card svc"><span class="e" aria-hidden="true">📖</span><h3 data-i18n="svc3t"></h3><p data-i18n="svc3p"></p></div>
+      <div class="card svc"><span class="e" aria-hidden="true">💬</span><h3 data-i18n="svc4t"></h3><p data-i18n="svc4p"></p></div>
+      <div class="card svc"><span class="e" aria-hidden="true">🤝</span><h3 data-i18n="svc5t"></h3><p data-i18n="svc5p"></p></div>
+      <div class="card svc"><span class="e" aria-hidden="true">🏫</span><h3 data-i18n="svc6t"></h3><p data-i18n="svc6p"></p></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0" id="signs" class="signs">
+    <h2 data-i18n="signsTitle"></h2>
+    <p class="lead" data-i18n="signsLead"></p>
+    <div class="grid3">
+      <div class="card" style="border-top:4px solid var(--teal)"><h3 data-i18n="sg1t"></h3><ul data-i18n="sg1l"></ul></div>
+      <div class="card" style="border-top:4px solid var(--coral)"><h3 data-i18n="sg2t"></h3><ul data-i18n="sg2l"></ul></div>
+      <div class="card" style="border-top:4px solid var(--lav)"><h3 data-i18n="sg3t"></h3><ul data-i18n="sg3l"></ul></div>
+    </div>
+    <div class="alert" data-i18n="signsNote"></div>
+  </section>
+
+  <section style="padding-top:0" id="learn">
+    <h2 data-i18n="latestTitle"></h2>
+    <p class="lead" data-i18n="latestLead"></p>
+    <div class="art-grid" id="latest"></div>
+    <div class="btns"><a class="btn" href="/learn/" data-i18n="allArt"></a></div>
+  </section>
+
   <section style="padding-top:0">
     <div class="play-teaser">
       <div>
@@ -82,7 +114,7 @@
   <section id="about">
     <span class="eyebrow" data-i18n="aboutEyebrow"></span>
     <div class="about">
-      <div class="portrait" aria-hidden="true"><span style="display:block;width:70%;aspect-ratio:1;background:var(--teal);-webkit-mask:url(/assets/logo-mark.png?v=2) center/contain no-repeat;mask:url(/assets/logo-mark.png?v=2) center/contain no-repeat"></span></div>
+      <div class="portrait photo"><img src="/assets/dr-sally.jpg?v=1" width="560" height="700" alt="د. سالي رزقو · Dr. Sally Rizqo" loading="lazy" decoding="async"></div>
       <div>
         <h2 data-i18n="brand"></h2>
         <p data-i18n="aboutP"></p>
@@ -113,10 +145,36 @@
     </div>
   </section>
 
+  <section id="community">
+    <span class="eyebrow" data-i18n="orgEyebrow"></span>
+    <h2 data-i18n="orgTitle"></h2>
+    <p class="lead" data-i18n="orgLead"></p>
+    <div class="grid2">
+      <div class="card"><h3 data-i18n="org1t"></h3><p data-i18n="org1p"></p><div class="btns"><a class="btn wa-link" data-wamsg="waMsgTraining" href="#book"><span data-i18n="btnTraining"></span></a></div></div>
+      <div class="card"><h3 data-i18n="org2t"></h3><p data-i18n="org2p"></p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 data-i18n="faqTitle"></h2>
+    <div class="faq">
+      <details><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
+      <details><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
+      <details><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
+      <details><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
+      <details><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
+      <details><summary data-i18n="q6"></summary><p data-i18n="a6"></p></details>
+      <details><summary data-i18n="q7"></summary><p data-i18n="a7"></p></details>
+    </div>
+  </section>
+
   <section id="book" class="cta">
     <h2 data-i18n="bookTitle"></h2>
     <p class="lead" data-i18n="bookLead"></p>
-    <div class="btns"><a class="btn primary wa-link" href="#book"><span data-i18n="btnBook"></span></a></div>
+    <div class="contact-card">
+      <div class="card"><h3 data-i18n="contactWa"></h3><p data-i18n="contactWaP"></p><div class="btns" style="margin-top:6px"><a class="btn primary wa-link" href="#book"><span data-i18n="btnBook"></span></a></div></div>
+      <div class="card"><h3 data-i18n="contactPhone"></h3><a class="big tel-link" dir="ltr" href="#" data-tel>0773 891 9655</a><p data-i18n="contactPhoneP"></p></div>
+    </div>
     <p class="hint" data-i18n="bookHint"></p>
     <p class="hint wa-missing" style="font-weight:700;color:var(--teal);font-size:16px" data-i18n="waMissing"></p>
   </section>
@@ -159,7 +217,34 @@ ar:{
  feesTitle:"الرسوم وطرق الدفع", feesP:"نوضّح لكم الرسوم وطرق الدفع المتاحة داخل العراق وخارجه عند الحجز.",
  bookTitle:"احجزوا استشارتكم", bookLead:"أرسلوا رسالة قصيرة على واتساب، وسنرد عليكم لتحديد الموعد.",
  bookHint:"من فضلكم لا ترسلوا تقارير طبية أو تفاصيل حساسة في الرسالة الأولى. سنرشدكم لاحقًا إلى طريقة آمنة لمشاركتها.",
- waMissing:"سيتاح الحجز عبر واتساب قريبًا."
+ waMissing:"سيتاح الحجز عبر واتساب قريبًا.",
+ svcTitle:"بماذا نساعدكم؟", svcLead:"استشارات أونلاين للأهل والمراهقين، مبنية على الاستماع وفهم الحالة قبل أي توصية.",
+ svc1t:"تقييم ودعم التوحد", svc1p:"فهم العلامات، رأي ثانٍ في تشخيص سابق، وخطة لدعم التواصل والمهارات في البيت والمدرسة.",
+ svc2t:"فرط الحركة وتشتت الانتباه", svc2p:"تقييم الأعراض، تنظيم الروتين، التنسيق مع المدرسة، ومناقشة خيارات المساندة والعلاج.",
+ svc3t:"صعوبات التعلم", svc3p:"التعرّف على صعوبات القراءة والكتابة والحساب، وتوجيه الأسرة والمدرسة نحو الدعم المناسب.",
+ svc4t:"قلق ومزاج وسلوك المراهقين", svc4p:"الانسحاب والغضب والقلق وتراجع الدراسة، وكيف تفتحون باب الحوار مع المراهق.",
+ svc5t:"إرشاد الأهل", svc5p:"جلسات لمساعدة الأهل على التعامل مع السلوكيات الصعبة وبناء روتين هادئ، مع الاعتناء بأنفسهم أيضًا.",
+ svc6t:"التنسيق مع المدرسة", svc6p:"توجيه المعلمين والمرشدين حول تعديلات الصف التي تساعد الطفل على التعلّم.",
+ signsTitle:"متى أطلب استشارة؟", signsLead:"هذه أمثلة عامة وليست تشخيصًا. إذا ساوركم القلق فاسألوا، فالسؤال لا يضرّ.",
+ sg1t:"الأطفال الصغار (حتى 5 سنوات)", sg1l:"<li>تأخر في الكلام أو فقدان كلمات سبق قولها</li><li>قلة النظر في العين أو عدم الالتفات للاسم</li><li>نوبات غضب شديدة أو صعوبة في التهدئة</li><li>حساسية شديدة للأصوات أو الملمس أو التغيير</li><li>صعوبة في اللعب مع الأطفال</li>",
+ sg2t:"عمر المدرسة (6–12)", sg2l:"<li>شرود وكثرة نسيان وصعوبة في إكمال المهام</li><li>حركة زائدة واندفاع</li><li>صعوبة في القراءة أو الكتابة أو الحساب</li><li>رفض المدرسة أو شكاوى جسدية متكررة</li><li>قلق أو خوف أو انعزال</li>",
+ sg3t:"المراهقون", sg3l:"<li>حزن أو تهيّج يستمر أسبوعين أو أكثر</li><li>انسحاب من الأصدقاء والأنشطة</li><li>تغيّر في النوم أو الأكل</li><li>تراجع دراسي مفاجئ</li><li>حديث عن اليأس أو إيذاء النفس (حالة طارئة)</li>",
+ signsNote:"إذا كان الطفل أو المراهق في خطر مباشر، لا تنتظروا استشارة أونلاين: توجهوا إلى أقرب مستشفى.",
+ latestTitle:"أحدث المقالات والأدلة", latestLead:"معلومات مبسّطة وعملية للأهل والمعلمين.",
+ orgEyebrow:"المدارس والمؤسسات والمجتمع", orgTitle:"ورش تدريبية ودعم مجتمعي", orgLead:"خبرة في إدارة دورات تدريبية والعمل مع منظمات المجتمع المدني.",
+ org1t:"ورش للمعلمين والعاملين", org1p:"للمدارس ورياض الأطفال والمؤسسات: ورش عن التوحد وفرط الحركة وصعوبات التعلم ودعم الأطفال في الصف. نتفق معكم على المواضيع والمدة.",
+ org2t:"دعم الأطفال في الأزمات", org2p:"شاركت الدكتورة سالي مع منظمات المجتمع المدني في زيارات لمخيمات المهجّرين والنازحين. للمنظمات المهتمة بالتعاون أو التدريب، تواصلوا معنا.",
+ btnTraining:"استفسار عن ورشة تدريبية",
+ faqTitle:"أسئلة شائعة",
+ q1:"من يحجز الاستشارة؟", a1:"الأهل أو من يرعى الطفل يحجزون للأطفال والمراهقين. نبدأ بالحديث معكم، ثم نقرر معكم كيف يشارك الطفل في الجلسة بحسب عمره وحالته.",
+ q2:"هل المعلومات سرّية؟", a2:"نعم. جميع الاستشارات والمعلومات تُعامل بسرّية تامة. لا ترسلوا تقارير طبية في الرسالة الأولى، وسنرشدكم إلى طريقة آمنة للمشاركة.",
+ q3:"بأي لغة تتم الاستشارة؟", a3:"بالعربية أو الكوردية (البادينية) أو الإنجليزية، حسب ما تفضلون.",
+ q4:"هل يمكن أن تتم الاستشارة من خارج العراق؟", a4:"نعم، للأسر المقيمة في الخارج. نرتب الموعد حسب فرق التوقيت. وبعض الحالات قد تحتاج تقييمًا حضوريًا في بلد إقامتكم، وسنخبركم بصراحة.",
+ q5:"هل يكفي التقييم أونلاين؟", a5:"في كثير من الحالات يكفي لفهم المشكلة ووضع خطة والمتابعة. وبعض الحالات تحتاج فحصًا أو تقييمًا حضوريًا، وسنوضح لكم ذلك.",
+ q6:"هل الموقع للحالات الطارئة؟", a6:"لا. إذا كان الطفل في خطر مباشر أو كانت حياته مهددة، توجهوا إلى أقرب مستشفى أو اتصلوا بخدمات الطوارئ.",
+ q7:"كم تكلفة الاستشارة وكيف أدفع؟", a7:"نوضح لكم الرسوم وطرق الدفع المتاحة عند الحجز.",
+ contactWa:"واتساب", contactWaP:"أسرع طريقة للحجز: رسالة قصيرة وسنرد عليكم.",
+ contactPhone:"اتصال هاتفي", contactPhoneP:"يمكنكم الاتصال أيضًا على هذا الرقم. إن لم نرد على الفور، أرسلوا رسالة على واتساب."
 },
 ku:{
  heroEyebrow:"شێوەرێن ئۆنلاین ب کوردی، عەرەبی و ئینگلیزی",
@@ -195,7 +280,34 @@ ku:{
  feesTitle:"کرێ و پارەدان", feesP:"دەمێ ژڤان گرتنێ، کرێ و ڕێکێن پارەدانێ ل ناڤ و دەرڤەی عێراقێ بۆ هەوە ڕوون دکەین.",
  bookTitle:"ژڤانێ خۆ بگرن", bookLead:"نامەیەکا کورت ب واتسئاپێ بفرێکەن، و دێ بەرسڤا هەوە دەین.",
  bookHint:"تکایە ڕاپۆرتێن پزیشکی یان هوورکاریێن هەستیار د نامەیا ئێکێ دا نەفرێکەن.",
- waMissing:"گرتنا ژڤانی ب واتسئاپێ دێ زوو بەردەست بیت."
+ waMissing:"گرتنا ژڤانی ب واتسئاپێ دێ زوو بەردەست بیت.",
+ svcTitle:"ئەم چەوا هاریکاریا هەوە دکەین؟", svcLead:"شێوەرێن ئۆنلاین بۆ خێزان و هەرزەکاران، ل سەر بنەمایێ گوهدانێ و تێگەهشتنا ڕەوشێ بەری هەر ڕاسپاردەیەکێ.",
+ svc1t:"هەلسەنگاندن و پشتەڤانیا ئۆتیزمێ", svc1p:"تێگەهشتنا نیشانان، بیروڕایا دووێ، و پلانەکا پشتەڤانیا پەیوەندیێ و شارەزاییان ل مال و قوتابخانێ.",
+ svc2t:"زێدە-جوولە و کێمیا سەرنجێ", svc2p:"هەلسەنگاندنا نیشانان، ڕێکخستنا ڕۆتینێ، هەماهەنگی دگەل قوتابخانێ، و گفتوگۆیا ڕێکێن پشتەڤانی و چارەسەریێ.",
+ svc3t:"زەحمەتیێن فێربوونێ", svc3p:"ناسینا زەحمەتیێن خواندن، نڤیسین و حسابێ، و ڕێنمایکرنا خێزان و قوتابخانێ بۆ پشتەڤانیا گونجای.",
+ svc4t:"نیگەرانی، مەزاج و ڕەفتارا هەرزەکاران", svc4p:"دویرکەفتن، توڕەبوون، نیگەرانی، کێمبوونا ئاستێ خواندنێ، و چەوا دەرگەهێ ئاخفتنێ دگەل هەرزەکاری ڤەکەین.",
+ svc5t:"ڕێنمایا دایک و بابان", svc5p:"دانیشتن بۆ هاریکاریا دایک و بابان د مامەلەکرنا ڕەفتارێن زەحمەت و دانانا ڕۆتینەکا ئارام دا، دگەل گرنگیدانا ب خۆ ژی.",
+ svc6t:"هەماهەنگی دگەل قوتابخانێ", svc6p:"ڕێنمایکرنا مامۆستا و ڕێنماییکاران دەربارەی گۆڕانکاریێن پۆلێ کو هاریکاریا زارۆکی دکەن بۆ فێربوونێ.",
+ signsTitle:"کەنگێ شێوەرێ دخوازم؟", signsLead:"ئەڤە نموونەیێن گشتینە و تشخیس نینە. ئەگەر نیگەران بن، پسیار بکەن؛ پسیارکرن زیانێ ناگەهینیت.",
+ sg1t:"زارۆکێن بچووک (هەتا 5 ساڵی)", sg1l:"<li>دەرەنگکەفتنا ئاخفتنێ یان ژدەستدانا پەیڤێن بەری نوکە</li><li>کێم تەماشەکرنا چاڤان یان بەرسڤنەدانا ناڤی</li><li>تۆڕەبوونێن توند یان زەحمەتیا ئارامکرنێ</li><li>هەستیاریا زێدە بۆ دەنگان، دەست‌لێدان یان گۆڕانکاریێ</li><li>زەحمەتیا یاریکرنێ دگەل زارۆکان</li>",
+ sg2t:"تەمەنێ قوتابخانێ (6–12)", sg2l:"<li>خەیاڵکرنا زێدە، ژیرچوون و زەحمەتیا تەمامکرنا ئەرکان</li><li>جوولا زێدە و بێ‌ئاگاهی</li><li>زەحمەتی د خواندن، نڤیسین یان حسابێ دا</li><li>نەچوونا قوتابخانێ یان گازندێن لەشی یێن دووبارە</li><li>نیگەرانی، ترس یان دویرکەفتن</li>",
+ sg3t:"هەرزەکار", sg3l:"<li>خەمگینی یان تۆڕەبوون دوو هەفتیان یان زێدەتر بخایەنیت</li><li>دویرکەفتن ژ هەڤالان و چالاکیان</li><li>گۆڕانکاری د خەو یان خوارنێ دا</li><li>کێمبوونا ئاستێ خواندنێ یا ناگەهانی</li><li>ئاخفتن دەربارەی بێهیڤیێ یان زیانگەهاندنا خۆ (ڕەوشەکا لەزگینە)</li>",
+ signsNote:"ئەگەر زارۆک یان هەرزەکار د مەترسیەکا ڕاستەوخۆ دا بیت، چاڤەڕێی شێوەرەکا ئۆنلاین نەبن: بچنە نێزیکترین نەخوشخانێ.",
+ latestTitle:"نوی‌ترین بابەت و ڕێبەر", latestLead:"زانیاریێن ساناهی و کرداری بۆ خێزان و مامۆستایان.",
+ orgEyebrow:"قوتابخانە، دامەزراوە و جڤاک", orgTitle:"ورکشۆپێن ڕاهێنانێ و پشتەڤانیا جڤاکی", orgLead:"ئەزموونا بڕێڤەبرنا خولێن ڕاهێنانێ و کارکرن دگەل ڕێکخراوێن جڤاکا مەدەنی.",
+ org1t:"ورکشۆپ بۆ مامۆستا و کارمەندان", org1p:"بۆ قوتابخانە، باخچێن زارۆکان و دامەزراوان: ورکشۆپ دەربارەی ئۆتیزم، زێدە-جوولە، زەحمەتیێن فێربوونێ، و پشتەڤانیا زارۆکان د پۆلێ دا. بابەت و ماوە دگەل هەوە ل سەر ڕێک دکەڤین.",
+ org2t:"پشتەڤانیا زارۆکان د قەیرانان دا", org2p:"دکتۆرە سالی دگەل ڕێکخراوێن جڤاکا مەدەنی سەرەدانا کەمپێن ئاوارە و دەربەدەران کریە. ئەگەر ڕێکخراوەکا دخوازیت هەڤکاری یان ڕاهێنانێ بکەت، پەیوەندیێ ب مە بکەن.",
+ btnTraining:"پسیار دەربارەی ورکشۆپەکا ڕاهێنانێ",
+ faqTitle:"پسیارێن بەربەلاڤ",
+ q1:"کێ شێوەرێ دگریت؟", a1:"دایک و باب یان کەسێ بەرپرسیارێ زارۆکی بۆ زارۆک و هەرزەکاران ژڤانی دگرن. ئەم ب ئاخفتنا دگەل هەوە دەست پێ دکەین، پاشی دگەل هەوە بڕیارێ ددەین چەوا زارۆک ل دانیشتنێ بەشدار بیت، ل دویڤ تەمەن و ڕەوشا وی.",
+ q2:"ئایا زانیاری نهێنینە؟", a2:"بەلێ. هەمی شێوەر و زانیاری ب تەمامی نهێنی دمینن. د نامەیا ئێکێ دا ڕاپۆرتێن پزیشکی نەفرێکەن، و دێ ڕێکەکا ئاسایش بۆ بەشکرنێ نیشا هەوە دەین.",
+ q3:"شێوەر ب کیژ زمانی دبیت؟", a3:"ب کوردی (بادینی)، عەرەبی یان ئینگلیزی، ل دویڤ ڕەزامەندیا هەوە.",
+ q4:"ئایا شێوەر ژ دەرڤەی عێراقێ دشێت بێتە کرن؟", a4:"بەلێ، بۆ ئەو خێزانێن ل دەرڤەی وەڵاتی دژین. دەمێ ژڤانی ل دویڤ جیاوازیا دەمژمێرێ ڕێک دئێخین. هندەک ڕەوش پێدڤی ب هەلسەنگاندنا ئامادەبوونێ ل وەڵاتێ هەوە نە، و دێ ب ڕاستگۆیی بێژینە هەوە.",
+ q5:"ئایا هەلسەنگاندنا ئۆنلاین بەسە؟", a5:"د گەلەک ڕەوشان دا بەسە بۆ تێگەهشتنا ئاریشێ، دانانا پلانێ و دویڤچوونێ. هندەک ڕەوش پێدڤی ب پشکنین یان هەلسەنگاندنا ئامادەبوونێ نە، و دێ ڕوون کەین.",
+ q6:"ئایا ماڵپەڕ بۆ ڕەوشێن لەزگینە؟", a6:"نە. ئەگەر زارۆک د مەترسیەکا ڕاستەوخۆ دا بیت یان مەترسی ل سەر ژیانا وی هەبیت، بچنە نێزیکترین نەخوشخانێ یان پەیوەندیێ ب خزمەتگوزاریێن لەزگین بکەن.",
+ q7:"شێوەر چەند دبیت و چەوا پارە ددەم؟", a7:"دەمێ ژڤان گرتنێ، کرێ و ڕێکێن پارەدانێ بۆ هەوە ڕوون دکەین.",
+ contactWa:"واتسئاپ", contactWaP:"زووترین ڕێک بۆ ژڤان گرتنێ: نامەیەکا کورت و دێ بەرسڤا هەوە دەین.",
+ contactPhone:"پەیوەندیا تەلەفونی", contactPhoneP:"هوین دشێن ب ڤێ ژمارێ ژی پەیوەندیێ بکەن. ئەگەر دەستبەجێ بەرسڤ نەدایە، نامەیەکێ ب واتسئاپێ بفرێکەن."
 },
 en:{
  heroEyebrow:"Online consultations in Arabic, Kurdish and English",
@@ -231,9 +343,41 @@ en:{
  feesTitle:"Fees and payment", feesP:"We'll explain fees and payment options inside and outside Iraq when you book.",
  bookTitle:"Book your consultation", bookLead:"Send a short WhatsApp message and we'll reply to arrange a time.",
  bookHint:"Please don't send medical reports or sensitive details in your first message. We'll guide you on how to share them securely.",
- waMissing:"Booking via WhatsApp opens soon."
-}}};
+ waMissing:"Booking via WhatsApp opens soon.",
+ svcTitle:"How we can help", svcLead:"Online consultations for parents and teenagers, built on listening and understanding before any recommendation.",
+ svc1t:"Autism assessment and support", svc1p:"Understanding the signs, a second opinion on an earlier diagnosis, and a plan to support communication and skills at home and school.",
+ svc2t:"ADHD", svc2p:"Assessing symptoms, organising routines, working with school, and discussing support and treatment options.",
+ svc3t:"Learning difficulties", svc3p:"Recognising reading, writing and maths difficulties, and guiding families and schools towards the right support.",
+ svc4t:"Teen anxiety, mood and behaviour", svc4p:"Withdrawal, anger, worry and falling grades, and how to open the conversation with your teenager.",
+ svc5t:"Parent guidance", svc5p:"Sessions to help parents handle difficult behaviour and build a calm routine, while looking after themselves too.",
+ svc6t:"Working with school", svc6p:"Guiding teachers and counsellors on the classroom adjustments that help a child learn.",
+ signsTitle:"When should I ask for a consultation?", signsLead:"These are general examples, not a diagnosis. If you are worried, ask. Asking never hurts.",
+ sg1t:"Young children (up to 5)", sg1l:"<li>Delayed speech, or losing words they used to say</li><li>Little eye contact, or not responding to their name</li><li>Intense tantrums or difficulty calming</li><li>Strong reactions to sounds, textures or change</li><li>Difficulty playing with other children</li>",
+ sg2t:"School age (6–12)", sg2l:"<li>Daydreaming, forgetfulness, trouble finishing tasks</li><li>Excess movement and impulsivity</li><li>Difficulty with reading, writing or maths</li><li>School refusal or repeated physical complaints</li><li>Worry, fear or isolation</li>",
+ sg3t:"Teenagers", sg3l:"<li>Sadness or irritability lasting two weeks or more</li><li>Withdrawing from friends and activities</li><li>Changes in sleep or eating</li><li>A sudden drop in school performance</li><li>Talk of hopelessness or self-harm (an emergency)</li>",
+ signsNote:"If a child or teenager is in immediate danger, don't wait for an online consultation: go to the nearest hospital.",
+ latestTitle:"Latest guides & articles", latestLead:"Plain-language, practical information for families and teachers.",
+ orgEyebrow:"Schools, organisations & community", orgTitle:"Training workshops and community support", orgLead:"Experience running training courses and working with civil-society organisations.",
+ org1t:"Workshops for teachers and staff", org1p:"For schools, nurseries and organisations: workshops on autism, ADHD, learning difficulties and supporting children in the classroom. We agree topics and length with you.",
+ org2t:"Supporting children in crises", org2p:"Dr. Sally has taken part, with civil-society organisations, in visits to camps for displaced families. Organisations interested in collaboration or training are welcome to get in touch.",
+ btnTraining:"Ask about a training workshop",
+ faqTitle:"Frequently asked questions",
+ q1:"Who books the consultation?", a1:"Parents or carers book for children and teenagers. We start by talking with you, then decide together how your child takes part in the session, depending on age and situation.",
+ q2:"Is my information confidential?", a2:"Yes. All consultations and information are treated as completely confidential. Please don't send medical reports in your first message; we'll guide you on a safe way to share them.",
+ q3:"In which language is the consultation?", a3:"In Arabic, Kurdish (Badini) or English, whichever you prefer.",
+ q4:"Can the consultation take place from outside Iraq?", a4:"Yes, for families living abroad. We arrange the time around time differences. Some cases may need an in-person assessment in your country of residence, and we'll tell you honestly.",
+ q5:"Is an online assessment enough?", a5:"In many cases it is enough to understand the problem, agree a plan and follow up. Some cases need an examination or in-person assessment, and we'll make that clear.",
+ q6:"Is this service for emergencies?", a6:"No. If a child is in immediate danger or their life is at risk, go to the nearest hospital or call emergency services.",
+ q7:"How much does a consultation cost and how do I pay?", a7:"We explain fees and the available payment methods when you book.",
+ contactWa:"WhatsApp", contactWaP:"The fastest way to book: a short message and we'll reply.",
+ contactPhone:"Phone", contactPhoneP:"You can also call this number. If we can't answer right away, send a WhatsApp message."
+}}, onLang(){
+  const pick = ["autism-early-signs","adhd-not-laziness","teen-talk-feelings"];
+  document.getElementById("latest").innerHTML = pick.map(sl => window.ARTICLES.find(a => a.slug === sl)).filter(Boolean).map(window.artCard).join("");
+ } };
 </script>
-<script src="/assets/site.js?v=6"></script>
+<script src="/assets/articles-data.js?v=7"></script>
+<script src="/assets/articles-ui.js?v=7"></script>
+<script src="/assets/site.js?v=7"></script>
 </body>
 </html>

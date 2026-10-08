@@ -1,9 +1,10 @@
 # drsallycare.com
 
-Static site for Dr. Sally Rizqo (child & adolescent mental health, online). Cloudflare Pages project `drsallycare` deploys this branch (`drsallycare`) with no build step, output directory `/`.
+Static site for Dr. Sally Rizqo (child & adolescent mental health, online). Cloudflare Pages project `drsallycare` deploys this repo with no build step, output directory `/`. (Repo: github.com/hercules84/drsallycare, `main`. It used to be the `drsallycare` branch of doctorsaleemandraws.)
 
 ## Structure
 - `index.html` home, `autism/`, `adhd/`, `adolescence/` topic pages (Families / Teachers / Researchers), `play/` games
+- `learn/` guides hub and one page per article. Articles are written in `tools/articles.json`; run `node tools/build-articles.mjs` to regenerate `learn/`, `assets/articles-data.js` and `sitemap.xml` (commit the output).
 - `assets/site.js` shared header, footer, language switch (ar / ku / en), WhatsApp number setting
 - `assets/topic.js` topic page template, `assets/site.css` styles, `assets/logo-mark.png` logo mask
 
@@ -11,7 +12,8 @@ Static site for Dr. Sally Rizqo (child & adolescent mental health, online). Clou
 Public since 2026-10-07 (indexable, sitemap at /sitemap.xml).
 
 ## Still to fill in
-- `WHATSAPP_NUMBER` in `assets/site.js`: until set, booking buttons lead to an "opening soon" note and the floating button is hidden.
+- WhatsApp/phone is set (07738919655 → `WHATSAPP_NUMBER` / `PHONE_DISPLAY` in `assets/site.js`).
+- The articles and her photo (`assets/dr-sally.jpg`) await Dr. Sally's medical review and approval.
 - Specialty and registration number (hidden until confirmed); her title currently reads "physician in child & adolescent mental health".
 - Kurdish review; long topic content shows Arabic with a note in the Kurdish view.
 - Bump the `?v=` number on asset links in every page after changing CSS/JS.
