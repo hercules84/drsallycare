@@ -6,7 +6,7 @@ import path from "node:path";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const articles = JSON.parse(fs.readFileSync(path.join(root, "tools/articles.json"), "utf8"));
 const DATE = "2026-10-08";
-const V = "8"; // asset version, must match the ?v= used in the other pages
+const V = "9"; // asset version, must match the ?v= used in the other pages
 
 const TAGKEY = { autism:"tagAutism", adhd:"tagAdhd", adolescence:"tagAdolescence", learning:"tagLearning",
   teachers:"tagTeachers", community:"tagCommunity", wellbeing:"tagWellbeing", consultation:"tagConsultation" };
@@ -29,7 +29,7 @@ function head({ title, desc, url, extra = "" }) {
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="https://drsallycare.com${url}">
 <meta property="og:image" content="https://drsallycare.com/icon-512.png">
-<meta name="theme-color" content="#2F6F6A">
+<meta name="theme-color" content="#4A726E">
 <link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">

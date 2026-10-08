@@ -2,28 +2,28 @@
    One calm column. Sticky header (brand, language switch, page tabs) → page content → footer with emergency notice.
    A floating WhatsApp button stays on every page. Teal = trust, coral = warmth, sun/lavender = play. */
 :root{
-  --bg:#FBF8F3; --surface:#FFFFFF; --ink:#1F2E2C; --muted:#5D6B68; --line:#E7E1D6;
-  --teal:#2F6F6A; --teal-soft:#E4F0EE; --coral:#C8664A; --coral-soft:#FBEAE4;
-  --sun:#C9951F; --sun-soft:#FBF2DC; --lav:#6E62A6; --lav-soft:#EEEBF7;
-  --warn:#9E2B25; --warn-soft:#FBE9E7; --ok:#2E7D4F; --ok-soft:#E3F3E8;
+  --bg:#F6F4EF; --surface:#FFFFFF; --ink:#26322F; --muted:#66726F; --line:#E4E0D8;
+  --teal:#4A726E; --teal-soft:#E8EFED; --coral:#A9776A; --coral-soft:#F3EAE6;
+  --sun:#9E8A5A; --sun-soft:#F3EEE1; --lav:#7B769E; --lav-soft:#ECEAF2;
+  --warn:#8E4741; --warn-soft:#F4E8E6; --ok:#4D7F61; --ok-soft:#E6F0E9;
   --on-accent:#FFFFFF;
-  --shadow:0 1px 2px rgba(31,46,44,.05),0 8px 24px rgba(31,46,44,.06);
+  --shadow:0 1px 2px rgba(38,50,47,.04),0 8px 24px rgba(38,50,47,.05);
   --f-ar:'Vazirmatn',Tahoma,sans-serif;
   --f-en-body:'Nunito Sans','Segoe UI',sans-serif;
   --f-en-head:'Fraunces',Georgia,serif;
   --radius:18px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#111816; --surface:#18221F; --ink:#E9EFEC; --muted:#A3B3AE; --line:#2A3833;
-  --teal:#7CC3BB; --teal-soft:#1D332F; --coral:#F0A189; --coral-soft:#3A2520;
-  --sun:#F0CB6E; --sun-soft:#352D17; --lav:#B4A9E6; --lav-soft:#27233A;
-  --warn:#F2A39C; --warn-soft:#3A1C1A; --ok:#86D3A3; --ok-soft:#1B3325;
+  --bg:#141A19; --surface:#1B2321; --ink:#E4EAE7; --muted:#9CABA6; --line:#2B3633;
+  --teal:#86AEA8; --teal-soft:#1F2F2C; --coral:#D2A598; --coral-soft:#302622;
+  --sun:#D5C28A; --sun-soft:#302B1C; --lav:#ABA5CF; --lav-soft:#26243A;
+  --warn:#E0A09A; --warn-soft:#37201E; --ok:#8CC2A0; --ok-soft:#1D3024;
   --on-accent:#0E1A17; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#111816; --surface:#18221F; --ink:#E9EFEC; --muted:#A3B3AE; --line:#2A3833;
-  --teal:#7CC3BB; --teal-soft:#1D332F; --coral:#F0A189; --coral-soft:#3A2520;
-  --sun:#F0CB6E; --sun-soft:#352D17; --lav:#B4A9E6; --lav-soft:#27233A;
-  --warn:#F2A39C; --warn-soft:#3A1C1A; --ok:#86D3A3; --ok-soft:#1B3325;
+  --bg:#141A19; --surface:#1B2321; --ink:#E4EAE7; --muted:#9CABA6; --line:#2B3633;
+  --teal:#86AEA8; --teal-soft:#1F2F2C; --coral:#D2A598; --coral-soft:#302622;
+  --sun:#D5C28A; --sun-soft:#302B1C; --lav:#ABA5CF; --lav-soft:#26243A;
+  --warn:#E0A09A; --warn-soft:#37201E; --ok:#8CC2A0; --ok-soft:#1D3024;
   --on-accent:#0E1A17; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -165,7 +165,7 @@ footer.site{border-top:1px solid var(--line);padding-block:28px 100px;font-size:
 .foot-links{display:flex;flex-wrap:wrap;gap:12px}
 
 /* floating whatsapp */
-.fab{position:fixed;inset-inline-end:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;background:#25D366;color:#073B1E;font-weight:800;text-decoration:none;padding:12px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.18);min-height:52px}
+.fab{position:fixed;inset-inline-end:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;background:#5FAE88;color:#0B2A1B;font-weight:800;text-decoration:none;padding:12px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.18);min-height:52px}
 .fab svg{width:24px;height:24px}
 
 /* ===== play page ===== */
@@ -328,7 +328,7 @@ html[dir="rtl"] .stat b{direction:ltr;text-align:right;unicode-bidi:isolate}
 @media (max-width:520px){.svc-grid{grid-template-columns:1fr}}
 
 /* ===== portrait + phone ===== */
-.hero-photo{margin:0;justify-self:center;width:100%;max-width:340px;aspect-ratio:4/5;border-radius:36px 36px 120px 36px;overflow:hidden;box-shadow:0 18px 50px rgba(47,111,106,.22);border:6px solid var(--surface);background:var(--teal-soft)}
+.hero-photo{margin:0;justify-self:center;width:100%;max-width:340px;aspect-ratio:4/5;border-radius:36px 36px 120px 36px;overflow:hidden;box-shadow:0 18px 50px rgba(74,114,110,.18);border:6px solid var(--surface);background:var(--teal-soft)}
 html[dir="ltr"] .hero-photo{border-radius:36px 36px 36px 120px}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .head-right{display:flex;align-items:center;gap:8px}
