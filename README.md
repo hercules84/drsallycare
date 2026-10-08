@@ -13,6 +13,7 @@ Public since 2026-10-07 (indexable, sitemap at /sitemap.xml).
 
 ## Still to fill in
 - WhatsApp/phone is set (07738919655 → `WHATSAPP_NUMBER` / `PHONE_DISPLAY` in `assets/site.js`).
+- Her details as given by Dr. Sally: graduated 2009 (Mosul, Nineveh Medicine), began practising psychiatry 2017, director of the Child Psychology Centre since 2021, 2,000+ cases. Her photo (`assets/dr-sally.jpg`) has a cut-out soft background.
 - The articles and her photo (`assets/dr-sally.jpg`) await Dr. Sally's medical review and approval.
 - Specialty and registration number (hidden until confirmed); her title currently reads "physician in child & adolescent mental health".
 - Kurdish review; long topic content shows Arabic with a note in the Kurdish view.

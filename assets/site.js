@@ -106,8 +106,11 @@ function buildChrome(){
   <header class="site"><div class="wrap">
     <div class="head-row">
       <a class="brand" href="/">${MARK}<span><span class="brand-name" data-i18n="brand"></span><br><span class="brand-sub" data-i18n="brandSub"></span></span></a>
-      <div class="langs" role="group" aria-label="Language">
-        <button data-lang="ar" lang="ar">العربية</button><button data-lang="ku" lang="ku">کوردی</button><button data-lang="en" lang="en">English</button>
+      <div class="head-right">
+        <a class="head-tel" dir="ltr" data-tel href="#" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="tel-num">${PHONE_DISPLAY}</span></a>
+        <div class="langs" role="group" aria-label="Language">
+          <button data-lang="ar" lang="ar">العربية</button><button data-lang="ku" lang="ku">کوردی</button><button data-lang="en" lang="en">English</button>
+        </div>
       </div>
     </div>
     <nav class="tabs" aria-label="Main">${NAV.map(([id,href,key]) => `<a href="${href}" data-i18n="${key}"${id===PAGE.id?' aria-current="page"':''}></a>`).join("")}</nav>
@@ -144,7 +147,7 @@ function setLang(lang){
     // no number yet: hide the floating button and the button inside the booking box; links elsewhere lead to the "opening soon" note
     a.hidden = !has && (a.classList.contains("fab") || !!a.closest("#book"));
   });
-  document.querySelectorAll("[data-tel]").forEach(a => { a.href = has ? `tel:+${WHATSAPP_NUMBER}` : "#"; a.hidden = !has; });
+  document.querySelectorAll("[data-tel]").forEach(a => { a.href = has ? `tel:+${WHATSAPP_NUMBER}` : "#"; a.hidden = !has; const n = a.querySelector(".tel-num"); if (n && !n.textContent) n.textContent = PHONE_DISPLAY; });
   document.querySelectorAll(".wa-missing").forEach(el => el.hidden = has);
   const title = tx("pageTitle"); if (title) document.title = title;
   try { localStorage.setItem("drsally-lang", lang); } catch(e){}
