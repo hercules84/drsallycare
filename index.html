@@ -16,8 +16,8 @@
 <link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=9">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Sally Rizqo","alternateName":"د. سالي رزقو","url":"https://drsallycare.com/","image":"https://drsallycare.com/assets/dr-sally.jpg","telephone":"+9647738919655","availableLanguage":["Arabic","Kurdish","English"],"areaServed":["Duhok","Kurdistan Region of Iraq","Online"],"description":"Online consultations and guides for children's and teenagers' emotional wellbeing: autism, ADHD, learning difficulties and adolescence."}</script>
+<link rel="stylesheet" href="/assets/site.css?v=10">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Sally Rizqo","alternateName":"د. سالي رزقو","url":"https://drsallycare.com/","telephone":"+9647738919655","availableLanguage":["Arabic","Kurdish","English"],"areaServed":["Duhok","Kurdistan Region of Iraq","Online"],"description":"Online consultations and guides for children's and teenagers' emotional wellbeing: autism, ADHD, learning difficulties and adolescence."}</script>
 </head>
 <body>
 <main class="wrap">
@@ -38,7 +38,7 @@
       </div>
       <p class="small-note" data-i18n="disclaimer"></p>
     </div>
-    <figure class="hero-photo"><img src="/assets/dr-sally.jpg?v=3" width="560" height="700" alt="د. سالي رزقو · Dr. Sally Rizqo" fetchpriority="high" decoding="async"></figure>
+    <figure class="hero-photo" aria-hidden="true"><img src="/assets/dr-sally.jpg" width="560" height="700" alt="" decoding="async" onerror="this.remove()"></figure>
   </section>
 
   <section style="padding-top:0">
@@ -115,7 +115,7 @@
   <section id="about">
     <span class="eyebrow" data-i18n="aboutEyebrow"></span>
     <div class="about">
-      <div class="portrait photo"><img src="/assets/dr-sally.jpg?v=1" width="560" height="700" alt="د. سالي رزقو · Dr. Sally Rizqo" loading="lazy" decoding="async"></div>
+      <div class="portrait photo" aria-hidden="true"><img src="/assets/dr-sally.jpg" width="560" height="700" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
       <div>
         <h2 data-i18n="brand"></h2>
         <p data-i18n="aboutP"></p>
@@ -377,8 +377,8 @@ en:{
   document.getElementById("latest").innerHTML = pick.map(sl => window.ARTICLES.find(a => a.slug === sl)).filter(Boolean).map(window.artCard).join("");
  } };
 </script>
-<script src="/assets/articles-data.js?v=9"></script>
-<script src="/assets/articles-ui.js?v=9"></script>
-<script src="/assets/site.js?v=9"></script>
+<script src="/assets/articles-data.js?v=10"></script>
+<script src="/assets/articles-ui.js?v=10"></script>
+<script src="/assets/site.js?v=10"></script>
 </body>
 </html>
