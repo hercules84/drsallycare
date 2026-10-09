@@ -28,7 +28,7 @@ ar:{
  gThermo:"مقياس مشاعري", gThermoD:"للمراهقين: كيف أشعر اليوم؟",
  gSort:"فرز وتصنيف", gSortD:"ضع كل شيء في سلته", gPattern:"أنماط وتسلسل", gPatternD:"ما الذي يأتي بعد ذلك؟", gOdd:"من المختلف؟", gOddD:"لاحظ واختر الشيء المختلف", gSituations:"كيف يشعرون؟", gSituationsD:"اربط الموقف بالشعور", gChallenge:"تحدي ألغاز التفكير", gChallengeD:"٨ ألغاز ممتعة (ليس اختبار ذكاء)",
  refsTitle:"مراجع مختارة",
- navLearn:"مقالات وأدلة", phoneLabel:"هاتف / واتساب", callNow:"اتصال هاتفي",
+ navLearn:"مقالات وأدلة", navRes:"الموارد", phoneLabel:"هاتف / واتساب", callNow:"اتصال هاتفي",
  tagAutism:"التوحد", tagAdhd:"فرط الحركة", tagAdolescence:"المراهقة", tagLearning:"صعوبات التعلم", tagTeachers:"للمعلمين", tagCommunity:"دعم في الأزمات", tagWellbeing:"الحياة اليومية", tagConsultation:"الاستشارة", allTags:"الكل",
  minWord:"دقائق قراءة", backLearn:"← كل المقالات", moreArt:"مقالات ذات صلة", allArt:"كل المقالات", artNote:"محتوى عام للتوعية، ولا يغني عن التقييم الفردي.",
 },
@@ -53,7 +53,7 @@ ku:{
  gThermo:"پێڤەرێ هەستێن من", gThermoD:"بۆ هەرزەکاران: ئەز ئەڤرۆ چەوانم؟",
  gSort:"ڕیزکرن و پۆلینکرن", gSortD:"هەر تشتەکی بکە د سەبەتا خۆ دا", gPattern:"پاتێر و ڕیزبوون", gPatternD:"پشتی ڤێ چ دئێت؟", gOdd:"کیژ جودایە؟", gOddD:"تێبینی بکە و یێ جودا هەلبژێرە", gSituations:"چەوا هەست دکەن؟", gSituationsD:"ڕەوشێ ب هەستی ڤە گرێبدە", gChallenge:"بەرەنگاربوونا پەزلان", gChallengeD:"8 پەزلێن خۆش (تێستا زیرەکیێ نینە)",
  refsTitle:"ژێدەرێن هەلبژارتی",
- navLearn:"ڕێبەر و بابەت", phoneLabel:"تەلەفون / واتسئاپ", callNow:"پەیوەندیێ بکە",
+ navLearn:"ڕێبەر و بابەت", navRes:"سەرچاوە", phoneLabel:"تەلەفون / واتسئاپ", callNow:"پەیوەندیێ بکە",
  tagAutism:"ئۆتیزم", tagAdhd:"زێدە-جوولە", tagAdolescence:"هەرزەکاری", tagLearning:"زەحمەتیێن فێربوونێ", tagTeachers:"بۆ مامۆستایان", tagCommunity:"پشتەڤانی د قەیرانان دا", tagWellbeing:"ژیانا ڕۆژانە", tagConsultation:"شێوەر", allTags:"هەمی",
  minWord:"خولەک بۆ خواندنێ", backLearn:"← هەمی بابەت", moreArt:"بابەتێن پەیوەندیدار", allArt:"هەمی بابەت", artNote:"ناڤەڕۆکەکێ گشتییە بۆ هۆشیاریێ، و جهێ هەلسەنگاندنا تاکەکەسی ناگریت.",
 },
@@ -78,7 +78,7 @@ en:{
  gThermo:"Feelings check-in", gThermoD:"For teens: how am I today?",
  gSort:"Sort it out", gSortD:"Put each thing in its basket", gPattern:"Patterns", gPatternD:"What comes next?", gOdd:"Odd one out", gOddD:"Spot the one that is different", gSituations:"How do they feel?", gSituationsD:"Match the situation to the feeling", gChallenge:"Thinking puzzles", gChallengeD:"8 fun puzzles (not an IQ test)",
  refsTitle:"Selected references",
- navLearn:"Guides & articles", phoneLabel:"Phone / WhatsApp", callNow:"Call",
+ navLearn:"Guides & articles", navRes:"Resources", phoneLabel:"Phone / WhatsApp", callNow:"Call",
  tagAutism:"Autism", tagAdhd:"ADHD", tagAdolescence:"Adolescence", tagLearning:"Learning difficulties", tagTeachers:"For teachers", tagCommunity:"Support in crises", tagWellbeing:"Everyday life", tagConsultation:"Consultation", allTags:"All",
  minWord:"min read", backLearn:"← All articles", moreArt:"Related articles", allArt:"All articles", artNote:"General information for awareness; it does not replace an individual assessment.",
 }};
@@ -88,7 +88,7 @@ const MARK = '<span class="brand-mark" aria-hidden="true" style="display:inline-
 
 const NAV = [
   ["home","/","navHome"],["autism","/autism/","navAutism"],["adhd","/adhd/","navAdhd"],
-  ["teen","/adolescence/","navTeen"],["learn","/learn/","navLearn"],["play","/play/","navPlay"],["book","/#book","navBook"]
+  ["teen","/adolescence/","navTeen"],["learn","/learn/","navLearn"],["res","/resources/","navRes"],["play","/play/","navPlay"],["book","/#book","navBook"]
 ];
 
 let LANG = "ar";
