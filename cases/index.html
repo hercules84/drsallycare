@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#3F729B">
+<title>Case sheets</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css?v=12">
+<style>
+body{padding:0}
+.cs{max-width:1060px;margin:0 auto;padding:18px 16px 60px}
+.cs-top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}
+.cs-top h1{font-size:22px;margin:0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.cs input,.cs select,.cs textarea{font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;width:100%}
+.cs textarea{min-height:76px;resize:vertical}
+.cs label{display:block;font-size:13.5px;color:var(--muted);margin:0 0 4px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}
+.lock{max-width:420px;margin:12vh auto 0;text-align:center}
+.lock input{text-align:center;margin:10px 0}
+.msg{color:var(--warn);font-size:14px;min-height:20px}
+.warn{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:10px 12px;font-size:14px;margin:10px 0}
+.note{color:var(--muted);font-size:13.5px}
+.cs .btn.small{padding:7px 14px;font-size:14px}
+.layout{display:grid;grid-template-columns:300px 1fr;gap:14px;align-items:start}
+@media(max-width:820px){.layout{grid-template-columns:1fr}}
+.plist{max-height:62vh;overflow:auto;margin-top:10px}
+.pi{display:block;width:100%;text-align:start;background:none;border:0;border-bottom:1px solid var(--line);padding:10px 4px;cursor:pointer;font:inherit;color:var(--ink)}
+.pi:hover,.pi.on{background:var(--teal-soft)}
+.pi small{display:block;color:var(--muted)}
+.due{font-size:12px;border-radius:999px;padding:1px 8px;background:var(--sun-soft);color:var(--sun)}
+.due.late{background:var(--warn-soft);color:var(--warn)}
+table.v{width:100%;border-collapse:collapse;font-size:14.5px}
+table.v th,table.v td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+table.v th{color:var(--muted);font-weight:600;font-size:13px}
+.prog{display:inline-block;min-width:22px;text-align:center;border-radius:8px;padding:0 6px;background:var(--teal-soft);font-weight:700}
+.empty{color:var(--muted);text-align:center;padding:30px 0}
+dialog{border:0;border-radius:20px;padding:0;max-width:640px;width:calc(100% - 24px);background:var(--bg);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(30,40,38,.45)}
+dialog form{padding:18px}
+dialog h2{margin:0 0 12px;font-size:19px}
+.chk{display:flex;gap:8px;align-items:center}.chk input{width:auto}
+@media print{
+ .cs-top,.noprint,.plist,#side,.btn{display:none!important}
+ .layout{display:block}.box{box-shadow:none;border:1px solid #bbb;break-inside:avoid}
+ body{background:#fff}
+}
+</style>
+</head>
+<body>
+<div class="cs" id="app">
+
+<!-- lock screen -->
+<div id="lock" class="box lock" hidden>
+  <h1 style="font-size:20px" data-i="title"></h1>
+  <p class="note" id="lock-hint"></p>
+  <input type="password" id="pw" autocomplete="off" data-ph="pass" aria-label="passphrase">
+  <input type="password" id="pw2" autocomplete="off" data-ph="pass2" hidden>
+  <div class="warn" id="lock-warn" hidden data-i="warnNew"></div>
+  <div class="msg" id="lock-msg" role="alert"></div>
+  <button class="btn primary" id="lock-go" type="button"></button>
+  <p class="note" style="margin-top:14px"><button class="btn small" type="button" id="lang-l"></button></p>
+</div>
+
+<!-- main -->
+<div id="main" hidden>
+  <div class="cs-top noprint">
+    <h1 data-i="title"></h1>
+    <div class="row">
+      <button class="btn small" type="button" id="b-lang"></button>
+      <button class="btn small" type="button" id="b-export" data-i="export"></button>
+      <button class="btn small" type="button" id="b-import" data-i="import"></button>
+      <button class="btn small" type="button" id="b-pw" data-i="chpw"></button>
+      <button class="btn small primary" type="button" id="b-lock" data-i="lock"></button>
+      <input type="file" id="f-import" accept=".json,application/json" hidden>
+    </div>
+  </div>
+  <div class="warn noprint" id="storewarn" hidden data-i="storeWarn"></div>
+  <div class="layout">
+    <aside id="side" class="box">
+      <div class="row" style="justify-content:space-between"><b data-i="patients"></b><button class="btn small primary" type="button" id="b-newp" data-i="newPatient"></button></div>
+      <input type="search" id="q" data-ph="search" style="margin-top:10px" aria-label="search">
+      <div class="row" style="margin-top:8px"><label class="chk" style="margin:0"><input type="checkbox" id="only-due"><span data-i="onlyDue"></span></label></div>
+      <div class="plist" id="plist"></div>
+    </aside>
+    <section id="detail"></section>
+  </div>
+  <p class="note noprint" data-i="foot"></p>
+</div>
+
+<!-- patient dialog -->
+<dialog id="dp"><form method="dialog" id="fp">
+  <h2 id="dp-t"></h2>
+  <div class="grid2">
+    <div><label data-i="fName"></label><input id="p-name" required></div>
+    <div><label data-i="fCode"></label><input id="p-code"></div>
+    <div><label data-i="fDob"></label><input id="p-dob" type="date"></div>
+    <div><label data-i="fSex"></label><select id="p-sex"><option value=""></option><option value="F" data-i="female"></option><option value="M" data-i="male"></option></select></div>
+    <div><label data-i="fGuardian"></label><input id="p-guardian"></div>
+    <div><label data-i="fPhone"></label><input id="p-phone" type="tel" dir="ltr"></div>
+    <div><label data-i="fSchool"></label><input id="p-school"></div>
+    <div><label data-i="fRef"></label><input id="p-ref"></div>
+    <div><label data-i="fFirst"></label><input id="p-first" type="date"></div>
+    <div><label data-i="fStatus"></label><select id="p-status"><option value="active" data-i="stActive"></option><option value="paused" data-i="stPaused"></option><option value="closed" data-i="stClosed"></option></select></div>
+  </div>
+  <div style="margin-top:12px"><label data-i="fDx"></label><input id="p-dx"></div>
+  <div class="grid2" style="margin-top:12px">
+    <div><label data-i="fMeds"></label><textarea id="p-meds"></textarea></div>
+    <div><label data-i="fAllergy"></label><textarea id="p-allergy"></textarea></div>
+  </div>
+  <div style="margin-top:12px"><label data-i="fEssential"></label><textarea id="p-ess"></textarea></div>
+  <label class="chk" style="margin-top:12px"><input type="checkbox" id="p-consent"><span data-i="fConsent"></span></label>
+  <div class="row" style="margin-top:16px;justify-content:space-between">
+    <span class="row"><button class="btn primary" value="save" type="submit" data-i="save"></button><button class="btn" value="cancel" type="button" id="dp-cancel" data-i="cancel"></button></span>
+    <button class="btn small" type="button" id="dp-del" data-i="delPatient" hidden></button>
+  </div>
+</form></dialog>
+
+<!-- visit dialog -->
+<dialog id="dv"><form method="dialog" id="fv">
+  <h2 id="dv-t"></h2>
+  <div class="grid2">
+    <div><label data-i="vDate"></label><input id="v-date" type="date" required></div>
+    <div><label data-i="vType"></label><select id="v-type"></select></div>
+    <div><label data-i="vProg"></label><select id="v-prog"></select></div>
+    <div><label data-i="vNext"></label><input id="v-next" type="date"></div>
+  </div>
+  <div style="margin-top:12px"><label data-i="vTreat"></label><textarea id="v-treat"></textarea></div>
+  <div style="margin-top:12px"><label data-i="vProgNote"></label><textarea id="v-prognote"></textarea></div>
+  <div style="margin-top:12px"><label data-i="vMeds"></label><textarea id="v-meds" style="min-height:56px"></textarea></div>
+  <div class="row" style="margin-top:16px;justify-content:space-between">
+    <span class="row"><button class="btn primary" value="save" type="submit" data-i="save"></button><button class="btn" type="button" id="dv-cancel" data-i="cancel"></button></span>
+    <button class="btn small" type="button" id="dv-del" data-i="delVisit" hidden></button>
+  </div>
+</form></dialog>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------- text ---------- */
+const T = {
+ar:{
+ title:"ملفات المرضى (خاص)", pass:"كلمة السر", pass2:"أعد كتابة كلمة السر",
+ hintNew:"أنشئي كلمة سر قوية. تُشفَّر كل البيانات بها داخل هذا الجهاز ولا تُرسل إلى أي خادم.",
+ hintOpen:"أدخلي كلمة السر لفتح الملفات.",
+ warnNew:"لا يمكن استرجاع كلمة السر. إذا نُسيت تضيع البيانات. احتفظي بنسخة احتياطية مشفّرة من زر «نسخة احتياطية».",
+ create:"إنشاء وفتح", open:"فتح", wrong:"كلمة السر غير صحيحة", short:"كلمة السر قصيرة (٨ أحرف على الأقل)", nomatch:"كلمتا السر غير متطابقتين", nocrypto:"المتصفح لا يدعم التشفير. استخدمي متصفحًا حديثًا ورابطًا آمنًا (https).",
+ export:"نسخة احتياطية", import:"استعادة", chpw:"تغيير كلمة السر", lock:"قفل",
+ storeWarn:"تعذّر الحفظ في هذا المتصفح (وضع خاص أو منع التخزين). لن تُحفظ التغييرات. استخدمي «نسخة احتياطية» قبل الإغلاق.",
+ patients:"المرضى", newPatient:"+ مريض", search:"بحث بالاسم أو الرمز", onlyDue:"المتابعات المستحقة فقط",
+ foot:"البيانات مشفّرة ومحفوظة في هذا المتصفح فقط. خذي نسخة احتياطية بانتظام. لا تظهر هذه الصفحة في محركات البحث.",
+ noPatients:"لا يوجد مرضى بعد.", pickOne:"اختاري مريضًا من القائمة أو أضيفي مريضًا جديدًا.",
+ fName:"الاسم", fCode:"رمز الملف", fDob:"تاريخ الميلاد", fSex:"الجنس", female:"أنثى", male:"ذكر", fGuardian:"ولي الأمر", fPhone:"هاتف ولي الأمر", fSchool:"المدرسة / الصف", fRef:"جهة الإحالة", fFirst:"تاريخ أول زيارة", fStatus:"الحالة",
+ stActive:"نشط", stPaused:"متوقف مؤقتًا", stClosed:"مغلق", fDx:"التشخيص / الانطباع السريري", fMeds:"الأدوية الحالية", fAllergy:"الحساسية", fEssential:"معلومات أساسية (التاريخ المرضي، العائلة، الأمور المهمة)", fConsent:"تم أخذ موافقة ولي الأمر على حفظ البيانات",
+ save:"حفظ", cancel:"إلغاء", delPatient:"حذف المريض", delVisit:"حذف الزيارة", confirmDelP:"حذف هذا المريض وكل زياراته نهائيًا؟", confirmDelV:"حذف هذه الزيارة؟", newP:"مريض جديد", editP:"تعديل بيانات المريض",
+ newV:"زيارة جديدة", editV:"تعديل زيارة", vDate:"تاريخ الزيارة", vType:"نوع الجلسة / العلاج", vProg:"التقدّم", vNext:"موعد المتابعة القادم", vTreat:"العلاج / ما تم في الجلسة", vProgNote:"ملاحظات التقدّم", vMeds:"تغييرات الدواء",
+ types:["تقييم أولي","متابعة","علاج سلوكي / جلسات","إرشاد الأهل","مراجعة دواء","تنسيق مع المدرسة","استشارة عن بُعد","أخرى"],
+ prog:["—","1 تراجع","2 دون تحسن","3 مستقر","4 تحسن","5 تحسن كبير"],
+ visits:"الزيارات", addVisit:"+ زيارة", noVisits:"لا توجد زيارات.", cDate:"التاريخ", cType:"النوع", cProg:"التقدّم", cNotes:"العلاج والملاحظات", cNext:"المتابعة",
+ edit:"تعديل", print:"طباعة الملف", chart:"منحنى التقدّم", age:"العمر", yrs:"سنة", mo:"شهر", due:"متابعة", late:"متأخرة", noconsent:"لا توجد موافقة مسجلة",
+ pPhone:"الهاتف", pGuardian:"ولي الأمر", pSchool:"المدرسة", pRef:"الإحالة", pFirst:"أول زيارة", pDx:"التشخيص", pMeds:"الأدوية", pAllergy:"الحساسية", pEss:"معلومات أساسية", pStatus:"الحالة",
+ imported:"تمت الاستعادة", badfile:"ملف غير صالح أو كلمة سر مختلفة", impConfirm:"سيستبدل هذا كل البيانات الحالية بالنسخة الاحتياطية. متابعة؟", impPw:"كلمة سر النسخة الاحتياطية:",
+ newpw:"كلمة السر الجديدة (٨ أحرف على الأقل):", pwChanged:"تم تغيير كلمة السر", lang:"English"
+},
+en:{
+ title:"Patient case sheets (private)", pass:"Passphrase", pass2:"Repeat passphrase",
+ hintNew:"Create a strong passphrase. All data is encrypted with it on this device and is never sent to any server.",
+ hintOpen:"Enter your passphrase to open the files.",
+ warnNew:"The passphrase cannot be recovered. If it is forgotten the data is lost. Keep an encrypted copy with the Backup button.",
+ create:"Create and open", open:"Open", wrong:"Wrong passphrase", short:"Passphrase too short (at least 8 characters)", nomatch:"The passphrases do not match", nocrypto:"This browser has no encryption support. Use a modern browser over https.",
+ export:"Backup", import:"Restore", chpw:"Change passphrase", lock:"Lock",
+ storeWarn:"Saving is blocked in this browser (private mode or storage disabled). Changes will not be kept. Use Backup before closing.",
+ patients:"Patients", newPatient:"+ Patient", search:"Search name or code", onlyDue:"Follow-ups due only",
+ foot:"Data is encrypted and stored in this browser only. Back up regularly. This page is not listed in search engines.",
+ noPatients:"No patients yet.", pickOne:"Pick a patient from the list or add a new one.",
+ fName:"Name", fCode:"File code", fDob:"Date of birth", fSex:"Sex", female:"Female", male:"Male", fGuardian:"Guardian", fPhone:"Guardian phone", fSchool:"School / grade", fRef:"Referred by", fFirst:"First visit date", fStatus:"Status",
+ stActive:"Active", stPaused:"Paused", stClosed:"Closed", fDx:"Diagnosis / clinical impression", fMeds:"Current medication", fAllergy:"Allergies", fEssential:"Essential information (history, family, important points)", fConsent:"Guardian consent to keep this data was obtained",
+ save:"Save", cancel:"Cancel", delPatient:"Delete patient", delVisit:"Delete visit", confirmDelP:"Permanently delete this patient and all visits?", confirmDelV:"Delete this visit?", newP:"New patient", editP:"Edit patient details",
+ newV:"New visit", editV:"Edit visit", vDate:"Visit date", vType:"Session / treatment type", vProg:"Progress", vNext:"Next follow-up date", vTreat:"Treatment / what was done", vProgNote:"Progress notes", vMeds:"Medication changes",
+ types:["Initial assessment","Follow-up","Therapy / behavioural sessions","Parent guidance","Medication review","School liaison","Online consultation","Other"],
+ prog:["—","1 Worse","2 No change","3 Stable","4 Improving","5 Much better"],
+ visits:"Visits", addVisit:"+ Visit", noVisits:"No visits yet.", cDate:"Date", cType:"Type", cProg:"Progress", cNotes:"Treatment & notes", cNext:"Follow-up",
+ edit:"Edit", print:"Print sheet", chart:"Progress curve", age:"Age", yrs:"y", mo:"m", due:"Follow-up", late:"overdue", noconsent:"No consent recorded",
+ pPhone:"Phone", pGuardian:"Guardian", pSchool:"School", pRef:"Referral", pFirst:"First visit", pDx:"Diagnosis", pMeds:"Medication", pAllergy:"Allergies", pEss:"Essential info", pStatus:"Status",
+ imported:"Restored", badfile:"Invalid file or different passphrase", impConfirm:"This replaces all current data with the backup. Continue?", impPw:"Passphrase of the backup:",
+ newpw:"New passphrase (at least 8 characters):", pwChanged:"Passphrase changed", lang:"العربية"
+}};
+let LANG = "ar"; try { LANG = localStorage.getItem("drsally-cases-lang") || "ar"; } catch(e){}
+const t = k => T[LANG][k];
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ---------- crypto (PBKDF2 -> AES-GCM) ---------- */
+const KEYNAME = "drsally-cases-v1";
+const enc = new TextEncoder(), dec = new TextDecoder();
+const b64 = u => btoa(String.fromCharCode(...new Uint8Array(u)));
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function deriveKey(pw, salt){
+  const base = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({ name:"PBKDF2", salt, iterations:250000, hash:"SHA-256" }, base, { name:"AES-GCM", length:256 }, false, ["encrypt","decrypt"]);
+}
+async function seal(key, salt, data){
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name:"AES-GCM", iv }, key, enc.encode(JSON.stringify(data)));
+  return { v:1, salt:b64(salt), iv:b64(iv), ct:b64(ct) };
+}
+async function unseal(pw, blob){
+  const salt = unb64(blob.salt), key = await deriveKey(pw, salt);
+  const pt = await crypto.subtle.decrypt({ name:"AES-GCM", iv:unb64(blob.iv) }, key, unb64(blob.ct));
+  return { key, salt, data: JSON.parse(dec.decode(pt)) };
+}
+function readBlob(){ try { const s = localStorage.getItem(KEYNAME); return s ? JSON.parse(s) : null; } catch(e){ return null; } }
+let storeOK = true;
+function writeBlob(b){ try { localStorage.setItem(KEYNAME, JSON.stringify(b)); storeOK = true; } catch(e){ storeOK = false; } $("storewarn").hidden = storeOK; }
+
+/* ---------- state ---------- */
+let KEY = null, SALT = null, DB = { patients: [] }, curId = null, idle = null;
+const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+async function persist(){ if (!KEY) return; writeBlob(await seal(KEY, SALT, DB)); }
+const today = () => new Date().toISOString().slice(0, 10);
+const fmt = d => d || "";
+function ageOf(dob){
+  if (!dob) return ""; const b = new Date(dob), n = new Date(); let m = (n.getFullYear() - b.getFullYear()) * 12 + n.getMonth() - b.getMonth(); if (n.getDate() < b.getDate()) m--;
+  if (m < 0) return ""; return m >= 24 ? Math.floor(m / 12) + " " + t("yrs") : m + " " + t("mo");
+}
+function nextDue(p){ // latest visit's next date
+  const v = (p.visits || []).slice().sort((a, b) => a.date < b.date ? 1 : -1)[0];
+  return v && v.next ? v.next : "";
+}
+
+/* ---------- lock screen ---------- */
+function applyLang(){
+  document.documentElement.lang = LANG; document.documentElement.dir = LANG === "en" ? "ltr" : "rtl";
+  document.querySelectorAll("[data-i]").forEach(e => { e.textContent = t(e.dataset.i); });
+  document.querySelectorAll("[data-ph]").forEach(e => { e.placeholder = t(e.dataset.ph); });
+  $("b-lang").textContent = $("lang-l").textContent = t("lang");
+  document.title = t("title");
+  const first = !readBlob();
+  $("lock-hint").textContent = first ? t("hintNew") : t("hintOpen");
+  $("lock-go").textContent = first ? t("create") : t("open");
+  $("pw2").hidden = !first; $("lock-warn").hidden = !first;
+  fillSelects();
+  if (KEY) render();
+}
+function toggleLang(){ LANG = LANG === "ar" ? "en" : "ar"; try { localStorage.setItem("drsally-cases-lang", LANG); } catch(e){} applyLang(); }
+$("b-lang").onclick = $("lang-l").onclick = toggleLang;
+
+async function unlock(){
+  $("lock-msg").textContent = "";
+  if (!(window.crypto && crypto.subtle)) { $("lock-msg").textContent = t("nocrypto"); return; }
+  const pw = $("pw").value, blob = readBlob();
+  try {
+    if (!blob){
+      if (pw.length < 8){ $("lock-msg").textContent = t("short"); return; }
+      if (pw !== $("pw2").value){ $("lock-msg").textContent = t("nomatch"); return; }
+      SALT = crypto.getRandomValues(new Uint8Array(16)); KEY = await deriveKey(pw, SALT); DB = { patients: [] }; await persist();
+    } else {
+      const r = await unseal(pw, blob); KEY = r.key; SALT = r.salt; DB = r.data; if (!DB.patients) DB.patients = [];
+    }
+  } catch(e){ $("lock-msg").textContent = t("wrong"); return; }
+  $("pw").value = $("pw2").value = ""; $("lock").hidden = true; $("main").hidden = false; $("storewarn").hidden = storeOK;
+  curId = null; render(); bump();
+}
+function lockNow(){ KEY = SALT = null; DB = { patients: [] }; curId = null; $("main").hidden = true; $("lock").hidden = false; $("detail").innerHTML = ""; $("plist").innerHTML = ""; applyLang(); clearTimeout(idle); }
+$("lock-go").onclick = unlock;
+["pw","pw2"].forEach(i => $(i).addEventListener("keydown", e => { if (e.key === "Enter") unlock(); }));
+$("b-lock").onclick = lockNow;
+function bump(){ clearTimeout(idle); if (KEY) idle = setTimeout(lockNow, 5 * 60 * 1000); }
+["click","keydown","touchstart"].forEach(ev => document.addEventListener(ev, () => { if (KEY) bump(); }, { passive:true }));
+document.addEventListener("visibilitychange", () => { if (document.hidden && KEY) { clearTimeout(idle); idle = setTimeout(lockNow, 60 * 1000); } else bump(); });
+
+/* ---------- list + detail ---------- */
+function render(){ renderList(); renderDetail(); }
+function renderList(){
+  const q = $("q").value.trim().toLowerCase(), od = $("only-due").checked, td = today();
+  let list = DB.patients.filter(p => (!q || (p.name + " " + (p.code || "")).toLowerCase().includes(q)) && (!od || (nextDue(p) && nextDue(p) <= td && p.status !== "closed")));
+  list.sort((a, b) => (nextDue(a) || "9999") < (nextDue(b) || "9999") ? -1 : 1);
+  $("plist").innerHTML = list.length ? list.map(p => {
+    const nd = nextDue(p), late = nd && nd < td, soon = nd && nd >= td && nd <= new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10);
+    return `<button type="button" class="pi${p.id === curId ? " on" : ""}" data-id="${p.id}"><b>${esc(p.name)}</b>${p.code ? " · " + esc(p.code) : ""}<small>${esc(ageOf(p.dob))} ${esc(p.dx || "")}</small>${nd && p.status !== "closed" ? `<span class="due${late ? " late" : ""}">${late ? t("late") + " · " : (soon ? t("due") + " · " : "")}${esc(nd)}</span>` : ""}</button>`;
+  }).join("") : `<div class="empty">${t("noPatients")}</div>`;
+  $("plist").querySelectorAll(".pi").forEach(b => b.onclick = () => { curId = b.dataset.id; render(); });
+}
+function chartSvg(vs){
+  const pts = vs.filter(v => +v.prog > 0).sort((a, b) => a.date < b.date ? -1 : 1);
+  if (pts.length < 2) return "";
+  const W = 560, H = 120, pad = 22, n = pts.length;
+  const xy = pts.map((v, i) => [pad + (W - 2 * pad) * (i / (n - 1)), H - pad - (H - 2 * pad) * ((+v.prog - 1) / 4)]);
+  const d = xy.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  return `<h3 style="margin:14px 0 4px;font-size:15px">${t("chart")}</h3><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${t("chart")}" style="max-width:${W}px;direction:ltr">
+   ${[1,2,3,4,5].map(k => { const y = H - pad - (H - 2 * pad) * ((k - 1) / 4); return `<line x1="${pad}" x2="${W - pad}" y1="${y}" y2="${y}" stroke="var(--line)"/><text x="4" y="${y + 4}" font-size="10" fill="var(--muted)">${k}</text>`; }).join("")}
+   <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>${xy.map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="var(--teal)"><title>${esc(pts[i].date)}: ${pts[i].prog}</title></circle>`).join("")}
+   <text x="${pad}" y="${H - 4}" font-size="10" fill="var(--muted)">${esc(pts[0].date)}</text><text x="${W - pad}" y="${H - 4}" font-size="10" text-anchor="end" fill="var(--muted)">${esc(pts[n - 1].date)}</text></svg>`;
+}
+function renderDetail(){
+  const box = $("detail"), p = DB.patients.find(x => x.id === curId);
+  if (!p){ box.innerHTML = `<div class="box empty">${t("pickOne")}</div>`; return; }
+  const vs = (p.visits || []).slice().sort((a, b) => a.date < b.date ? 1 : -1);
+  const fld = (k, v) => v ? `<div><label>${t(k)}</label><div>${esc(v).replace(/\n/g, "<br>")}</div></div>` : "";
+  const st = { active:t("stActive"), paused:t("stPaused"), closed:t("stClosed") }[p.status || "active"];
+  box.innerHTML = `
+  <div class="box">
+    <div class="row" style="justify-content:space-between"><h2 style="margin:0">${esc(p.name)}${p.code ? " · " + esc(p.code) : ""}</h2>
+      <span class="row noprint"><button class="btn small" type="button" id="d-edit">${t("edit")}</button><button class="btn small" type="button" id="d-print">${t("print")}</button></span></div>
+    <p class="note">${esc(ageOf(p.dob))}${p.dob ? " (" + esc(p.dob) + ")" : ""} ${p.sex ? "· " + (p.sex === "F" ? t("female") : t("male")) : ""} · ${t("pStatus")}: ${esc(st)}${p.consent ? "" : ` · <span style="color:var(--warn)">${t("noconsent")}</span>`}</p>
+    <div class="grid2">${fld("pGuardian", p.guardian)}${fld("pPhone", p.phone)}${fld("pSchool", p.school)}${fld("pRef", p.ref)}${fld("pFirst", p.first)}${fld("pDx", p.dx)}${fld("pMeds", p.meds)}${fld("pAllergy", p.allergy)}</div>
+    ${p.ess ? `<div style="margin-top:12px">${fld("pEss", p.ess)}</div>` : ""}
+  </div>
+  <div class="box">
+    <div class="row" style="justify-content:space-between"><h3 style="margin:0">${t("visits")} (${vs.length})</h3><button class="btn small primary noprint" type="button" id="d-addv">${t("addVisit")}</button></div>
+    ${chartSvg(vs)}
+    ${vs.length ? `<div style="overflow:auto;margin-top:8px"><table class="v"><thead><tr><th>${t("cDate")}</th><th>${t("cType")}</th><th>${t("cProg")}</th><th>${t("cNotes")}</th><th>${t("cNext")}</th><th class="noprint"></th></tr></thead><tbody>${vs.map(v => `<tr>
+      <td dir="ltr">${esc(v.date)}</td><td>${esc(T[LANG].types[v.type] || "")}</td><td>${+v.prog ? `<span class="prog">${v.prog}</span>` : ""}</td>
+      <td>${esc(v.treat).replace(/\n/g, "<br>")}${v.prognote ? `<br><span class="note">${esc(v.prognote).replace(/\n/g, "<br>")}</span>` : ""}${v.meds ? `<br><span class="note">💊 ${esc(v.meds)}</span>` : ""}</td>
+      <td dir="ltr">${esc(v.next)}</td><td class="noprint"><button class="btn small" type="button" data-ev="${v.id}">${t("edit")}</button></td></tr>`).join("")}</tbody></table></div>` : `<div class="empty">${t("noVisits")}</div>`}
+  </div>`;
+  $("d-edit").onclick = () => openPatient(p); $("d-print").onclick = () => window.print(); $("d-addv").onclick = () => openVisit(p, null);
+  box.querySelectorAll("[data-ev]").forEach(b => b.onclick = () => openVisit(p, (p.visits || []).find(v => v.id === b.dataset.ev)));
+}
+$("q").oninput = renderList; $("only-due").onchange = renderList;
+
+/* ---------- patient dialog ---------- */
+const PF = { name:"p-name", code:"p-code", dob:"p-dob", sex:"p-sex", guardian:"p-guardian", phone:"p-phone", school:"p-school", ref:"p-ref", first:"p-first", status:"p-status", dx:"p-dx", meds:"p-meds", allergy:"p-allergy", ess:"p-ess" };
+let editP = null;
+function openPatient(p){
+  editP = p; $("dp-t").textContent = p ? t("editP") : t("newP"); $("dp-del").hidden = !p;
+  Object.entries(PF).forEach(([k, id]) => { $(id).value = p ? (p[k] || "") : (k === "status" ? "active" : k === "first" ? today() : ""); });
+  $("p-consent").checked = p ? !!p.consent : false; $("dp").showModal();
+}
+$("b-newp").onclick = () => openPatient(null);
+$("dp-cancel").onclick = () => $("dp").close();
+$("fp").onsubmit = async e => {
+  e.preventDefault(); if (!$("p-name").value.trim()) return;
+  const o = editP || { id: uid(), visits: [] };
+  Object.entries(PF).forEach(([k, id]) => o[k] = $(id).value.trim()); o.consent = $("p-consent").checked;
+  if (!editP) DB.patients.push(o);
+  curId = o.id; await persist(); $("dp").close(); render();
+};
+$("dp-del").onclick = async () => { if (editP && confirm(t("confirmDelP"))){ DB.patients = DB.patients.filter(x => x !== editP); curId = null; await persist(); $("dp").close(); render(); } };
+
+/* ---------- visit dialog ---------- */
+let editV = null, visitP = null;
+function fillSelects(){
+  $("v-type").innerHTML = T[LANG].types.map((x, i) => `<option value="${i}">${esc(x)}</option>`).join("");
+  $("v-prog").innerHTML = T[LANG].prog.map((x, i) => `<option value="${i}">${esc(x)}</option>`).join("");
+}
+function openVisit(p, v){
+  visitP = p; editV = v; $("dv-t").textContent = v ? t("editV") : t("newV"); $("dv-del").hidden = !v;
+  $("v-date").value = v ? v.date : today(); $("v-type").value = v ? v.type : 1; $("v-prog").value = v ? v.prog : 0; $("v-next").value = v ? v.next || "" : "";
+  $("v-treat").value = v ? v.treat || "" : ""; $("v-prognote").value = v ? v.prognote || "" : ""; $("v-meds").value = v ? v.meds || "" : ""; $("dv").showModal();
+}
+$("dv-cancel").onclick = () => $("dv").close();
+$("fv").onsubmit = async e => {
+  e.preventDefault();
+  const o = editV || { id: uid() };
+  Object.assign(o, { date:$("v-date").value, type:+$("v-type").value, prog:+$("v-prog").value, next:$("v-next").value, treat:$("v-treat").value.trim(), prognote:$("v-prognote").value.trim(), meds:$("v-meds").value.trim() });
+  visitP.visits = visitP.visits || []; if (!editV) visitP.visits.push(o);
+  await persist(); $("dv").close(); render();
+};
+$("dv-del").onclick = async () => { if (editV && confirm(t("confirmDelV"))){ visitP.visits = visitP.visits.filter(x => x !== editV); await persist(); $("dv").close(); render(); } };
+
+/* ---------- backup / restore / change passphrase ---------- */
+$("b-export").onclick = async () => {
+  const blob = await seal(KEY, SALT, DB);
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(blob)], { type:"application/json" }));
+  a.download = "case-sheets-backup-" + today() + ".json"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+};
+$("b-import").onclick = () => $("f-import").click();
+$("f-import").onchange = async e => {
+  const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+  try {
+    const blob = JSON.parse(await f.text()); const pw = prompt(t("impPw")); if (pw == null) return;
+    const r = await unseal(pw, blob);
+    if (!confirm(t("impConfirm"))) return;
+    KEY = r.key; SALT = r.salt; DB = r.data; await persist(); curId = null; render(); alert(t("imported"));
+  } catch(err){ alert(t("badfile")); }
+};
+$("b-pw").onclick = async () => {
+  const pw = prompt(t("newpw")); if (pw == null) return; if (pw.length < 8){ alert(t("short")); return; }
+  SALT = crypto.getRandomValues(new Uint8Array(16)); KEY = await deriveKey(pw, SALT); await persist(); alert(t("pwChanged"));
+};
+
+applyLang(); $("lock").hidden = false;
+})();
+</script>
+</body>
+</html>

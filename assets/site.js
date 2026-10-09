@@ -128,7 +128,7 @@ function buildChrome(){
       <div><b data-i18n="brand"></b><br><span data-i18n="base"></span><br><a class="tel-link" dir="ltr" href="#" data-tel>${PHONE_DISPLAY}</a></div>
       <div class="foot-links">${NAV.slice(1,6).map(([id,href,key]) => `<a href="${href}" data-i18n="${key}"></a>`).join("")}</div>
     </div>
-    <p data-i18n="confid"></p><p data-i18n="disclaimer"></p>
+    <p data-i18n="confid"></p><p data-i18n="disclaimer"></p><p style="text-align:center;margin:6px 0 0"><a href="/cases/" rel="nofollow" aria-label="Staff" style="color:var(--muted);opacity:.35;text-decoration:none;padding:8px 14px">·</a></p>
   </div></footer>
   <a class="fab wa-link" href="/#book" aria-label="WhatsApp">${WA_ICON}<span data-i18n="fab"></span></a>`;
   document.body.append(...foot.childNodes);
