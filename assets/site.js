@@ -62,7 +62,7 @@ ku:{
 en:{
 
  skip:"Skip to content", testbar:"Test version for review — content awaits the doctor's approval.",
- brand:"Dr. Sally Rizqo", brandSub:"Child & adolescent mental health · Online",
+ brand:"", brandSub:"Child & adolescent mental health · Online",
  navHome:"Home", navAutism:"Autism", navAdhd:"ADHD", navTeen:"Adolescence", navPlay:"Games & activities", navBook:"Book",
  btnBook:"Book via WhatsApp", fab:"WhatsApp",
  confid:"Every consultation and all information are completely confidential.",
@@ -109,7 +109,7 @@ function tx(key, lang = LANG){
 window.tx = tx;
 
 function buildChrome(){
-  const BRAND = `<a class="brand" href="${LOC('/')}">${MARK}<span><span class="brand-name" data-i18n="brand"></span><br><span class="brand-sub" data-i18n="brandSub"></span></span></a>`;
+  const BRAND = `<a class="brand" href="${LOC('/')}">${MARK}<span><span class="brand-name"><span class="brand-ar" data-i18n="brand"></span><span class="brand-en" dir="ltr">Dr. Sally R. Mekha</span></span><br><span class="brand-sub" data-i18n="brandSub"></span></span></a>`;
   const TEL = `<a class="head-tel" dir="ltr" data-tel href="#" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="tel-num">${PHONE_DISPLAY}</span></a>`;
   const LANGS = `<div class="langs" role="group" aria-label="Language"><button data-lang="ar" lang="ar">العربية</button><button data-lang="ku" lang="ku">کوردی</button><button data-lang="en" lang="en">English</button></div>`;
   const NAVL = NAV.map(([id,href,key]) => `<a href="${LOC(href)}" data-i18n="${key}"${id===PAGE.id?' aria-current="page"':''}></a>`).join("");
@@ -179,7 +179,7 @@ function wireSide(){
   side.querySelectorAll(".side-nav a").forEach(a => a.addEventListener("click", () => setSide(false)));
   const q = document.getElementById("side-q"), res = document.getElementById("side-res");
   let loading = false;
-  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=23"; s.onload = () => draw(q.value); document.head.appendChild(s); };
+  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=24"; s.onload = () => draw(q.value); document.head.appendChild(s); };
   function draw(v){
     const term = (v || "").trim().toLowerCase();
     if (!term){ res.innerHTML = ""; return; }
