@@ -12,11 +12,11 @@
 <meta property="og:description" content="Calm games for children and teens: feelings match, memory cards, breathing bubble, picture schedule and a feelings check-in.">
 <meta property="og:url" content="https://drsallycare.com/play/">
 <meta property="og:image" content="https://drsallycare.com/icon-512.png">
-<meta name="theme-color" content="#4A726E">
+<meta name="theme-color" content="#4F726D">
 <link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=10">
+<link rel="stylesheet" href="/assets/site.css?v=11">
 </head>
 <body>
 <main class="wrap">
@@ -31,6 +31,11 @@
       <a href="#breath"><span aria-hidden="true">🌬️</span><b data-i18n="gBreath"></b></a>
       <a href="#schedule"><span aria-hidden="true">🗓️</span><b data-i18n="gSchedule"></b></a>
       <a href="#thermo"><span aria-hidden="true">🌡️</span><b data-i18n="gThermo"></b></a>
+      <a href="#sorting"><span aria-hidden="true">🧺</span><b data-i18n="gSort"></b></a>
+      <a href="#situations"><span aria-hidden="true">💭</span><b data-i18n="gSituations"></b></a>
+      <a href="#pattern"><span aria-hidden="true">🔷</span><b data-i18n="gPattern"></b></a>
+      <a href="#oddone"><span aria-hidden="true">🔍</span><b data-i18n="gOdd"></b></a>
+      <a href="#challenge"><span aria-hidden="true">🧩</span><b data-i18n="gChallenge"></b></a>
     </nav>
     <p class="privacy-note">🔒 <span data-i18n="privacy"></span></p>
   </section>
@@ -119,6 +124,51 @@
       <div class="thermo" id="thermo-btns" role="group"></div>
       <div class="thermo-out" id="thermo-out" aria-live="polite"></div>
     </div>
+  </section>
+
+  <section class="game" id="sorting" style="--c:var(--teal);--cs:var(--teal-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🧺</span><span data-i18n="gSort"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age4b"></span><span class="tag" data-i18n="tagAutism"></span></div>
+    </div>
+    <p class="why" data-i18n="whySort"></p>
+    <div class="stage" id="sort-stage"></div>
+  </section>
+
+  <section class="game" id="situations" style="--c:var(--coral);--cs:var(--coral-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">💭</span><span data-i18n="gSituations"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age5"></span><span class="tag" data-i18n="tagSocial"></span><span class="tag" data-i18n="tagAutism"></span></div>
+    </div>
+    <p class="why" data-i18n="whySituations"></p>
+    <div class="stage" id="sit-stage"></div>
+  </section>
+
+  <section class="game" id="pattern" style="--c:var(--lav);--cs:var(--lav-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🔷</span><span data-i18n="gPattern"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age5"></span><span class="tag" data-i18n="tagThink"></span><span class="tag" data-i18n="tagAutism"></span></div>
+    </div>
+    <p class="why" data-i18n="whyPattern"></p>
+    <div class="stage" id="pat-stage"></div>
+  </section>
+
+  <section class="game" id="oddone" style="--c:var(--sun);--cs:var(--sun-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🔍</span><span data-i18n="gOdd"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age4b"></span><span class="tag" data-i18n="tagThink"></span><span class="tag" data-i18n="tagAdhd"></span></div>
+    </div>
+    <p class="why" data-i18n="whyOdd"></p>
+    <div class="stage" id="odd-stage"></div>
+  </section>
+
+  <section class="game" id="challenge" style="--c:var(--teal);--cs:var(--teal-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🧩</span><span data-i18n="gChallenge"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age6"></span><span class="tag" data-i18n="tagThink"></span><span class="tag" data-i18n="tagNotIQ"></span></div>
+    </div>
+    <p class="why" data-i18n="whyChallenge"></p>
+    <div class="stage" id="ch-stage"></div>
   </section>
 
   <section class="cta">
@@ -217,7 +267,7 @@ en:{
   "<p><b>You're not alone, and you don't have to carry this by yourself.</b></p><ul><li>Talk today with a parent, teacher or another adult you trust.</li><li>If you're having thoughts of hurting yourself, contact emergency services or go to the nearest hospital now.</li></ul>"
  ]
 }},
-onLang(){ Games.relabel(); }
+onLang(){ Games.relabel(); window.Games2 && Games2.relabel(); }
 };
 
 /* ===== Games ===== */
@@ -383,7 +433,8 @@ const Games = (() => {
   return { init, relabel };
 })();
 </script>
-<script src="/assets/site.js?v=10"></script>
-<script>Games.init(); Games.relabel();</script>
+<script src="/assets/games2.js?v=11"></script>
+<script src="/assets/site.js?v=11"></script>
+<script>Games.init(); Games2.init(); Games.relabel(); Games2.relabel();</script>
 </body>
 </html>

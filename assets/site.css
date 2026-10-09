@@ -2,28 +2,28 @@
    One calm column. Sticky header (brand, language switch, page tabs) → page content → footer with emergency notice.
    A floating WhatsApp button stays on every page. Teal = trust, coral = warmth, sun/lavender = play. */
 :root{
-  --bg:#F6F4EF; --surface:#FFFFFF; --ink:#26322F; --muted:#66726F; --line:#E4E0D8;
-  --teal:#4A726E; --teal-soft:#E8EFED; --coral:#A9776A; --coral-soft:#F3EAE6;
-  --sun:#9E8A5A; --sun-soft:#F3EEE1; --lav:#7B769E; --lav-soft:#ECEAF2;
-  --warn:#8E4741; --warn-soft:#F4E8E6; --ok:#4D7F61; --ok-soft:#E6F0E9;
+  --bg:#F7F6F2; --surface:#FEFDFB; --ink:#2F3A38; --muted:#62706C; --line:#E9E6DF;
+  --teal:#4F726D; --teal-soft:#EDF2F0; --coral:#8A6055; --coral-soft:#F5EEEA;
+  --sun:#796A41; --sun-soft:#F5F1E7; --lav:#6C678A; --lav-soft:#F0EEF4;
+  --warn:#8F4F49; --warn-soft:#F5EBE9; --ok:#4B7259; --ok-soft:#E9F1EC;
   --on-accent:#FFFFFF;
-  --shadow:0 1px 2px rgba(38,50,47,.04),0 8px 24px rgba(38,50,47,.05);
+  --shadow:0 1px 2px rgba(47,58,56,.03),0 6px 20px rgba(47,58,56,.04);
   --f-ar:'Vazirmatn',Tahoma,sans-serif;
   --f-en-body:'Nunito Sans','Segoe UI',sans-serif;
   --f-en-head:'Fraunces',Georgia,serif;
   --radius:18px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#141A19; --surface:#1B2321; --ink:#E4EAE7; --muted:#9CABA6; --line:#2B3633;
-  --teal:#86AEA8; --teal-soft:#1F2F2C; --coral:#D2A598; --coral-soft:#302622;
-  --sun:#D5C28A; --sun-soft:#302B1C; --lav:#ABA5CF; --lav-soft:#26243A;
-  --warn:#E0A09A; --warn-soft:#37201E; --ok:#8CC2A0; --ok-soft:#1D3024;
+  --bg:#151A19; --surface:#1C2321; --ink:#E1E7E4; --muted:#9AA8A3; --line:#2C3633;
+  --teal:#8FB3AD; --teal-soft:#202D2A; --coral:#CFAA9E; --coral-soft:#2E2724;
+  --sun:#CDBE90; --sun-soft:#2C291E; --lav:#AFAACF; --lav-soft:#252438;
+  --warn:#DDA39D; --warn-soft:#35211F; --ok:#93C3A5; --ok-soft:#1F3026;
   --on-accent:#0E1A17; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#141A19; --surface:#1B2321; --ink:#E4EAE7; --muted:#9CABA6; --line:#2B3633;
-  --teal:#86AEA8; --teal-soft:#1F2F2C; --coral:#D2A598; --coral-soft:#302622;
-  --sun:#D5C28A; --sun-soft:#302B1C; --lav:#ABA5CF; --lav-soft:#26243A;
-  --warn:#E0A09A; --warn-soft:#37201E; --ok:#8CC2A0; --ok-soft:#1D3024;
+  --bg:#151A19; --surface:#1C2321; --ink:#E1E7E4; --muted:#9AA8A3; --line:#2C3633;
+  --teal:#8FB3AD; --teal-soft:#202D2A; --coral:#CFAA9E; --coral-soft:#2E2724;
+  --sun:#CDBE90; --sun-soft:#2C291E; --lav:#AFAACF; --lav-soft:#252438;
+  --warn:#DDA39D; --warn-soft:#35211F; --ok:#93C3A5; --ok-soft:#1F3026;
   --on-accent:#0E1A17; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -165,7 +165,7 @@ footer.site{border-top:1px solid var(--line);padding-block:28px 100px;font-size:
 .foot-links{display:flex;flex-wrap:wrap;gap:12px}
 
 /* floating whatsapp */
-.fab{position:fixed;inset-inline-end:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;background:#5FAE88;color:#0B2A1B;font-weight:800;text-decoration:none;padding:12px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.18);min-height:52px}
+.fab{position:fixed;inset-inline-end:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;background:#7DB898;color:#12301F;font-weight:800;text-decoration:none;padding:12px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.18);min-height:52px}
 .fab svg{width:24px;height:24px}
 
 /* ===== play page ===== */
@@ -328,7 +328,7 @@ html[dir="rtl"] .stat b{direction:ltr;text-align:right;unicode-bidi:isolate}
 @media (max-width:520px){.svc-grid{grid-template-columns:1fr}}
 
 /* ===== portrait + phone ===== */
-.hero-photo{margin:0;justify-self:center;width:100%;max-width:340px;aspect-ratio:4/5;border-radius:36px 36px 120px 36px;overflow:hidden;box-shadow:0 18px 50px rgba(74,114,110,.18);border:6px solid var(--surface);background:var(--teal-soft)}
+.hero-photo{margin:0;justify-self:center;width:100%;max-width:340px;aspect-ratio:4/5;border-radius:36px 36px 120px 36px;overflow:hidden;box-shadow:0 18px 50px rgba(79,114,109,.12);border:6px solid var(--surface);background:var(--teal-soft)}
 html[dir="ltr"] .hero-photo{border-radius:36px 36px 36px 120px}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .head-right{display:flex;align-items:center;gap:8px}
@@ -342,3 +342,18 @@ html[dir="ltr"] .hero-photo{border-radius:36px 36px 36px 120px}
 /* empty portrait frames: soft panel until a photo is added at /assets/dr-sally.jpg */
 .hero-photo,.about .portrait.photo{background:linear-gradient(160deg,var(--teal-soft),var(--coral-soft))}
 .about .portrait.photo{aspect-ratio:4/5;border-radius:var(--radius)}
+
+/* ===== extra games (games2.js) ===== */
+.seq{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;font-size:44px;margin:6px 0 14px;direction:ltr}
+.seq .q{display:inline-grid;place-items:center;width:64px;height:64px;border:2px dashed var(--line);border-radius:16px;color:var(--muted);font-size:30px}
+.seq .op{color:var(--muted);font-size:30px}
+.visual{text-align:center;margin:0 0 12px}
+.big-item{font-size:84px;text-align:center;line-height:1.1;margin:4px 0 14px}
+.scene{display:flex;gap:12px;align-items:center;justify-content:center;background:var(--cs);border-radius:16px;padding:14px 16px;margin-bottom:10px;font-size:18px}
+.scene .se{font-size:40px}
+.choices.g4{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
+.choice.wide{width:auto;min-width:150px;height:auto;min-height:90px;padding:12px 16px;display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;font-size:17px}
+.choice .ci,.choice .fe{font-size:38px}
+.choice .cl{font-size:16px;font-weight:700}
+.qprog{text-align:center;color:var(--muted);font-size:14px;margin-bottom:8px}
+.iq-note{background:var(--lav-soft);border-radius:14px;padding:12px 14px;font-size:14.5px;color:var(--muted);margin:12px 0}

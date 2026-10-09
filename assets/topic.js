@@ -3,8 +3,8 @@
    Text keys used from PAGE.t: title, lead, myth, fact, fam, tea, res. */
 (function(){
   const P = window.PAGE, T = P.topic;
-  const GAMES = { emotions:"😊", memory:"🃏", breath:"🌬️", schedule:"🗓️", thermo:"🌡️" };
-  const GKEY = { emotions:"gEmotions", memory:"gMemory", breath:"gBreath", schedule:"gSchedule", thermo:"gThermo" };
+  const GAMES = { emotions:"😊", memory:"🃏", breath:"🌬️", schedule:"🗓️", thermo:"🌡️", sorting:"🧺", situations:"💭", pattern:"🔷", oddone:"🔍", challenge:"🧩" };
+  const GKEY = { emotions:"gEmotions", memory:"gMemory", breath:"gBreath", schedule:"gSchedule", thermo:"gThermo", sorting:"gSort", situations:"gSituations", pattern:"gPattern", oddone:"gOdd", challenge:"gChallenge" };
   const main = document.getElementById("topic");
   main.style.setProperty("--c", `var(--${T.color})`);
   main.style.setProperty("--cs", `var(--${T.color}-soft)`);
