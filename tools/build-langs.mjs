@@ -22,7 +22,7 @@ function collect(dir, out = []) {
   }
   return out;
 }
-const SKIP = ["cases/", "ku/", "en/", "functions/", "tools/"];
+const SKIP = ["private-254f50cabe4785fd/", "ku/", "en/", "functions/", "tools/"];
 const pages = ["index.html", ...collect("autism"), ...collect("adhd"), ...collect("adolescence"), ...collect("play"), ...collect("resources"), ...collect("learn")]
   .filter(p => !SKIP.some(s => p.startsWith(s)));
 

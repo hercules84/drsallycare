@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /cases/
+Disallow: /private-254f50cabe4785fd/
 
 Sitemap: https://drsallycare.com/sitemap.xml

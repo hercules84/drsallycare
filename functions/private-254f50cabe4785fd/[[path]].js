@@ -1,4 +1,4 @@
-// Gate for the private case-sheet tool. Requires HTTP Basic auth.
+// Gate for the private case-sheet tool at /private-254f50cabe4785fd/ (not linked from the site). Requires HTTP Basic auth.
 // Set the secret in Cloudflare Pages: Settings > Environment variables > CASES_PASSWORD (encrypted).
 // If the secret is missing, access is refused (fails closed).
 
