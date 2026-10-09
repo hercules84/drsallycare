@@ -111,7 +111,7 @@ function buildChrome(){
   const head = document.createElement("div");
   head.innerHTML = `
   <header class="site"><div class="wrap">
-    <div class="head-row">${BRAND}${TEL}<button class="menu-btn" type="button" aria-controls="side" aria-expanded="false"><span aria-hidden="true">☰</span> <span data-i18n="menu"></span></button></div>
+    <div class="head-row">${BRAND}<button class="menu-btn" type="button" aria-controls="side" aria-expanded="false"><span aria-hidden="true">☰</span> <span data-i18n="menu"></span></button></div>
     <div class="langs-bar">${LANGS}</div>
   </div></header>
   <aside class="side" id="side" aria-label="Site"><div class="side-in">
