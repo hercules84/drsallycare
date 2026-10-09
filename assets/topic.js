@@ -25,11 +25,11 @@
   ${["fam","tea","res"].map((a,i) => `<div class="aud-panel" id="p-${a}" role="tabpanel"${i?" hidden":""}><div class="card"><div class="ku-note lang-note" hidden></div><div data-i18n="${a}"></div></div></div>`).join("")}
   <section style="padding-bottom:0">
     <h2 data-i18n="relTitle"></h2>
-    <div class="related">${T.games.map(g => `<a href="/play/#${g}"><span class="e" aria-hidden="true">${GAMES[g]}</span><span><b data-i18n="${GKEY[g]}"></b><span data-i18n="${GKEY[g]}D"></span></span></a>`).join("")}</div>
+    <div class="related">${T.games.map(g => `<a href="${LOC('/play/#' + g)}"><span class="e" aria-hidden="true">${GAMES[g]}</span><span><b data-i18n="${GKEY[g]}"></b><span data-i18n="${GKEY[g]}D"></span></span></a>`).join("")}</div>
   </section>
   <section class="cta">
     <h2 data-i18n="ctaTitle"></h2><p class="lead" data-i18n="ctaLead"></p>
-    <div class="btns"><a class="btn primary wa-link" href="/#book"><span data-i18n="btnBook"></span></a></div>
+    <div class="btns"><a class="btn primary wa-link" href="${LOC('/#book')}"><span data-i18n="btnBook"></span></a></div>
   </section>`;
 
   function show(a){

@@ -8,7 +8,8 @@ const PHONE_DISPLAY = "0773 891 9655"; // shown to visitors; tel: link is built 
 
 const COMMON = {
 ar:{
- testbar:"نسخة تجريبية للمراجعة — المحتوى بانتظار اعتماد الطبيبة.",
+
+ skip:"تجاوز إلى المحتوى", testbar:"نسخة تجريبية للمراجعة — المحتوى بانتظار اعتماد الطبيبة.",
  brand:"د. سالي رزقو", brandSub:"الصحة النفسية للأطفال والمراهقين · أونلاين",
  navHome:"الرئيسية", navAutism:"التوحد", navAdhd:"فرط الحركة", navTeen:"المراهقة", navPlay:"ألعاب وأنشطة", navBook:"احجز",
  btnBook:"احجز عبر واتساب", fab:"واتساب",
@@ -33,7 +34,8 @@ ar:{
  minWord:"دقائق قراءة", backLearn:"← كل المقالات", moreArt:"مقالات ذات صلة", allArt:"كل المقالات", artNote:"محتوى عام للتوعية، ولا يغني عن التقييم الفردي.",
 },
 ku:{
- testbar:"وەشانا تاقیکرنێ بۆ پێداچوونێ — کوردیا ڤێ ماڵپەڕێ ڕەشنڤیسە و پێدڤی ب پێداچوونێیە.",
+
+ skip:"بڕۆ بۆ ناوەڕۆک", testbar:"وەشانا تاقیکرنێ بۆ پێداچوونێ — کوردیا ڤێ ماڵپەڕێ ڕەشنڤیسە و پێدڤی ب پێداچوونێیە.",
  brand:"د. سالی ڕزقۆ", brandSub:"ساخلەمیا دەروونی یا زارۆکان و هەرزەکاران · ئۆنلاین",
  navHome:"سەرەکی", navAutism:"ئۆتیزم", navAdhd:"زێدە-جوولە", navTeen:"هەرزەکاری", navPlay:"یاری و چالاکی", navBook:"ژڤان بگرە",
  btnBook:"ب واتسئاپێ ژڤان بگرە", fab:"واتسئاپ",
@@ -58,7 +60,8 @@ ku:{
  minWord:"خولەک بۆ خواندنێ", backLearn:"← هەمی بابەت", moreArt:"بابەتێن پەیوەندیدار", allArt:"هەمی بابەت", artNote:"ناڤەڕۆکەکێ گشتییە بۆ هۆشیاریێ، و جهێ هەلسەنگاندنا تاکەکەسی ناگریت.",
 },
 en:{
- testbar:"Test version for review — content awaits the doctor's approval.",
+
+ skip:"Skip to content", testbar:"Test version for review — content awaits the doctor's approval.",
  brand:"Dr. Sally Rizqo", brandSub:"Child & adolescent mental health · Online",
  navHome:"Home", navAutism:"Autism", navAdhd:"ADHD", navTeen:"Adolescence", navPlay:"Games & activities", navBook:"Book",
  btnBook:"Book via WhatsApp", fab:"WhatsApp",
@@ -93,6 +96,8 @@ const NAV = [
 
 let LANG = "ar";
 const PAGE = window.PAGE || { id:"", t:{} };
+if (!window.LOC) window.LOC = p => p; // normally defined by the inline snippet in each page
+if (!window.SITE_LANG) window.SITE_LANG = "ar";
 
 function tx(key, lang = LANG){
   const p = PAGE.t || {};
@@ -104,10 +109,10 @@ function tx(key, lang = LANG){
 window.tx = tx;
 
 function buildChrome(){
-  const BRAND = `<a class="brand" href="/">${MARK}<span><span class="brand-name" data-i18n="brand"></span><br><span class="brand-sub" data-i18n="brandSub"></span></span></a>`;
+  const BRAND = `<a class="brand" href="${LOC('/')}">${MARK}<span><span class="brand-name" data-i18n="brand"></span><br><span class="brand-sub" data-i18n="brandSub"></span></span></a>`;
   const TEL = `<a class="head-tel" dir="ltr" data-tel href="#" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="tel-num">${PHONE_DISPLAY}</span></a>`;
   const LANGS = `<div class="langs" role="group" aria-label="Language"><button data-lang="ar" lang="ar">العربية</button><button data-lang="ku" lang="ku">کوردی</button><button data-lang="en" lang="en">English</button></div>`;
-  const NAVL = NAV.map(([id,href,key]) => `<a href="${href}" data-i18n="${key}"${id===PAGE.id?' aria-current="page"':''}></a>`).join("");
+  const NAVL = NAV.map(([id,href,key]) => `<a href="${LOC(href)}" data-i18n="${key}"${id===PAGE.id?' aria-current="page"':''}></a>`).join("");
   const head = document.createElement("div");
   head.innerHTML = `
   <header class="site"><div class="wrap">
@@ -132,11 +137,11 @@ function buildChrome(){
     <div class="emerg" data-i18n="emergency"></div>
     <div class="foot-grid">
       <div><b data-i18n="brand"></b><br><span data-i18n="base"></span><br><a class="tel-link" dir="ltr" href="#" data-tel>${PHONE_DISPLAY}</a></div>
-      <div class="foot-links">${NAV.slice(1,6).map(([id,href,key]) => `<a href="${href}" data-i18n="${key}"></a>`).join("")}</div>
+      <div class="foot-links">${NAV.slice(1,6).map(([id,href,key]) => `<a href="${LOC(href)}" data-i18n="${key}"></a>`).join("")}</div>
     </div>
-    <p data-i18n="confid"></p><p data-i18n="disclaimer"></p><p style="text-align:center;margin:6px 0 0"><a href="/cases/" rel="nofollow" aria-label="Staff" style="color:var(--muted);opacity:.35;text-decoration:none;padding:8px 14px">·</a></p>
+    <p data-i18n="confid"></p><p data-i18n="disclaimer"></p>
   </div></footer>
-  <a class="fab wa-link" href="/#book" aria-label="WhatsApp">${WA_ICON}<span data-i18n="fab"></span></a>`;
+  <a class="fab wa-link" href="${LOC('/#book')}" aria-label="WhatsApp">${WA_ICON}<span data-i18n="fab"></span></a>`;
   document.body.append(...foot.childNodes);
 }
 
@@ -152,7 +157,7 @@ function setLang(lang){
   const has = WHATSAPP_NUMBER.trim() !== "";
   document.querySelectorAll(".wa-link").forEach(a => {
     if (has){ a.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(tx(a.dataset.wamsg || "waMsg"))}`; a.target = "_blank"; a.rel = "noopener"; }
-    else { a.href = "/#book"; a.removeAttribute("target"); }
+    else { a.href = LOC("/#book"); a.removeAttribute("target"); }
     // no number yet: hide the floating button and the button inside the booking box; links elsewhere lead to the "opening soon" note
     a.hidden = !has && (a.classList.contains("fab") || !!a.closest("#book"));
   });
@@ -160,7 +165,6 @@ function setLang(lang){
   document.querySelectorAll(".wa-missing").forEach(el => el.hidden = has);
   const title = tx("pageTitle"); if (title) document.title = title;
   const sq = document.getElementById("side-q"); if (sq) sq.placeholder = tx("search");
-  try { localStorage.setItem("drsally-lang", lang); } catch(e){}
   if (typeof PAGE.onLang === "function") PAGE.onLang(lang);
 }
 window.setLang = setLang;
@@ -175,13 +179,13 @@ function wireSide(){
   side.querySelectorAll(".side-nav a").forEach(a => a.addEventListener("click", () => setSide(false)));
   const q = document.getElementById("side-q"), res = document.getElementById("side-res");
   let loading = false;
-  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=22"; s.onload = () => draw(q.value); document.head.appendChild(s); };
+  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=23"; s.onload = () => draw(q.value); document.head.appendChild(s); };
   function draw(v){
     const term = (v || "").trim().toLowerCase();
     if (!term){ res.innerHTML = ""; return; }
     const hits = [];
-    NAV.forEach(([id, href, key]) => { const label = tx(key); if (label.toLowerCase().includes(term)) hits.push([label, href]); });
-    (window.ARTICLES || []).forEach(a => { const d = a[LANG] || a.ar; if ((d.title + " " + d.sum).toLowerCase().includes(term)) hits.push([d.title, "/learn/" + a.slug + "/"]); });
+    NAV.forEach(([id, href, key]) => { const label = tx(key); if (label.toLowerCase().includes(term)) hits.push([label, LOC(href)]); });
+    (window.ARTICLES || []).forEach(a => { const d = a[LANG] || a.ar; if ((d.title + " " + d.sum).toLowerCase().includes(term)) hits.push([d.title, LOC("/learn/" + a.slug + "/")]); });
     res.innerHTML = hits.length ? hits.slice(0, 12).map(([l, h]) => `<a href="${h}">${l}</a>`).join("") : `<p class="small-note">${tx("noRes")}</p>`;
   }
   q.addEventListener("focus", loadArticles);
@@ -200,9 +204,14 @@ function wireSide(){
 window.getLang = () => LANG;
 
 buildChrome();
+{ const sk = document.createElement("a"); sk.className = "skip"; sk.href = "#main"; sk.dataset.i18n = "skip"; document.body.prepend(sk); }
 wireSide();
-document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
-let start = "ar";
-try { const s = localStorage.getItem("drsally-lang"); if (s && COMMON[s]) start = s; } catch(e){}
-const q = new URLSearchParams(location.search).get("lang"); if (q && COMMON[q]) start = q;
-setLang(start);
+/* each language has its own address: /, /ku/, /en/ (the page is rebuilt per language by tools/build-langs.mjs) */
+function goLang(lang){
+  const cur = window.SITE_LANG || "ar";
+  if (lang === cur) return;
+  const base = location.pathname.replace(/^\/(ku|en)(?=\/|$)/, "") || "/";
+  location.href = (lang === "ar" ? "" : "/" + lang) + base + location.search + location.hash;
+}
+document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => goLang(b.dataset.lang)));
+setLang(window.SITE_LANG || "ar");

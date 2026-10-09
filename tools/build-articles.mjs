@@ -6,7 +6,7 @@ import path from "node:path";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const articles = JSON.parse(fs.readFileSync(path.join(root, "tools/articles.json"), "utf8"));
 const DATE = "2026-10-08";
-const V = "22"; // asset version, must match the ?v= used in the other pages
+const V = "23"; // asset version, must match the ?v= used in the other pages
 
 const TAGKEY = { autism:"tagAutism", adhd:"tagAdhd", adolescence:"tagAdolescence", learning:"tagLearning",
   teachers:"tagTeachers", community:"tagCommunity", wellbeing:"tagWellbeing", consultation:"tagConsultation" };
@@ -149,9 +149,5 @@ fs.writeFileSync(path.join(root, "learn/index.html"), head({
 </html>
 `);
 
-// ---------- sitemap ----------
-const urls = ["/", "/autism/", "/adhd/", "/adolescence/", "/learn/", "/resources/", "/resources/print/", ...articles.map(a => `/learn/${a.slug}/`), "/play/"];
-fs.writeFileSync(path.join(root, "sitemap.xml"),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  urls.map(u => `  <url><loc>https://drsallycare.com${u}</loc><lastmod>${DATE}</lastmod></url>`).join("\n") + `\n</urlset>\n`);
-console.log("built", articles.length, "articles");
+// ---------- languages, hreflang and sitemap (tools/build-langs.mjs) ----------
+await import("./build-langs.mjs");

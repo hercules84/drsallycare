@@ -1,22 +1,459 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://drsallycare.com/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/autism/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/adhd/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/adolescence/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/resources/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/resources/print/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/autism-early-signs/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/autism-first-steps-home/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/adhd-not-laziness/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/adhd-routines-homework/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/teen-talk-feelings/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/teen-warning-signs/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/learning-difficulties/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/classroom-strategies/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/children-displacement-stress/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/screens-and-sleep/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/learn/prepare-online-consultation/</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://drsallycare.com/play/</loc><lastmod>2026-10-08</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://drsallycare.com/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/autism/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/autism/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/autism/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/autism/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/autism/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/autism/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/autism/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/autism/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/autism/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/autism/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/autism/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/autism/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/autism/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/autism/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/autism/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/adhd/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/adhd/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/adhd/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/adhd/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/adhd/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/adhd/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/adhd/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/adolescence/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/adolescence/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/adolescence/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/adolescence/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/adolescence/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/adolescence/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/adolescence/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/play/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/play/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/play/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/play/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/play/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/play/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/play/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/play/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/play/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/play/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/play/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/play/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/play/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/play/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/play/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/resources/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/resources/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/resources/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/resources/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/resources/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/resources/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/resources/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/resources/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/resources/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/resources/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/resources/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/resources/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/resources/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/resources/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/resources/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/resources/print/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/resources/print/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/resources/print/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/resources/print/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/resources/print/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/resources/print/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/resources/print/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/adhd-not-laziness/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/adhd-not-laziness/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/adhd-not-laziness/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/adhd-not-laziness/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/adhd-not-laziness/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/adhd-not-laziness/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/adhd-not-laziness/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/adhd-routines-homework/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/adhd-routines-homework/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/adhd-routines-homework/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/adhd-routines-homework/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/adhd-routines-homework/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/adhd-routines-homework/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/adhd-routines-homework/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/autism-early-signs/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/autism-early-signs/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/autism-early-signs/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/autism-early-signs/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/autism-early-signs/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/autism-early-signs/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/autism-early-signs/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/autism-first-steps-home/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/autism-first-steps-home/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/autism-first-steps-home/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/autism-first-steps-home/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/autism-first-steps-home/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/autism-first-steps-home/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/autism-first-steps-home/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/children-displacement-stress/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/children-displacement-stress/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/children-displacement-stress/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/children-displacement-stress/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/children-displacement-stress/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/children-displacement-stress/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/children-displacement-stress/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/classroom-strategies/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/classroom-strategies/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/classroom-strategies/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/classroom-strategies/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/classroom-strategies/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/classroom-strategies/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/classroom-strategies/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/learning-difficulties/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/learning-difficulties/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/learning-difficulties/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/learning-difficulties/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/learning-difficulties/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/learning-difficulties/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/learning-difficulties/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/prepare-online-consultation/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/prepare-online-consultation/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/prepare-online-consultation/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/prepare-online-consultation/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/prepare-online-consultation/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/prepare-online-consultation/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/prepare-online-consultation/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/screens-and-sleep/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/screens-and-sleep/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/screens-and-sleep/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/screens-and-sleep/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/screens-and-sleep/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/screens-and-sleep/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/screens-and-sleep/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/teen-talk-feelings/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/teen-talk-feelings/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/teen-talk-feelings/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/teen-talk-feelings/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/teen-talk-feelings/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/teen-talk-feelings/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/teen-talk-feelings/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/learn/teen-warning-signs/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/teen-warning-signs/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/ku/learn/teen-warning-signs/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/teen-warning-signs/"/>
+  </url>
+  <url>
+    <loc>https://drsallycare.com/en/learn/teen-warning-signs/</loc>
+    <lastmod>2026-10-09</lastmod>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/teen-warning-signs/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/teen-warning-signs/"/>
+  </url>
 </urlset>

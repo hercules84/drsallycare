@@ -252,7 +252,7 @@ function init(){
     done(n, m){
       const msg = n >= 6 ? "chMsgHi" : n >= 3 ? "chMsgMid" : "chMsgLo";
       return `<div class="prompt">${L("chResult").replace("{n}", n).replace("{m}", m)}</div><div class="stars">${"⭐".repeat(n)}</div><p class="feedback">${L(msg)}</p>
-        <p class="iq-note">${L("iqNote")}</p><div class="game-controls"><a class="btn small wa-link" data-wamsg="waMsgAssess" href="/#book"><span>${L("btnAssess")}</span></a></div>`;
+        <p class="iq-note">${L("iqNote")}</p><div class="game-controls"><a class="btn small wa-link" data-wamsg="waMsgAssess" href="${LOC('/#book')}"><span>${L("btnAssess")}</span></a></div>`;
     }
   });
 

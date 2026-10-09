@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<title>أدوات للطباعة | د. سالي رزقو</title>
+<link rel="canonical" href="https://drsallycare.com/ku/resources/print/">
+<!--hreflang--><link rel="alternate" hreflang="ar" href="https://drsallycare.com/resources/print/">
+<link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/resources/print/">
+<link rel="alternate" hreflang="en" href="https://drsallycare.com/en/resources/print/">
+<link rel="alternate" hreflang="x-default" href="https://drsallycare.com/resources/print/">
+<!--/hreflang-->
+<meta name="theme-color" content="#3F729B">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=23">
+<style>
+.sheet{background:#fff;color:#25364A;border:1px solid var(--line);border-radius:18px;padding:26px;max-width:800px;margin:16px auto;box-shadow:var(--shadow)}
+.sheet h1{font-size:24px;margin:0 0 6px;color:#25364A}
+.sheet .sub{color:#566B81;margin:0 0 14px}
+.sheet ul{padding-inline-start:20px}
+.sheet li{margin:6px 0;font-size:16px}
+.sheet .emerg{background:#F5EBE9;color:#8F4F49;border-radius:12px;padding:12px 14px;font-weight:700;margin-top:14px}
+.sheet .foot{color:#566B81;font-size:12.5px;margin-top:14px}
+.sheet table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+.sheet th,.sheet td{border:1px solid #cfdbe6;padding:6px 7px;text-align:start;vertical-align:top;min-height:28px}
+.sheet th{background:#E4F0FA}
+.sheet .fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin:10px 0}
+.sheet .fields div{border-bottom:1px solid #9fb3c4;padding:14px 0 2px;color:#566B81;font-size:13px}
+.bar{max-width:800px;margin:14px auto 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.bar select{font:inherit;padding:8px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+@media print{ .bar,.noprint{display:none!important} .sheet{box-shadow:none;border:0;margin:0;padding:0;max-width:none} body{background:#fff} @page{size:A4;margin:14mm} }
+</style>
+</head>
+<body>
+<main id="main" class="wrap">
+  <div class="bar noprint">
+    <a class="btn small" href="/ku/resources/" data-i18n="back"></a>
+    <button class="btn small primary" type="button" id="print" data-i18n="printBtn"></button>
+  </div>
+  <article class="sheet" id="sheet"></article>
+  <p class="note noprint" style="text-align:center" data-i18n="printNote"></p>
+</main>
+
+<script>
+(function(){
+const DOCS_FALLBACK = null;
+window.PAGE = { id:"print", t:{
+ar:{
+ pageTitle:"أدوات للطباعة | د. سالي رزقو", back:"← الموارد", printBtn:"طباعة / حفظ PDF", printNote:"اختاري «حفظ كـ PDF» من نافذة الطباعة.",
+ docs:{
+  red:{ title:"متى نستشير مختصًا؟", sub:"علامات تستدعي تقييمًا، وليست تشخيصًا بحد ذاتها", intro:"إذا لاحظتم أيًا من هذه العلامات بشكل مستمر لمدة أسبوعين أو أكثر، أو بشدة واضحة، فاحجزوا موعدًا مع مختص:",
+   items:["انسحاب واضح من العائلة والأصدقاء، أو توقف عن اللعب مع الآخرين","تراجع مفاجئ في الدرجات، أو رفض الذهاب إلى المدرسة","فقدان مهارات كان الطفل قد تعلمها (كلام، استخدام الحمام، مهارات اجتماعية)","تغيّر مستمر في النوم أو الأكل، أو إرهاق دائم","نوبات غضب أو بكاء شديدة ومتكررة لا تهدأ بالمساعدة الهادئة","قلق دائم أو تجنّب يحدّ من الحياة اليومية","حزن أو يأس معظم الأيام"],
+   emerg:"⚠️ إذا تحدّث الطفل أو المراهق عن رغبته في الموت أو إيذاء نفسه، لا تنتظروا: اتصلوا بالطوارئ فورًا أو توجهوا إلى أقرب قسم طوارئ.",
+   foot:"هذه الإرشادات عامة ولا تغني عن التقييم المهني." },
+  tracker:{ title:"سجل السلوك اليومي", sub:"أحضروا هذا السجل إلى الزيارة", intro:"دوّنوا ما حدث قبل السلوك وما حدث بعده. ليس المطلوب الكمال، بل الصدق والتفاصيل.",
+   fields:["اسم الطفل","العمر","التاريخ الذي بدأ فيه التسجيل"], cols:["التاريخ والوقت","ما حدث قبل السلوك (المحفّز)","ما فعله الطفل","ما الذي ساعد","المدة","ملاحظات"], rows:14,
+   foot:"اسألوا الطبيب عن الطريقة الأنسب لمشاركة هذا السجل. البيانات تبقى بينكم وبين العيادة." },
+  classroom:{ title:"٥ طرق لدعم طالب يعاني", sub:"للتعليق في الصف أو غرفة المعلمين", items:["لاحظوا وسجّلوا بتاريخ: الوقائع أفضل من الانطباعات.","قسّموا المهمة إلى خطوات صغيرة، واستخدموا جدولًا مرئيًا.","أعطوا تعليمات قصيرة وواضحة، وخيارين بسيطين بدل الأمر.","وفّروا مكانًا هادئًا وخطة استراحة متفقًا عليها.","تواصلوا مبكرًا مع الأهل، وشاركوا الملاحظات لا التسميات."], foot:"الهدف دعم الطالب وليس تشخيصه داخل الصف." },
+  checklist:{ title:"نموذج ملاحظة سلوكية", sub:"للمشاركة مع د. سالي بعد التعبئة", intro:"ضعوا علامة في الخانة المناسبة وأضيفوا الملاحظات.",
+   fields:["اسم الطالب","الصف","تاريخ الملاحظة","اسم المعلم"],
+   cols:["السلوك","نادرًا","أحيانًا","غالبًا","السياق / الوقت"],
+   behaviors:["صعوبة في البقاء في المقعد","صعوبة في إنهاء المهام المكتوبة","ينسى التعليمات أو المواد بشكل متكرر","يقاطع الآخرين أو يتحدث دون إذن","يبدو مرهقًا أو شاردًا معظم الوقت","ينسحب من الأنشطة الجماعية","نوبات غضب أو بكاء في الصف","علامات قلق واضحة (مثل التوتر الجسدي)"],
+   foot:"سرّي: للاستخدام المهني ومشاركته مع الأهل والمختص فقط." }
+ }
+},
+ku:{
+ back:"← سەرچاوە", printBtn:"چاپکرن / PDF", printNote:"ژ پەنجەرا چاپکرنێ «هەڵگرتن وەک PDF» هەلبژێرە.",
+ docs:{
+  red:{ title:"کەنگێ پسپۆڕەکی بپرسین؟", sub:"نیشانێن پێدڤی هەڵسەنگاندنێ، نە تەشخیس ب خۆ", intro:"ئەگەر ئەڤ نیشانان دوو هەفتان یان زێدەتر بەردەوام بوون، یان ب توندی ئاشکرا بوون، دەمژمێرەکێ ژ پسپۆڕی بگرن:",
+   items:["ژ خێزان و هەڤالان دوور کەفتن، یان ڕاوەستان ژ یاریکرنێ ل گەل یێن دی","کێمبوونا ناکاو د پۆلێ دا، یان ڕەتکرنا چوونا بۆ قوتابخانێ","ژدەستدانا شارەزاییێن زارۆکی کو ب ڕێکێ هەبوون (گۆتن، سەرشۆرێ، شارەزاییێن کۆمەلایەتی)","گوهۆڕینێن بەردەوام د خەوێ یان خواردنێ دا، یان ماندبوونا هەمیشەیی","تووڕەبوون یان گریانا توند و دووباره کو ب ئارامکرنا هێدی نا ڕاوەستیت","ترس یان دویرکەفتنا بەردەوام کو ژیانا ڕۆژانە سنووردار دکەت","خەم یان نائومێدی زۆربەی ڕۆژان"],
+   emerg:"⚠️ ئەگەر زارۆک یان هەرزەکار ژ مرنێ یان زیانگەهاندنا خۆ بێژیت، چاوەڕێ نەکەن: ب فەوری ژمارەیا فەوارێ پەیوەندیێ بکەن یان بچنە ئەکسێ فەوارێ یا نێزیک.",
+   foot:"ئەڤ ڕێنمایی گشتین و جهێ هەڵسەنگاندنا پسپۆڕی ناگرنەوە." },
+  tracker:{ title:"تۆمارا ڕەفتارا ڕۆژانە", sub:"ڤی تۆمارێ بۆ سەردانێ بینن", intro:"تێبینی بکەن کا چ پێش ڕەفتاری ڕوویدایە و پشتی وێ چ. نە پێدڤیە تەواو بیت، مە دوو ڕاستگۆیی و وردەکاری.",
+   fields:["ناڤێ زارۆکی","تەمەن","ڕێکەفتا دەستپێکرنێ"], cols:["ڕێکەفت و دەم","چ پێش ڕەفتاری ڕوویدا","زارۆکی چ کر","چ هاریکاریکر","ماوە","تێبینی"], rows:14,
+   foot:"ژ دکتۆری بپرسن کا چاوا باشترە ئەڤ تۆمارە پارڤە بکەن. داتا د ناڤبەرا هەوە و کلینیکێ دا دمینیت." },
+  classroom:{ title:"٥ ڕێێن پشتەڤانیێ بۆ قوتابیێ زەحمەتکێش", sub:"بۆ هەڵاواتنێ د پۆلێ یان ژوورا مامۆستایان", items:["تێبینی بکەن و ب ڕێکەفتی تۆمار بکەن: ڕاستی ژ هزرێن بێ بنگەه باشترن.","کارێ بکە هندەک ئەنجامێن بچووک بکە، و تابلۆیەکا بینراوی بکاربینە.","ڕێنماییێن کورت و ڕوون بدە، و دوو هەلبژارتنێن ساناهی بدە نە فەرمانێ.","جهەکێ ئارام و پلانەکا حەوانەوێ یا ڕێککەفتی دابین بکە.","زوو ل گەل خێزانێ پەیوەندیێ بکە، و تێبینیان پارڤە بکە نە ناڤێن تەشخیسێ."], foot:"ئارمانج پشتەڤانیکرنا قوتابیە، نە تەشخیسکرنا وی د پۆلێ دا." },
+  checklist:{ title:"فۆرما تێبینیا ڕەفتاری", sub:"پشتی تژیکرنێ ل گەل دکتۆرە سالی پارڤە بکە", intro:"نیشانەکێ د خانا گونجای دانە و تێبینیان زێدە بکە.",
+   fields:["ناڤێ قوتابی","پۆل","ڕێکەفتا تێبینیێ","ناڤێ مامۆستای"],
+   cols:["ڕەفتار","کێم","جاروبار","زۆر","دەوروبەر / دەم"],
+   behaviors:["زەحمەتیا مانێ ل سەر کورسیێ","زەحمەتیا تەواوکرنا کارێن نڤیسی","بیرا خۆ ژ ڕێنمایی یان بابەتان دبەت","دەمێ یێن دی دبڕیت یان بێ ڕێپێدانێ دئاخڤیت","ب گشتی ماندوو یان دویرکەفتی دیاره","ژ چالاکیێن کۆمەلایەتی دوور دکەڤیت","تووڕەبوون یان گریان د پۆلێ دا","نیشانێن دیار یێن نیگەرانیێ (وەک تەنگژەیا لەشی)"],
+   foot:"نهێنی: ب تنێ بۆ کارێ پسپۆری و پارڤەکرن ل گەل خێزان و پسپۆڕی." }
+ }
+},
+en:{
+ pageTitle:"Printable tools | Dr. Sally Rizqo", back:"← Resources", printBtn:"Print / Save as PDF", printNote:"Choose “Save as PDF” in the print dialog.",
+ docs:{
+  red:{ title:"When to see a specialist", sub:"Signs that warrant an assessment, not a diagnosis in themselves", intro:"If you notice any of these signs persistently for two weeks or more, or clearly and severely, book an appointment with a specialist:",
+   items:["Clear withdrawal from family and friends, or stopping play with others","A sudden drop in school results, or refusing to go to school","Losing skills the child had already learned (speech, toileting, social skills)","Lasting changes in sleep or eating, or constant tiredness","Frequent, very intense anger or crying that does not settle with calm help","Persistent worry or avoidance that limits daily life","Sadness or hopelessness most days"],
+   emerg:"⚠️ If a child or teen talks about wanting to die or hurting themselves, do not wait: contact your local emergency number now or go to the nearest emergency room.",
+   foot:"This is general guidance and does not replace professional assessment." },
+  tracker:{ title:"Daily behaviour tracker", sub:"Bring this log to the appointment", intro:"Note what happened before the behaviour and what happened after. It does not need to be perfect; honest detail is what helps.",
+   fields:["Child’s name","Age","Date tracking started"], cols:["Date & time","What happened before (trigger)","What the child did","What helped","Duration","Notes"], rows:14,
+   foot:"Ask the doctor how best to share this log. It stays between you and the clinic." },
+  classroom:{ title:"5 ways to support a struggling student", sub:"For the classroom or staff room wall", items:["Observe and record with dates: facts work better than impressions.","Break tasks into small steps and use a visual schedule.","Give short, clear instructions and two simple choices instead of a command.","Provide a calm space and an agreed break plan.","Contact parents early and share observations, not labels."], foot:"The goal is to support the student, not to diagnose them in class." },
+  checklist:{ title:"Behaviour observation form", sub:"To share with Dr. Sally once completed", intro:"Tick the right column and add notes.",
+   fields:["Student’s name","Class","Date observed","Teacher’s name"],
+   cols:["Behaviour","Rarely","Sometimes","Often","Context / time"],
+   behaviors:["Difficulty staying in seat","Difficulty finishing written tasks","Often forgets instructions or materials","Interrupts others or speaks without permission","Appears tired or distracted most of the time","Withdraws from group activities","Anger or crying outbursts in class","Clear signs of anxiety (e.g. physical tension)"],
+   foot:"Confidential: for professional use and sharing with parents and the specialist only." }
+ }
+}
+}};
+
+const L = () => (window.getLang && window.getLang()) || "ar";
+const doc = () => { const q = new URLSearchParams(location.search).get("doc") || "red"; return { id:q, ...(window.PAGE.t[L()].docs[q] || window.PAGE.t.ar.docs[q] || window.PAGE.t.ar.docs.red) }; };
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const lab = k => ({ ar:"", ku:"", en:"" })[k] || "";
+function draw(){
+  const d = doc(), sheet = document.getElementById("sheet");
+  const sub = `<p class="sub">${esc(d.sub)}</p>`;
+  let body = "";
+  if (d.id === "red"){
+    body = `<p>${esc(d.intro)}</p><ul>${d.items.map(i => `<li>${esc(i)}</li>`).join("")}</ul><p class="emerg">${esc(d.emerg)}</p>`;
+  } else if (d.id === "tracker"){
+    body = `<p>${esc(d.intro)}</p><div class="fields">${d.fields.map(f => `<div>${esc(f)}</div>`).join("")}</div>
+      <table><thead><tr>${d.cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${Array.from({ length: d.rows }, () => `<tr>${d.cols.map(() => "<td style='height:30px'></td>").join("")}</tr>`).join("")}</tbody></table>`;
+  } else if (d.id === "classroom"){
+    body = `<ol style="font-size:17px;line-height:1.8">${d.items.map(i => `<li>${esc(i)}</li>`).join("")}</ol>`;
+  } else if (d.id === "checklist"){
+    body = `<p>${esc(d.intro)}</p><div class="fields">${d.fields.map(f => `<div>${esc(f)}</div>`).join("")}</div>
+      <table><thead><tr>${d.cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${d.behaviors.map(b => `<tr><td>${esc(b)}</td><td style='text-align:center'>☐</td><td style='text-align:center'>☐</td><td style='text-align:center'>☐</td><td></td></tr>`).join("")}</tbody></table>`;
+  }
+  sheet.innerHTML = `<h1>${esc(d.title)}</h1>${sub}${body}<p class="foot">${esc(d.foot)}</p>`;
+  document.title = d.title + " | Dr. Sally Rizqo";
+}
+document.getElementById("print").onclick = () => window.print();
+window.PAGE.onLang = draw;
+window.__drawPrint = draw;
+const oldInit = window.PAGE.onLang;
+document.addEventListener("DOMContentLoaded", draw);
+draw();
+})();
+</script>
+<!--lang--><script>window.SITE_LANG="ku";window.LOC=function(p){return "/ku"+p};</script>
+<!--/lang--><script src="/assets/site.js?v=23"></script>
+</body>
+</html>

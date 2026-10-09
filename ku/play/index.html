@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ألعاب وأنشطة | د. سالي رزقو</title>
+<link rel="canonical" href="https://drsallycare.com/ku/play/">
+<!--hreflang--><link rel="alternate" hreflang="ar" href="https://drsallycare.com/play/">
+<link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/play/">
+<link rel="alternate" hreflang="en" href="https://drsallycare.com/en/play/">
+<link rel="alternate" hreflang="x-default" href="https://drsallycare.com/play/">
+<!--/hreflang-->
+<meta name="description" content="Calm games for children and teens: feelings match, memory cards, breathing bubble, picture schedule and a feelings check-in.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Sally Rizqo">
+<meta property="og:title" content="ألعاب وأنشطة | د. سالي رزقو">
+<meta property="og:description" content="Calm games for children and teens: feelings match, memory cards, breathing bubble, picture schedule and a feelings check-in.">
+<meta property="og:url" content="https://drsallycare.com/ku/play/">
+<meta property="og:image" content="https://drsallycare.com/icon-512.png">
+<meta name="theme-color" content="#3F729B">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=23">
+</head>
+<body>
+<main id="main" class="wrap">
+
+  <section class="play-hero">
+    <span class="eyebrow" data-i18n="navPlay"></span>
+    <h1 data-i18n="h1"></h1>
+    <p class="lead" data-i18n="lead"></p>
+    <nav class="play-nav" aria-label="Activities">
+      <a href="#emotions"><span aria-hidden="true">😊</span><b data-i18n="gEmotions"></b></a>
+      <a href="#memory"><span aria-hidden="true">🃏</span><b data-i18n="gMemory"></b></a>
+      <a href="#breath"><span aria-hidden="true">🌬️</span><b data-i18n="gBreath"></b></a>
+      <a href="#schedule"><span aria-hidden="true">🗓️</span><b data-i18n="gSchedule"></b></a>
+      <a href="#thermo"><span aria-hidden="true">🌡️</span><b data-i18n="gThermo"></b></a>
+      <a href="#sorting"><span aria-hidden="true">🧺</span><b data-i18n="gSort"></b></a>
+      <a href="#situations"><span aria-hidden="true">💭</span><b data-i18n="gSituations"></b></a>
+      <a href="#pattern"><span aria-hidden="true">🔷</span><b data-i18n="gPattern"></b></a>
+      <a href="#oddone"><span aria-hidden="true">🔍</span><b data-i18n="gOdd"></b></a>
+      <a href="#challenge"><span aria-hidden="true">🧩</span><b data-i18n="gChallenge"></b></a>
+    </nav>
+    <p class="privacy-note">🔒 <span data-i18n="privacy"></span></p>
+  </section>
+
+  <!-- 1. Feelings match -->
+  <section class="game" id="emotions" style="--c:var(--teal);--cs:var(--teal-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">😊</span><span data-i18n="gEmotions"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age3"></span><span class="tag" data-i18n="tagAutism"></span></div>
+    </div>
+    <p class="why" data-i18n="whyEmotions"></p>
+    <div class="stage">
+      <div class="prompt" id="emo-prompt" aria-live="polite"></div>
+      <div class="choices" id="emo-choices"></div>
+      <div class="feedback" id="emo-feedback" aria-live="polite"></div>
+      <div class="stars" id="emo-stars" aria-label="stars"></div>
+      <div class="game-controls"><button class="btn small" id="emo-restart" data-i18n="restart"></button></div>
+    </div>
+  </section>
+
+  <!-- 2. Memory -->
+  <section class="game" id="memory" style="--c:var(--coral);--cs:var(--coral-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🃏</span><span data-i18n="gMemory"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age4"></span><span class="tag" data-i18n="tagAdhd"></span></div>
+    </div>
+    <p class="why" data-i18n="whyMemory"></p>
+    <div class="stage">
+      <div class="game-controls" style="margin:0 0 14px">
+        <div class="seg" role="group" id="mem-level">
+          <button data-n="3" aria-pressed="true" data-i18n="easy"></button>
+          <button data-n="6" aria-pressed="false" data-i18n="harder"></button>
+        </div>
+      </div>
+      <div class="mem-grid" id="mem-grid"></div>
+      <div class="mem-info"><span><span data-i18n="moves"></span>: <span id="mem-moves">0</span></span><span><span data-i18n="pairs"></span>: <span id="mem-pairs">0</span></span></div>
+      <div class="feedback" id="mem-feedback" aria-live="polite"></div>
+      <div class="game-controls"><button class="btn small" id="mem-restart" data-i18n="restart"></button></div>
+    </div>
+  </section>
+
+  <!-- 3. Breathing -->
+  <section class="game" id="breath" style="--c:var(--teal);--cs:var(--teal-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🌬️</span><span data-i18n="gBreath"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="ageAll"></span><span class="tag" data-i18n="tagCalm"></span></div>
+    </div>
+    <p class="why" data-i18n="whyBreath"></p>
+    <div class="stage">
+      <div class="breath-wrap"><div class="breath-ring"></div><div class="breath" id="breath-ball"></div></div>
+      <div class="breath-label" id="breath-label" aria-live="polite"></div>
+      <div class="breath-count" id="breath-count"></div>
+      <div class="game-controls"><button class="btn primary small" id="breath-btn"></button></div>
+    </div>
+  </section>
+
+  <!-- 4. Picture schedule -->
+  <section class="game" id="schedule" style="--c:var(--sun);--cs:var(--sun-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🗓️</span><span data-i18n="gSchedule"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age3"></span><span class="tag" data-i18n="tagAutism"></span><span class="tag" data-i18n="tagAdhd"></span></div>
+    </div>
+    <p class="why" data-i18n="whySchedule"></p>
+    <div class="stage">
+      <p style="margin:0 0 10px;font-weight:700" data-i18n="schedHow"></p>
+      <div class="sched-bank" id="sched-bank"></div>
+      <div class="game-controls">
+        <button class="btn small" id="sched-example" data-i18n="schedExample"></button>
+        <button class="btn small" id="sched-clear" data-i18n="clear"></button>
+        <button class="btn primary small" id="sched-print" data-i18n="print"></button>
+      </div>
+      <h3 style="margin:18px 0 0" data-i18n="schedMine"></h3>
+      <div id="sched-list"></div>
+    </div>
+  </section>
+
+  <!-- 5. Teen check-in -->
+  <section class="game" id="thermo" style="--c:var(--lav);--cs:var(--lav-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🌡️</span><span data-i18n="gThermo"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age11"></span><span class="tag" data-i18n="tagTeen"></span></div>
+    </div>
+    <p class="why" data-i18n="whyThermo"></p>
+    <div class="stage">
+      <div class="prompt" data-i18n="thermoQ"></div>
+      <div class="thermo" id="thermo-btns" role="group"></div>
+      <div class="thermo-out" id="thermo-out" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="game" id="sorting" style="--c:var(--teal);--cs:var(--teal-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🧺</span><span data-i18n="gSort"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age4b"></span><span class="tag" data-i18n="tagAutism"></span></div>
+    </div>
+    <p class="why" data-i18n="whySort"></p>
+    <div class="stage" id="sort-stage"></div>
+  </section>
+
+  <section class="game" id="situations" style="--c:var(--coral);--cs:var(--coral-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">💭</span><span data-i18n="gSituations"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age5"></span><span class="tag" data-i18n="tagSocial"></span><span class="tag" data-i18n="tagAutism"></span></div>
+    </div>
+    <p class="why" data-i18n="whySituations"></p>
+    <div class="stage" id="sit-stage"></div>
+  </section>
+
+  <section class="game" id="pattern" style="--c:var(--lav);--cs:var(--lav-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🔷</span><span data-i18n="gPattern"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age5"></span><span class="tag" data-i18n="tagThink"></span><span class="tag" data-i18n="tagAutism"></span></div>
+    </div>
+    <p class="why" data-i18n="whyPattern"></p>
+    <div class="stage" id="pat-stage"></div>
+  </section>
+
+  <section class="game" id="oddone" style="--c:var(--sun);--cs:var(--sun-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🔍</span><span data-i18n="gOdd"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age4b"></span><span class="tag" data-i18n="tagThink"></span><span class="tag" data-i18n="tagAdhd"></span></div>
+    </div>
+    <p class="why" data-i18n="whyOdd"></p>
+    <div class="stage" id="odd-stage"></div>
+  </section>
+
+  <section class="game" id="challenge" style="--c:var(--teal);--cs:var(--teal-soft);padding-top:24px">
+    <div class="game-head">
+      <h2><span class="e" aria-hidden="true">🧩</span><span data-i18n="gChallenge"></span></h2>
+      <div class="tags"><span class="tag" data-i18n="age6"></span><span class="tag" data-i18n="tagThink"></span><span class="tag" data-i18n="tagNotIQ"></span></div>
+    </div>
+    <p class="why" data-i18n="whyChallenge"></p>
+    <div class="stage" id="ch-stage"></div>
+  </section>
+
+  <section class="cta">
+    <h2 data-i18n="ctaTitle"></h2><p class="lead" data-i18n="ctaLead"></p>
+    <div class="btns"><a class="btn primary wa-link" href="/ku/#book"><span data-i18n="btnBook"></span></a></div>
+  </section>
+</main>
+
+<script>
+/* ===== Text ===== */
+window.PAGE = { id:"play", t:{
+ar:{
+ pageTitle:"ألعاب وأنشطة | د. سالي رزقو",
+ h1:"نلعب ونتعلّم بهدوء", lead:"أنشطة قصيرة للأطفال والمراهقين مع الأهل والمعلمين: فهم المشاعر، تقوية الذاكرة، التنفس الهادئ، وتنظيم اليوم.",
+ privacy:"لا يُحفظ أي شيء عن طفلك، ولا توجد إعلانات أو أصوات مفاجئة.",
+ age3:"من عمر 3", age4:"من عمر 4", age11:"من عمر 11", ageAll:"لكل الأعمار",
+ tagAutism:"مفيد مع التوحد", tagAdhd:"مفيد مع فرط الحركة", tagCalm:"للتهدئة", tagTeen:"للمراهقين",
+ restart:"ابدأ من جديد", easy:"سهل", harder:"أصعب", moves:"المحاولات", pairs:"الأزواج",
+ whyEmotions:"للأهل: التعرّف على تعابير الوجه مهارة أساسية للتواصل. العبوا معًا، وبعد كل إجابة اسألوا: «متى تشعر هكذا؟».",
+ whyMemory:"للأهل: يقوّي الانتباه والذاكرة العاملة. ابدأوا بالمستوى السهل، وامدحوا المحاولة لا السرعة.",
+ whyBreath:"للأهل: التنفس البطيء يهدّئ الجسم عند الغضب أو القلق. تدرّبوا عليه في الأوقات الهادئة أولًا، ليسهل استخدامه وقت الانزعاج.",
+ whySchedule:"للأهل: الجدول المصوّر يجعل اليوم متوقعًا ويقلل نوبات الانزعاج عند الانتقال بين الأنشطة. اطبعوه وعلّقوه في مكان يراه الطفل.",
+ whyThermo:"للمراهقين: لحظة صغيرة لتسأل نفسك كيف تشعر. لا يُحفظ أي شيء، ولا يراه أحد غيرك.",
+ emoPrompt:"أين الوجه <u>{x}</u>؟", emoRight:["رائع! 🌟","أحسنت! 👏","ممتاز! 💚"], emoTry:"حاول مرة أخرى 🙂", emoDone:"أحسنت! أكملت كل الوجوه 🎉",
+ feelings:{happy:"السعيد",sad:"الحزين",angry:"الغاضب",scared:"الخائف",surprised:"المتفاجئ",calm:"الهادئ"},
+ memWin:"رائع! وجدت كل الأزواج 🎉",
+ breathStart:"ابدأ", breathStop:"توقف", breathIn:"شهيق… خذ نفسًا من الأنف", breathOut:"زفير… أخرج الهواء ببطء", breathReady:"اضغط «ابدأ» واتبع الفقاعة", breathRound:"الجولة {n} من 5", breathDone:"أحسنت! كيف تشعر الآن؟ 🌿",
+ schedHow:"اضغط على الصور لتضيفها إلى جدولك بالترتيب:", schedMine:"جدولي", schedEmpty:"لم تُضف أي صورة بعد.", schedExample:"مثال: صباح المدرسة", clear:"مسح", print:"طباعة",
+ up:"أعلى", down:"أسفل", doneLbl:"تم", remove:"حذف",
+ acts:{wake:"الاستيقاظ",toilet:"الحمّام",wash:"غسل الوجه",teeth:"تنظيف الأسنان",dress:"ارتداء الملابس",breakfast:"الفطور",school:"المدرسة",lunch:"الغداء",homework:"الواجب",play:"اللعب",outside:"نزهة",screen:"وقت الشاشة",bath:"الاستحمام",dinner:"العشاء",story:"قصة",sleep:"النوم"},
+ thermoQ:"كيف تشعر اليوم؟",
+ levels:["رائع","جيد","عادي","متضايق","سيئ جدًا"],
+ thermoTips:[
+  "<p><b>جميل!</b> ما الذي جعل يومك جيدًا؟ تذكّره، فقد تحتاجه في يوم صعب.</p>",
+  "<p><b>جيد.</b> شيء صغير قد يجعله أفضل: مشي قصير، موسيقى تحبها، أو رسالة لصديق.</p>",
+  "<p><b>أيام «عادي» تحدث للجميع.</b> جرّب:</p><ul><li>10 دقائق حركة أو مشي.</li><li>اكتب ثلاثة أشياء في رأسك الآن.</li><li>تحدّث مع شخص تحبه.</li></ul>",
+  "<p><b>شكرًا لأنك صادق مع نفسك.</b> جرّب الآن:</p><ul><li><a href='#breath'>فقاعة التنفس</a> لدقيقة.</li><li>اكتب ما يضايقك على ورقة.</li><li>تحدّث مع أحد والديك أو معلم أو شخص تثق به اليوم.</li></ul><p>إذا استمر هذا الشعور أكثر من أسبوعين، اطلب من أهلك حجز استشارة.</p>",
+  "<p><b>لست وحدك، ولا يجب أن تحمل هذا وحدك.</b></p><ul><li>تحدّث اليوم مع أحد والديك أو معلم أو شخص كبير تثق به.</li><li>إذا كانت لديك أفكار عن إيذاء نفسك، اتصل بالطوارئ أو اذهب إلى أقرب مستشفى الآن.</li></ul>"
+ ]
+},
+ku:{
+ pageTitle:"یاری و چالاکی | د. سالی ڕزقۆ",
+ h1:"ب ئارامی یاری دکەین و فێر دبین", lead:"چالاکیێن کورت بۆ زارۆک و هەرزەکاران دگەل دایک و باب و مامۆستایان: تێگەهشتنا هەستان، بهێزکرنا بیرێ، هەناسەدانا ئارام، و ڕێکخستنا ڕۆژێ.",
+ privacy:"چ زانیاری دەربارەی زارۆکێ تە ناهێنە پاراستن، و چ ڕیکلام یان دەنگێن کتوپڕ نینن.",
+ age3:"ژ 3 سالیێ", age4:"ژ 4 سالیێ", age11:"ژ 11 سالیێ", ageAll:"بۆ هەمی تەمەنان",
+ tagAutism:"بۆ ئۆتیزمێ باشە", tagAdhd:"بۆ زێدە-جوولێ باشە", tagCalm:"بۆ ئارامبوونێ", tagTeen:"بۆ هەرزەکاران",
+ restart:"دووبارە دەست پێ بکە", easy:"ب ساناهی", harder:"زەحمەتتر", moves:"هەوڵ", pairs:"جووت",
+ whyEmotions:"بۆ دایک و بابان: ناسینا دەربڕینێن ڕوویی شیانەکا بنەڕەتی یە بۆ پەیوەندیێ. پێکڤە یاری بکەن و بپرسن: «کەنگی تو وەسا هەست دکەی؟».",
+ whyMemory:"بۆ دایک و بابان: سەرنج و بیرێ بهێز دکەت. ب ئاستێ ساناهی دەست پێ بکەن، و پەسنا هەوڵێ بدەن نە یا لەزێ.",
+ whyBreath:"بۆ دایک و بابان: هەناسەدانا هێدی لەشی ئارام دکەت دەمێ توڕەبوون یان نیگەرانیێ. ل دەمێن ئارام ڕاهێنانێ بکەن.",
+ whySchedule:"بۆ دایک و بابان: خشتێ وێنەیی ڕۆژێ پێشبینیکری دکەت و تەنگاڤیێ کێم دکەت. چاپ بکەن و ل جهەکێ دیار هەلاویسن.",
+ whyThermo:"بۆ هەرزەکاران: دەمەکێ بچووک بۆ پرسیارکرنێ ژ خۆ کا تو چەوا هەست دکەی. چ تشت ناهێتە پاراستن.",
+ emoPrompt:"ڕوویێ <u>{x}</u> کیژە؟", emoRight:["زۆر باشە! 🌟","دەستخۆش! 👏","نایابە! 💚"], emoTry:"جارەکا دی هەوڵ بدە 🙂", emoDone:"دەستخۆش! تە هەمی ڕوو تەمام کرن 🎉",
+ feelings:{happy:"دلخۆش",sad:"خەمگین",angry:"توڕە",scared:"ترسیای",surprised:"سەرسوڕمای",calm:"ئارام"},
+ memWin:"زۆر باشە! تە هەمی جووت دیتن 🎉",
+ breathStart:"دەست پێ بکە", breathStop:"ڕاوەستە", breathIn:"هەناسێ بکێشە… ب دفنێ", breathOut:"هەناسێ بەردە… هێدی هێدی", breathReady:"«دەست پێ بکە» بکرتێنە و دویڤ پڵقێ بچە", breathRound:"خولا {n} ژ 5", breathDone:"دەستخۆش! نوکە چەوا هەست دکەی؟ 🌿",
+ schedHow:"وێنەیان بکرتێنە دا ب ڕێز بۆ خشتێ تە زێدە ببن:", schedMine:"خشتێ من", schedEmpty:"هێشتا چ وێنە نەهاتینە زێدەکرن.", schedExample:"نموونە: سپێدەیا قوتابخانێ", clear:"پاقژکرن", print:"چاپکرن",
+ up:"سەر", down:"خوار", doneLbl:"تەمام", remove:"ژێبرن",
+ acts:{wake:"هشیاربوون",toilet:"دەستشویی",wash:"شویشتنا ڕوویی",teeth:"پاقژکرنا ددانان",dress:"جلک لبەرکرن",breakfast:"تێشت",school:"قوتابخانە",lunch:"فراڤین",homework:"ئەرکێ مالێ",play:"یاری",outside:"گەڕیان",screen:"دەمێ شاشێ",bath:"خۆشویشتن",dinner:"شیڤ",story:"چیرۆک",sleep:"نڤستن"},
+ thermoQ:"ئەڤرۆ تو چەوا هەست دکەی؟",
+ levels:["زۆر باش","باش","ئاسایی","بێزار","زۆر خراب"],
+ thermoTips:[
+  "<p><b>جوانە!</b> چ تشتی ڕۆژا تە باش کر؟ بیرا خۆ بیننە.</p>",
+  "<p><b>باشە.</b> تشتەکێ بچووک دبیت باشتر بکەت: پیاسەیەکا کورت، مۆزیک، یان نامەیەک بۆ هەڤالەکی.</p>",
+  "<p><b>ڕۆژێن «ئاسایی» بۆ هەمییان چێدبن.</b> هەوڵ بدە:</p><ul><li>10 خولەک جوولە یان پیاسە.</li><li>سێ تشتێن د سەرێ تە دا بنڤیسە.</li><li>دگەل کەسەکێ تو حەز ژێ دکەی باخڤە.</li></ul>",
+  "<p><b>سوپاس کو تو دگەل خۆ ڕاستگۆیی.</b> نوکە هەوڵ بدە:</p><ul><li><a href='#breath'>پڵقا هەناسێ</a> بۆ خولەکەکێ.</li><li>یا تە بێزار دکەت ل سەر کاغەزەکێ بنڤیسە.</li><li>ئەڤرۆ دگەل دایک یان بابێ خۆ، مامۆستایەکی یان کەسەکێ تو بڕوا پێ دکەی باخڤە.</li></ul><p>ئەگەر ئەڤ هەستە ژ دوو حەفتیان زێدەتر بەردەوام بوو، داخواز ژ مالباتا خۆ بکە ژڤانەکێ بگرن.</p>",
+  "<p><b>تو ب تنێ نینی، و پێدڤی نینە ڤێ ب تنێ هەلگری.</b></p><ul><li>ئەڤرۆ دگەل دایک یان بابێ خۆ، مامۆستایەکی یان کەسەکێ مەزن یێ تو بڕوا پێ دکەی باخڤە.</li><li>ئەگەر هزرێن ئێشاندنا خۆ هەبن، نوکە پەیوەندیێ ب لەزگینێ بکە یان بچە نێزیکترین نەخوشخانێ.</li></ul>"
+ ]
+},
+en:{
+ pageTitle:"Games & activities | Dr. Sally Rizqo",
+ h1:"Calm play, real learning", lead:"Short activities for children and teens to share with parents and teachers: understanding feelings, building memory, slow breathing and planning the day.",
+ privacy:"Nothing about your child is saved, and there are no ads or sudden sounds.",
+ age3:"Age 3+", age4:"Age 4+", age11:"Age 11+", ageAll:"All ages",
+ tagAutism:"Helpful for autism", tagAdhd:"Helpful for ADHD", tagCalm:"Calming", tagTeen:"For teens",
+ restart:"Start again", easy:"Easy", harder:"Harder", moves:"Moves", pairs:"Pairs",
+ whyEmotions:"For parents: recognising facial expressions is a core communication skill. Play together, and after each answer ask: \"When do you feel like this?\"",
+ whyMemory:"For parents: builds attention and working memory. Start with the easy level, and praise effort, not speed.",
+ whyBreath:"For parents: slow breathing calms the body during anger or worry. Practise at calm times first, so it's easier to use when upset.",
+ whySchedule:"For parents: a picture schedule makes the day predictable and reduces meltdowns at transitions. Print it and hang it where your child can see it.",
+ whyThermo:"For teens: a small moment to ask yourself how you feel. Nothing is saved, and nobody else sees it.",
+ emoPrompt:"Which face is <u>{x}</u>?", emoRight:["Great! 🌟","Well done! 👏","Brilliant! 💚"], emoTry:"Try again 🙂", emoDone:"Well done! You matched all the faces 🎉",
+ feelings:{happy:"happy",sad:"sad",angry:"angry",scared:"scared",surprised:"surprised",calm:"calm"},
+ memWin:"Brilliant! You found all the pairs 🎉",
+ breathStart:"Start", breathStop:"Stop", breathIn:"Breathe in… through your nose", breathOut:"Breathe out… slowly", breathReady:"Press Start and follow the bubble", breathRound:"Round {n} of 5", breathDone:"Well done! How do you feel now? 🌿",
+ schedHow:"Tap the pictures to add them to your schedule, in order:", schedMine:"My schedule", schedEmpty:"No pictures added yet.", schedExample:"Example: school morning", clear:"Clear", print:"Print",
+ up:"Up", down:"Down", doneLbl:"Done", remove:"Remove",
+ acts:{wake:"Wake up",toilet:"Toilet",wash:"Wash face",teeth:"Brush teeth",dress:"Get dressed",breakfast:"Breakfast",school:"School",lunch:"Lunch",homework:"Homework",play:"Play",outside:"Go outside",screen:"Screen time",bath:"Bath",dinner:"Dinner",story:"Story",sleep:"Sleep"},
+ thermoQ:"How are you feeling today?",
+ levels:["Great","Good","Okay","Low","Very low"],
+ thermoTips:[
+  "<p><b>Lovely!</b> What made today good? Remember it; you might need it on a harder day.</p>",
+  "<p><b>Good.</b> One small thing could make it better: a short walk, music you like, or a message to a friend.</p>",
+  "<p><b>\"Okay\" days happen to everyone.</b> Try:</p><ul><li>10 minutes of movement or a walk.</li><li>Write down three things on your mind.</li><li>Talk to someone you like.</li></ul>",
+  "<p><b>Thanks for being honest with yourself.</b> Try now:</p><ul><li>One minute of the <a href='#breath'>breathing bubble</a>.</li><li>Write down what's bothering you.</li><li>Talk today with a parent, teacher or someone you trust.</li></ul><p>If this feeling lasts more than two weeks, ask your family to book a consultation.</p>",
+  "<p><b>You're not alone, and you don't have to carry this by yourself.</b></p><ul><li>Talk today with a parent, teacher or another adult you trust.</li><li>If you're having thoughts of hurting yourself, contact emergency services or go to the nearest hospital now.</li></ul>"
+ ]
+}},
+onLang(){ Games.relabel(); window.Games2 && Games2.relabel(); }
+};
+
+/* ===== Games ===== */
+const Games = (() => {
+  const L = k => window.tx(k);
+  const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+  /* 1. Feelings match: 6 rounds, 3 faces each, no timer, wrong answers just fade. */
+  const FACES = { happy:"😊", sad:"😢", angry:"😠", scared:"😨", surprised:"😲", calm:"😌" };
+  let emoQueue = [], emoTarget = null, emoStars = 0, emoChoices = [];
+  function emoNew(){ emoQueue = shuffle(Object.keys(FACES)); emoStars = 0; emoNext(); }
+  function emoNext(){
+    document.getElementById("emo-feedback").textContent = "";
+    document.getElementById("emo-stars").textContent = "⭐".repeat(emoStars);
+    if (!emoQueue.length){ emoTarget = null; document.getElementById("emo-prompt").textContent = L("emoDone"); document.getElementById("emo-choices").innerHTML = ""; return; }
+    emoTarget = emoQueue.pop();
+    const others = shuffle(Object.keys(FACES).filter(k => k !== emoTarget)).slice(0, 2);
+    emoChoices = shuffle([emoTarget, ...others]);
+    emoRender();
+  }
+  function emoRender(){
+    if (!emoTarget) { if (emoStars) document.getElementById("emo-prompt").textContent = L("emoDone"); return; }
+    document.getElementById("emo-prompt").innerHTML = L("emoPrompt").replace("{x}", L("feelings")[emoTarget]);
+    const box = document.getElementById("emo-choices"); box.innerHTML = "";
+    emoChoices.forEach(k => {
+      const b = document.createElement("button"); b.className = "choice"; b.textContent = FACES[k];
+      b.setAttribute("aria-label", L("feelings")[k]);
+      b.onclick = () => {
+        if (b.disabled) return;
+        if (k === emoTarget){
+          b.classList.add("right"); box.querySelectorAll("button").forEach(x => x.disabled = true);
+          emoStars++; const r = L("emoRight"); document.getElementById("emo-feedback").textContent = r[Math.floor(Math.random() * r.length)];
+          document.getElementById("emo-stars").textContent = "⭐".repeat(emoStars);
+          setTimeout(emoNext, 1300);
+        } else { b.classList.add("wrong"); b.disabled = true; document.getElementById("emo-feedback").textContent = L("emoTry"); }
+      };
+      box.appendChild(b);
+    });
+  }
+
+  /* 2. Memory cards */
+  const ANIMALS = ["🐱","🐶","🐰","🦋","🐢","🐟","🦁","🐘"];
+  let memN = 3, memOpen = [], memMoves = 0, memFound = 0, memLock = false;
+  function memNew(){
+    memOpen = []; memMoves = 0; memFound = 0; memLock = false;
+    const deck = shuffle(shuffle(ANIMALS).slice(0, memN).flatMap(a => [a, a]));
+    const g = document.getElementById("mem-grid");
+    g.style.gridTemplateColumns = `repeat(${memN === 3 ? 3 : 4}, auto)`;
+    g.innerHTML = "";
+    deck.forEach(a => {
+      const c = document.createElement("button"); c.className = "mem-card"; c.dataset.a = a;
+      c.innerHTML = `<span class="f">★</span><span class="b">${a}</span>`;
+      c.setAttribute("aria-label", "?");
+      c.onclick = () => memFlip(c); g.appendChild(c);
+    });
+    memInfo();
+  }
+  function memFlip(c){
+    if (memLock || c.classList.contains("open") || c.classList.contains("done")) return;
+    c.classList.add("open"); c.setAttribute("aria-label", c.dataset.a); memOpen.push(c);
+    if (memOpen.length === 2){
+      memMoves++; const [a, b] = memOpen;
+      if (a.dataset.a === b.dataset.a){
+        a.classList.add("done"); b.classList.add("done"); memOpen = []; memFound++;
+        memInfo();
+      } else {
+        memLock = true;
+        setTimeout(() => { a.classList.remove("open"); b.classList.remove("open"); a.setAttribute("aria-label","?"); b.setAttribute("aria-label","?"); memOpen = []; memLock = false; }, 900);
+      }
+      memInfo();
+    }
+  }
+  function memInfo(){ document.getElementById("mem-moves").textContent = memMoves; document.getElementById("mem-pairs").textContent = `${memFound} / ${memN}`; document.getElementById("mem-feedback").textContent = memFound === memN ? L("memWin") : ""; }
+
+  /* 3. Breathing bubble: 4s in, 4s out, 5 rounds */
+  let brTimer = null, brRound = 0, brPhase = "idle";
+  function brSet(){
+    const lbl = document.getElementById("breath-label"), btn = document.getElementById("breath-btn"), cnt = document.getElementById("breath-count");
+    btn.textContent = brPhase === "idle" || brPhase === "done" ? L("breathStart") : L("breathStop");
+    lbl.textContent = brPhase === "in" ? L("breathIn") : brPhase === "out" ? L("breathOut") : brPhase === "done" ? L("breathDone") : L("breathReady");
+    cnt.textContent = brRound && brPhase !== "done" ? L("breathRound").replace("{n}", brRound) : "";
+  }
+  function brStep(){
+    const ball = document.getElementById("breath-ball");
+    if (brPhase === "in"){ brPhase = "out"; ball.classList.remove("big"); }
+    else {
+      if (brRound >= 5){ brStop(true); return; }
+      brRound++; brPhase = "in"; ball.classList.add("big");
+    }
+    brSet(); brTimer = setTimeout(brStep, 4000);
+  }
+  function brStop(done){ clearTimeout(brTimer); brTimer = null; brPhase = done ? "done" : "idle"; brRound = 0; document.getElementById("breath-ball").classList.remove("big"); brSet(); }
+  function brToggle(){ if (brTimer) brStop(false); else { brRound = 0; brPhase = "out"; brStep(); } }
+
+  /* 4. Picture schedule (kept in memory only; print to keep) */
+  const ACTS = { wake:"🌅", toilet:"🚽", wash:"🧼", teeth:"🪥", dress:"👕", breakfast:"🥣", school:"🎒", lunch:"🍽️", homework:"📚", play:"🧸", outside:"🌳", screen:"📺", bath:"🛁", dinner:"🍲", story:"📖", sleep:"😴" };
+  let sched = [];
+  function schedBank(){
+    const bank = document.getElementById("sched-bank"); bank.innerHTML = "";
+    Object.keys(ACTS).forEach(k => {
+      const b = document.createElement("button"); b.className = "pic";
+      b.innerHTML = `<span class="e" aria-hidden="true">${ACTS[k]}</span><span>${L("acts")[k]}</span>`;
+      b.onclick = () => { sched.push({ k, done:false }); schedList(); };
+      bank.appendChild(b);
+    });
+  }
+  function schedList(){
+    const box = document.getElementById("sched-list");
+    if (!sched.length){ box.innerHTML = `<div class="sched-empty">${L("schedEmpty")}</div>`; return; }
+    box.innerHTML = `<div class="sched-strip">${sched.map((s, i) => `
+      <div class="sched-item${s.done ? " done" : ""}">
+        <span class="n">${i + 1}</span><span class="e" aria-hidden="true">${ACTS[s.k]}</span><span class="lbl">${L("acts")[s.k]}</span>
+        <span class="acts">
+          <button data-a="up" data-i="${i}" aria-label="${L("up")}">↑</button>
+          <button data-a="down" data-i="${i}" aria-label="${L("down")}">↓</button>
+          <button data-a="done" data-i="${i}" aria-label="${L("doneLbl")}">✓</button>
+          <button data-a="del" data-i="${i}" aria-label="${L("remove")}">✕</button>
+        </span>
+      </div>`).join("")}</div>`;
+    box.querySelectorAll("button[data-a]").forEach(b => b.onclick = () => {
+      const i = +b.dataset.i, a = b.dataset.a;
+      if (a === "up" && i > 0) [sched[i - 1], sched[i]] = [sched[i], sched[i - 1]];
+      if (a === "down" && i < sched.length - 1) [sched[i + 1], sched[i]] = [sched[i], sched[i + 1]];
+      if (a === "done") sched[i].done = !sched[i].done;
+      if (a === "del") sched.splice(i, 1);
+      schedList();
+    });
+  }
+
+  /* 5. Teen check-in */
+  const LV = ["😄","🙂","😐","😟","😞"];
+  let thermoSel = -1;
+  function thermoRender(){
+    const box = document.getElementById("thermo-btns"); box.innerHTML = "";
+    LV.forEach((e, i) => {
+      const b = document.createElement("button");
+      b.innerHTML = `<span class="e" aria-hidden="true">${e}</span>${L("levels")[i]}`;
+      b.setAttribute("aria-pressed", String(i === thermoSel));
+      b.onclick = () => { thermoSel = i; thermoRender(); };
+      box.appendChild(b);
+    });
+    const out = document.getElementById("thermo-out");
+    out.innerHTML = thermoSel < 0 ? "" : `<div class="card" style="border-top:5px solid var(--c)">${L("thermoTips")[thermoSel]}</div>`;
+    if (thermoSel === 4) out.querySelector(".card").style.borderTopColor = "var(--warn)";
+  }
+
+  function relabel(){ emoRender(); memInfo(); brSet(); schedBank(); schedList(); thermoRender(); }
+
+  function init(){
+    document.getElementById("emo-restart").onclick = emoNew;
+    document.getElementById("mem-restart").onclick = memNew;
+    document.querySelectorAll("#mem-level button").forEach(b => b.onclick = () => {
+      memN = +b.dataset.n; document.querySelectorAll("#mem-level button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); memNew();
+    });
+    document.getElementById("breath-btn").onclick = brToggle;
+    document.getElementById("sched-clear").onclick = () => { sched = []; schedList(); };
+    document.getElementById("sched-example").onclick = () => { sched = ["wake","toilet","teeth","dress","breakfast","school"].map(k => ({ k, done:false })); schedList(); };
+    document.getElementById("sched-print").onclick = () => {
+      const g = document.getElementById("schedule"); g.classList.add("print-me"); window.print(); setTimeout(() => g.classList.remove("print-me"), 500);
+    };
+    emoQueue = shuffle(Object.keys(FACES)); emoNext(); memNew();
+  }
+  return { init, relabel };
+})();
+</script>
+<!--lang--><script>window.SITE_LANG="ku";window.LOC=function(p){return "/ku"+p};</script>
+<!--/lang--><script src="/assets/games2.js?v=23"></script>
+<script src="/assets/site.js?v=23"></script>
+<script>Games.init(); Games2.init(); Games.relabel(); Games2.relabel();</script>
+</body>
+</html>

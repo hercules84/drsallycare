@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مقالات وأدلة | د. سالي رزقو | Dr. Sally Rizqo</title>
+<link rel="canonical" href="https://drsallycare.com/ku/learn/">
+<!--hreflang--><link rel="alternate" hreflang="ar" href="https://drsallycare.com/learn/">
+<link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/learn/">
+<link rel="alternate" hreflang="en" href="https://drsallycare.com/en/learn/">
+<link rel="alternate" hreflang="x-default" href="https://drsallycare.com/learn/">
+<!--/hreflang-->
+<meta name="description" content="Practical guides for families and teachers on autism, ADHD, learning difficulties, adolescence and children under stress. Arabic, Kurdish, English.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dr. Sally Rizqo">
+<meta property="og:title" content="مقالات وأدلة | د. سالي رزقو | Dr. Sally Rizqo">
+<meta property="og:description" content="Practical guides for families and teachers on autism, ADHD, learning difficulties, adolescence and children under stress. Arabic, Kurdish, English.">
+<meta property="og:url" content="https://drsallycare.com/ku/learn/">
+<meta property="og:image" content="https://drsallycare.com/icon-512.png">
+<meta name="theme-color" content="#3F729B">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=23">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Guides & articles","url":"https://drsallycare.com/learn/","inLanguage":["ar","ku","en"]}</script>
+</head>
+<body>
+<main class="wrap" id="hub">
+  <section class="topic-hero" style="--c:var(--teal);--cs:var(--teal-soft)">
+    <div><h1 data-i18n="title"></h1><p class="lead" data-i18n="lead"></p></div>
+  </section>
+  <div class="chips" id="chips" role="group"></div>
+  <div class="art-grid" id="grid"></div>
+  <section class="cta">
+    <h2 data-i18n="ctaTitle"></h2><p class="lead" data-i18n="ctaLead"></p>
+    <div class="btns"><a class="btn primary wa-link" href="/ku/#book"><span data-i18n="btnBook"></span></a></div>
+  </section>
+</main>
+<!--lang--><script>window.SITE_LANG="ku";window.LOC=function(p){return "/ku"+p};</script>
+<!--/lang--><script src="/assets/articles-data.js?v=23"></script>
+<script>
+(function(){
+ let cur = "all";
+ const topics = ["all", ...Array.from(new Set(window.ARTICLES.map(a => a.topic)))];
+ function draw(){
+  const key = { all:"allTags", autism:"tagAutism", adhd:"tagAdhd", adolescence:"tagAdolescence", learning:"tagLearning", teachers:"tagTeachers", community:"tagCommunity", wellbeing:"tagWellbeing", consultation:"tagConsultation" };
+  document.getElementById("chips").innerHTML = topics.map(t => '<button type="button" data-t="' + t + '" aria-pressed="' + (t === cur) + '">' + window.tx(key[t]) + '</button>').join("");
+  document.getElementById("grid").innerHTML = window.ARTICLES.filter(a => cur === "all" || a.topic === cur).map(window.artCard).join("");
+  document.querySelectorAll("#chips button").forEach(b => b.onclick = () => { cur = b.dataset.t; draw(); });
+ }
+ window.PAGE = { id:"learn", t:{"ar":{"pageTitle":"مقالات وأدلة للأهل والمعلمين | د. سالي رزقو","title":"مقالات وأدلة","lead":"معلومات عملية ومبسّطة للأهل والمعلمين حول التوحد وفرط الحركة وتشتت الانتباه وصعوبات التعلم والمراهقة ودعم الأطفال في الأزمات."},"ku":{"pageTitle":"ڕێبەر و بابەتێن بۆ خێزان و مامۆستایان | د. سالی ڕزقۆ","title":"ڕێبەر و بابەت","lead":"زانیاریێن کرداری و ساناهی بۆ خێزان و مامۆستایان دەربارەی ئۆتیزم، زێدە-جوولە، زەحمەتیێن فێربوونێ، هەرزەکاری و پشتەڤانیا زارۆکان د قەیرانان دا."},"en":{"pageTitle":"Guides & articles for families and teachers | Dr. Sally Rizqo","title":"Guides & articles","lead":"Practical, plain-language information for families and teachers on autism, ADHD, learning difficulties, adolescence and supporting children in crises."}}, onLang: draw };
+})();
+</script>
+<script src="/assets/articles-ui.js?v=23"></script>
+<script src="/assets/site.js?v=23"></script>
+</body>
+</html>
