@@ -484,9 +484,10 @@ header.site .langs-bar{display:none}
 .side-tel{width:auto;padding:7px 14px}
 .side-tel .tel-num{display:inline}
 
-/* brand: Arabic name (Amiri) with English name beside it */
-.brand-name{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 9px}
+/* brand: Arabic name (Amiri) above the English name, stacked */
+.brand-name{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
 .brand-ar:empty{display:none}
-html[lang="ar"] .brand-ar{font-family:"Amiri",serif;font-weight:700;font-size:21px;line-height:1.1}
-.brand-en{font-weight:800;font-size:14px;letter-spacing:.2px;color:var(--ink);direction:ltr;white-space:nowrap}
-@media (max-width:520px){.brand-en{font-size:12.5px}html[lang="ar"] .brand-ar{font-size:19px}}
+html[lang="ar"] .brand-ar{font-family:"Amiri",serif;font-weight:700;font-size:22px;line-height:1}
+.brand-en{font-family:"Nunito Sans","Segoe UI",sans-serif;font-weight:700;font-size:11.5px;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted);direction:ltr;white-space:nowrap;line-height:1.1}
+html[lang="ar"] .brand-en{text-align:start}
+@media (max-width:520px){html[lang="ar"] .brand-ar{font-size:20px}.brand-en{font-size:10.5px;letter-spacing:.9px}}
