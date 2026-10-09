@@ -28,7 +28,7 @@ ar:{
  gThermo:"مقياس مشاعري", gThermoD:"للمراهقين: كيف أشعر اليوم؟",
  gSort:"فرز وتصنيف", gSortD:"ضع كل شيء في سلته", gPattern:"أنماط وتسلسل", gPatternD:"ما الذي يأتي بعد ذلك؟", gOdd:"من المختلف؟", gOddD:"لاحظ واختر الشيء المختلف", gSituations:"كيف يشعرون؟", gSituationsD:"اربط الموقف بالشعور", gChallenge:"تحدي ألغاز التفكير", gChallengeD:"٨ ألغاز ممتعة (ليس اختبار ذكاء)",
  refsTitle:"مراجع مختارة",
- navLearn:"مقالات وأدلة", navRes:"الموارد", phoneLabel:"هاتف / واتساب", callNow:"اتصال هاتفي",
+ navLearn:"مقالات وأدلة", menu:"القائمة", sections:"الأقسام", search:"ابحث في الموقع", noRes:"لا توجد نتائج", navRes:"الموارد", phoneLabel:"هاتف / واتساب", callNow:"اتصال هاتفي",
  tagAutism:"التوحد", tagAdhd:"فرط الحركة", tagAdolescence:"المراهقة", tagLearning:"صعوبات التعلم", tagTeachers:"للمعلمين", tagCommunity:"دعم في الأزمات", tagWellbeing:"الحياة اليومية", tagConsultation:"الاستشارة", allTags:"الكل",
  minWord:"دقائق قراءة", backLearn:"← كل المقالات", moreArt:"مقالات ذات صلة", allArt:"كل المقالات", artNote:"محتوى عام للتوعية، ولا يغني عن التقييم الفردي.",
 },
@@ -53,7 +53,7 @@ ku:{
  gThermo:"پێڤەرێ هەستێن من", gThermoD:"بۆ هەرزەکاران: ئەز ئەڤرۆ چەوانم؟",
  gSort:"ڕیزکرن و پۆلینکرن", gSortD:"هەر تشتەکی بکە د سەبەتا خۆ دا", gPattern:"پاتێر و ڕیزبوون", gPatternD:"پشتی ڤێ چ دئێت؟", gOdd:"کیژ جودایە؟", gOddD:"تێبینی بکە و یێ جودا هەلبژێرە", gSituations:"چەوا هەست دکەن؟", gSituationsD:"ڕەوشێ ب هەستی ڤە گرێبدە", gChallenge:"بەرەنگاربوونا پەزلان", gChallengeD:"8 پەزلێن خۆش (تێستا زیرەکیێ نینە)",
  refsTitle:"ژێدەرێن هەلبژارتی",
- navLearn:"ڕێبەر و بابەت", navRes:"سەرچاوە", phoneLabel:"تەلەفون / واتسئاپ", callNow:"پەیوەندیێ بکە",
+ navLearn:"ڕێبەر و بابەت", menu:"مینو", sections:"بەش", search:"گەڕان د ماڵپەڕی دا", noRes:"ئەنجام نینە", navRes:"سەرچاوە", phoneLabel:"تەلەفون / واتسئاپ", callNow:"پەیوەندیێ بکە",
  tagAutism:"ئۆتیزم", tagAdhd:"زێدە-جوولە", tagAdolescence:"هەرزەکاری", tagLearning:"زەحمەتیێن فێربوونێ", tagTeachers:"بۆ مامۆستایان", tagCommunity:"پشتەڤانی د قەیرانان دا", tagWellbeing:"ژیانا ڕۆژانە", tagConsultation:"شێوەر", allTags:"هەمی",
  minWord:"خولەک بۆ خواندنێ", backLearn:"← هەمی بابەت", moreArt:"بابەتێن پەیوەندیدار", allArt:"هەمی بابەت", artNote:"ناڤەڕۆکەکێ گشتییە بۆ هۆشیاریێ، و جهێ هەلسەنگاندنا تاکەکەسی ناگریت.",
 },
@@ -78,7 +78,7 @@ en:{
  gThermo:"Feelings check-in", gThermoD:"For teens: how am I today?",
  gSort:"Sort it out", gSortD:"Put each thing in its basket", gPattern:"Patterns", gPatternD:"What comes next?", gOdd:"Odd one out", gOddD:"Spot the one that is different", gSituations:"How do they feel?", gSituationsD:"Match the situation to the feeling", gChallenge:"Thinking puzzles", gChallengeD:"8 fun puzzles (not an IQ test)",
  refsTitle:"Selected references",
- navLearn:"Guides & articles", navRes:"Resources", phoneLabel:"Phone / WhatsApp", callNow:"Call",
+ navLearn:"Guides & articles", menu:"Menu", sections:"Sections", search:"Search the site", noRes:"No results", navRes:"Resources", phoneLabel:"Phone / WhatsApp", callNow:"Call",
  tagAutism:"Autism", tagAdhd:"ADHD", tagAdolescence:"Adolescence", tagLearning:"Learning difficulties", tagTeachers:"For teachers", tagCommunity:"Support in crises", tagWellbeing:"Everyday life", tagConsultation:"Consultation", allTags:"All",
  minWord:"min read", backLearn:"← All articles", moreArt:"Related articles", allArt:"All articles", artNote:"General information for awareness; it does not replace an individual assessment.",
 }};
@@ -110,15 +110,25 @@ function buildChrome(){
     <div class="head-row">
       <a class="brand" href="/">${MARK}<span><span class="brand-name" data-i18n="brand"></span><br><span class="brand-sub" data-i18n="brandSub"></span></span></a>
       <div class="head-right">
+        <button class="menu-btn" type="button" aria-controls="side" aria-expanded="false"><span aria-hidden="true">☰</span> <span data-i18n="menu"></span></button>
         <a class="head-tel" dir="ltr" data-tel href="#" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="tel-num">${PHONE_DISPLAY}</span></a>
         <div class="langs" role="group" aria-label="Language">
           <button data-lang="ar" lang="ar">العربية</button><button data-lang="ku" lang="ku">کوردی</button><button data-lang="en" lang="en">English</button>
         </div>
       </div>
     </div>
-    <nav class="tabs" aria-label="Main">${NAV.map(([id,href,key]) => `<a href="${href}" data-i18n="${key}"${id===PAGE.id?' aria-current="page"':''}></a>`).join("")}</nav>
-  </div></header>`;
+  </div></header>
+  <aside class="side" id="side" aria-label="${"Site"}">
+    <div class="side-in">
+      <input type="search" id="side-q" class="side-q" aria-label="search" autocomplete="off">
+      <div class="side-h" data-i18n="sections"></div>
+      <nav class="side-nav" aria-label="Main">${NAV.map(([id,href,key]) => `<a href="${href}" data-i18n="${key}"${id===PAGE.id?' aria-current="page"':''}></a>`).join("")}</nav>
+      <div class="side-res" id="side-res"></div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>`;
   document.body.prepend(...head.childNodes);
+  document.body.classList.add("has-side");
 
   const foot = document.createElement("div");
   foot.innerHTML = `
@@ -153,10 +163,35 @@ function setLang(lang){
   document.querySelectorAll("[data-tel]").forEach(a => { a.href = has ? `tel:+${WHATSAPP_NUMBER}` : "#"; a.hidden = !has; const n = a.querySelector(".tel-num"); if (n && !n.textContent) n.textContent = PHONE_DISPLAY; });
   document.querySelectorAll(".wa-missing").forEach(el => el.hidden = has);
   const title = tx("pageTitle"); if (title) document.title = title;
+  const sq = document.getElementById("side-q"); if (sq) sq.placeholder = tx("search");
   try { localStorage.setItem("drsally-lang", lang); } catch(e){}
   if (typeof PAGE.onLang === "function") PAGE.onLang(lang);
 }
 window.setLang = setLang;
+
+/* side panel: open/close on phones, search over sections and articles */
+function wireSide(){
+  const side = document.getElementById("side"), scrim = document.getElementById("scrim"), mb = document.querySelector(".menu-btn");
+  const setSide = o => { side.classList.toggle("open", o); scrim.classList.toggle("on", o); mb.setAttribute("aria-expanded", String(o)); };
+  mb.addEventListener("click", () => setSide(!side.classList.contains("open")));
+  scrim.addEventListener("click", () => setSide(false));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setSide(false); });
+  side.querySelectorAll(".side-nav a").forEach(a => a.addEventListener("click", () => setSide(false)));
+  const q = document.getElementById("side-q"), res = document.getElementById("side-res");
+  let loading = false;
+  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=20"; s.onload = () => draw(q.value); document.head.appendChild(s); };
+  function draw(v){
+    const term = (v || "").trim().toLowerCase();
+    if (!term){ res.innerHTML = ""; return; }
+    const hits = [];
+    NAV.forEach(([id, href, key]) => { const label = tx(key); if (label.toLowerCase().includes(term)) hits.push([label, href]); });
+    (window.ARTICLES || []).forEach(a => { const d = a[LANG] || a.ar; if ((d.title + " " + d.sum).toLowerCase().includes(term)) hits.push([d.title, "/learn/" + a.slug + "/"]); });
+    res.innerHTML = hits.length ? hits.slice(0, 12).map(([l, h]) => `<a href="${h}">${l}</a>`).join("") : `<p class="small-note">${tx("noRes")}</p>`;
+  }
+  q.addEventListener("focus", loadArticles);
+  q.addEventListener("input", () => { loadArticles(); draw(q.value); });
+}
+
 /* gentle scroll reveal */
 (function(){
   if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -169,6 +204,7 @@ window.setLang = setLang;
 window.getLang = () => LANG;
 
 buildChrome();
+wireSide();
 document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
 let start = "ar";
 try { const s = localStorage.getItem("drsally-lang"); if (s && COMMON[s]) start = s; } catch(e){}
