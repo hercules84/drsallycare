@@ -6,7 +6,7 @@ import path from "node:path";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const articles = JSON.parse(fs.readFileSync(path.join(root, "tools/articles.json"), "utf8"));
 const DATE = "2026-10-08";
-const V = "21"; // asset version, must match the ?v= used in the other pages
+const V = "22"; // asset version, must match the ?v= used in the other pages
 
 const TAGKEY = { autism:"tagAutism", adhd:"tagAdhd", adolescence:"tagAdolescence", learning:"tagLearning",
   teachers:"tagTeachers", community:"tagCommunity", wellbeing:"tagWellbeing", consultation:"tagConsultation" };

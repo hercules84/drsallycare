@@ -442,7 +442,34 @@ aside.side{position:fixed;top:0;bottom:0;inset-inline-start:0;width:250px;backgr
 }
 @media print{ aside.side,.scrim,.menu-btn{display:none!important} body.has-side{padding-inline-start:0} }
 @media (max-width:560px){
-  .head-row{flex-wrap:wrap;gap:10px}
-  .head-right{width:100%;justify-content:space-between;flex-wrap:wrap}
-  .head-tel .tel-num{font-size:13px}
+}
+
+/* ===== unified layout: same structure on phones, tablets, desktops (iPhone, Android, PC) ===== */
+.langs-bar{display:flex;justify-content:center;padding-block:4px 10px}
+.langs-bar .langs{width:100%;max-width:360px;justify-content:space-between;border:1.5px solid var(--teal);padding:4px}
+.langs button{font-size:15px;font-weight:700;color:var(--ink);padding:8px 12px;min-height:40px;flex:1}
+.langs button[aria-pressed="true"]{background:var(--grad);color:var(--on-accent)}
+.head-row .head-tel{margin-inline-start:4px}
+.head-row .menu-btn{margin-inline-start:auto}
+.side-top{display:grid;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.side-brand{padding:4px 2px}
+.side-tel{justify-self:start}
+.side-langs{padding:0}
+.side-langs .langs{max-width:none}
+input,select,textarea{font-size:16px}
+.fab{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.side-in{padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1000px){
+  header.site{display:none}
+  body.has-side{padding-top:0}
+  aside.side{visibility:visible}
+}
+@media (max-width:999px){
+  header.site .head-row{flex-wrap:nowrap}
+  .head-tel .tel-num{font-size:13.5px}
+}
+@media (max-width:400px){
+  .brand-name{font-size:15px}
+  .menu-btn span:last-child{display:none}
+  .head-tel{padding:7px 10px}
 }
