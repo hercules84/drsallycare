@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#3F729B">
 <title>Case sheets</title>
 <link rel="icon" href="/favicon.ico">
-<link rel="stylesheet" href="/assets/site.css?v=12">
+<link rel="stylesheet" href="/assets/site.css?v=13">
 <style>
 body{padding:0}
 .cs{max-width:1060px;margin:0 auto;padding:18px 16px 60px}
@@ -22,6 +22,10 @@ body{padding:0}
 .box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}
 .lock{max-width:420px;margin:12vh auto 0;text-align:center}
 .lock input{text-align:center;margin:10px 0}
+.lock-ic{width:68px;height:68px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;color:var(--teal);background:radial-gradient(circle at 30% 25%,#fff,var(--teal-soft) 70%);box-shadow:0 6px 22px rgba(63,114,155,.18);animation:floaty 6s ease-in-out infinite}
+.lock-ic svg{width:34px;height:34px;fill:color-mix(in srgb,currentColor 13%,transparent)}
+.box{animation:rise .5s ease-out}@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion:reduce){.lock-ic,.box{animation:none}}
 .msg{color:var(--warn);font-size:14px;min-height:20px}
 .warn{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:10px 12px;font-size:14px;margin:10px 0}
 .note{color:var(--muted);font-size:13.5px}
@@ -56,6 +60,7 @@ dialog h2{margin:0 0 12px;font-size:19px}
 
 <!-- lock screen -->
 <div id="lock" class="box lock" hidden>
+  <div class="lock-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.2"/></svg></div>
   <h1 style="font-size:20px" data-i="title"></h1>
   <p class="note" id="lock-hint"></p>
   <input type="password" id="pw" autocomplete="off" data-ph="pass" aria-label="passphrase">

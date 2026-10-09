@@ -157,6 +157,15 @@ function setLang(lang){
   if (typeof PAGE.onLang === "function") PAGE.onLang(lang);
 }
 window.setLang = setLang;
+/* gentle scroll reveal */
+(function(){
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold:.08 });
+  setTimeout(() => document.querySelectorAll("main .card, main .svc, main .topic-card, main .art-card, main .faq details, main .contact-card, main .cta").forEach((el, i) => {
+    const r = el.getBoundingClientRect(); if (r.top < innerHeight) return;
+    el.classList.add("rv"); el.style.transitionDelay = (i % 3) * 70 + "ms"; io.observe(el);
+  }), 60);
+})();
 window.getLang = () => LANG;
 
 buildChrome();
