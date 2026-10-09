@@ -3,9 +3,9 @@
    A floating WhatsApp button stays on every page. Teal = trust, coral = warmth, sun/lavender = play. */
 :root{
   --bg:#F1F7FC; --surface:#FDFEFF; --ink:#25364A; --muted:#566B81; --line:#DCE8F3;
-  --teal:#3F729B; --teal-soft:#E4F0FA; --coral:#7C6A8F; --coral-soft:#EFEBF5;
-  --sun:#4F7C8C; --sun-soft:#E5F2F5; --lav:#5E6FA3; --lav-soft:#E9EEF9;
-  --warn:#8F4F49; --warn-soft:#F5EBE9; --ok:#3F7A66; --ok-soft:#E5F3EE;
+  --teal:#3E7199; --teal-soft:#E4F0FA; --coral:#756486; --coral-soft:#EFEBF5;
+  --sun:#6E5314; --sun-soft:#FBF4E4; --lav:#59699B; --lav-soft:#E9EEF9;
+  --warn:#8F4F49; --warn-soft:#F5EBE9; --ok:#3E7864; --ok-soft:#E5F3EE;
   --on-accent:#FFFFFF;
   --shadow:0 1px 2px rgba(37,54,74,.04),0 8px 24px rgba(63,114,155,.08);
   --grad:linear-gradient(135deg,#4379A6 0%,#3A6B94 100%); --grad-soft:linear-gradient(160deg,#E4F1FB 0%,#F1F7FC 60%,#FFFFFF 100%);
@@ -17,13 +17,13 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#111A24; --surface:#18232F; --ink:#E1EAF3; --muted:#9DB0C3; --line:#28384A;
   --teal:#8DBCE6; --teal-soft:#1B2C3D; --coral:#BDB0D6; --coral-soft:#262236;
-  --sun:#9CC8D6; --sun-soft:#1B2D33; --lav:#A9B8E6; --lav-soft:#1F2740; --grad:linear-gradient(135deg,#4F86B3,#2F5F88); --grad-soft:linear-gradient(160deg,#1B2C3D,#111A24);
+  --sun:#9CC8D6; --sun-soft:#1B2D33; --lav:#A9B8E6; --lav-soft:#1F2740; --grad:linear-gradient(135deg,#5A8FBE,#4E84B0); --grad-soft:linear-gradient(160deg,#1B2C3D,#111A24);
   --warn:#DDA39D; --warn-soft:#35211F; --ok:#93C3A5; --ok-soft:#1F3026;
   --on-accent:#0B1622; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#111A24; --surface:#18232F; --ink:#E1EAF3; --muted:#9DB0C3; --line:#28384A;
   --teal:#8DBCE6; --teal-soft:#1B2C3D; --coral:#BDB0D6; --coral-soft:#262236;
-  --sun:#9CC8D6; --sun-soft:#1B2D33; --lav:#A9B8E6; --lav-soft:#1F2740; --grad:linear-gradient(135deg,#4F86B3,#2F5F88); --grad-soft:linear-gradient(160deg,#1B2C3D,#111A24);
+  --sun:#9CC8D6; --sun-soft:#1B2D33; --lav:#A9B8E6; --lav-soft:#1F2740; --grad:linear-gradient(135deg,#5A8FBE,#4E84B0); --grad-soft:linear-gradient(160deg,#1B2C3D,#111A24);
   --warn:#DDA39D; --warn-soft:#35211F; --ok:#93C3A5; --ok-soft:#1F3026;
   --on-accent:#0B1622; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}
 *{box-sizing:border-box}
