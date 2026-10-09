@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#3F729B">
 <title>Case sheets</title>
 <link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v=13">
 <style>
 body{padding:0}
@@ -19,20 +20,19 @@ body{padding:0}
 .cs textarea{min-height:76px;resize:vertical}
 .cs label{display:block;font-size:13.5px;color:var(--muted);margin:0 0 4px}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px;animation:rise .5s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
 .lock{max-width:420px;margin:12vh auto 0;text-align:center}
 .lock input{text-align:center;margin:10px 0}
 .lock-ic{width:68px;height:68px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;color:var(--teal);background:radial-gradient(circle at 30% 25%,#fff,var(--teal-soft) 70%);box-shadow:0 6px 22px rgba(63,114,155,.18);animation:floaty 6s ease-in-out infinite}
 .lock-ic svg{width:34px;height:34px;fill:color-mix(in srgb,currentColor 13%,transparent)}
-.box{animation:rise .5s ease-out}@keyframes rise{from{opacity:0;transform:translateY(8px)}}
-@media (prefers-reduced-motion:reduce){.lock-ic,.box{animation:none}}
 .msg{color:var(--warn);font-size:14px;min-height:20px}
 .warn{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:10px 12px;font-size:14px;margin:10px 0}
 .note{color:var(--muted);font-size:13.5px}
 .cs .btn.small{padding:7px 14px;font-size:14px}
 .layout{display:grid;grid-template-columns:300px 1fr;gap:14px;align-items:start}
 @media(max-width:820px){.layout{grid-template-columns:1fr}}
-.plist{max-height:62vh;overflow:auto;margin-top:10px}
+.plist{max-height:56vh;overflow:auto;margin-top:10px}
 .pi{display:block;width:100%;text-align:start;background:none;border:0;border-bottom:1px solid var(--line);padding:10px 4px;cursor:pointer;font:inherit;color:var(--ink)}
 .pi:hover,.pi.on{background:var(--teal-soft)}
 .pi small{display:block;color:var(--muted)}
@@ -43,16 +43,17 @@ table.v th,table.v td{padding:8px 6px;border-bottom:1px solid var(--line);text-a
 table.v th{color:var(--muted);font-weight:600;font-size:13px}
 .prog{display:inline-block;min-width:22px;text-align:center;border-radius:8px;padding:0 6px;background:var(--teal-soft);font-weight:700}
 .empty{color:var(--muted);text-align:center;padding:30px 0}
-dialog{border:0;border-radius:20px;padding:0;max-width:640px;width:calc(100% - 24px);background:var(--bg);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.post{border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px;background:linear-gradient(180deg,var(--surface),var(--teal-soft))}
+.post h3{margin:6px 0;font-size:17px}
+.post p{margin:0 0 10px;font-size:15px}
+.imp-row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)}
+.imp-row input[type=text]{padding:6px 10px}
+dialog{border:0;border-radius:20px;padding:0;max-width:680px;width:calc(100% - 24px);background:var(--bg);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.25)}
 dialog::backdrop{background:rgba(30,40,38,.45)}
-dialog form{padding:18px}
+dialog form,dialog .dpad{padding:18px}
 dialog h2{margin:0 0 12px;font-size:19px}
 .chk{display:flex;gap:8px;align-items:center}.chk input{width:auto}
-@media print{
- .cs-top,.noprint,.plist,#side,.btn{display:none!important}
- .layout{display:block}.box{box-shadow:none;border:1px solid #bbb;break-inside:avoid}
- body{background:#fff}
-}
+@media print{ .cs-top,.noprint,.plist,#side,.btn{display:none!important} .layout{display:block} .box{box-shadow:none;border:1px solid #bbb} body{background:#fff} }
 </style>
 </head>
 <body>
@@ -68,15 +69,18 @@ dialog h2{margin:0 0 12px;font-size:19px}
   <div class="warn" id="lock-warn" hidden data-i="warnNew"></div>
   <div class="msg" id="lock-msg" role="alert"></div>
   <button class="btn primary" id="lock-go" type="button"></button>
-  <p class="note" style="margin-top:14px"><button class="btn small" type="button" id="lang-l"></button></p>
+  <p class="note" style="margin-top:14px"><button class="btn small" type="button" id="lang-l"></button> <a class="btn small" href="/" data-i="home"></a></p>
 </div>
 
 <!-- main -->
 <div id="main" hidden>
   <div class="cs-top noprint">
-    <h1 data-i="title"></h1>
+    <div class="row"><a class="btn small" id="b-home" href="/" data-i="home"></a><h1 data-i="title"></h1></div>
     <div class="row">
       <button class="btn small" type="button" id="b-lang"></button>
+      <button class="btn small" type="button" id="b-posts" data-i="posts"></button>
+      <button class="btn small" type="button" id="b-xlsx" data-i="xlsx"></button>
+      <button class="btn small" type="button" id="b-pdf" data-i="pdfAll"></button>
       <button class="btn small" type="button" id="b-export" data-i="export"></button>
       <button class="btn small" type="button" id="b-import" data-i="import"></button>
       <button class="btn small" type="button" id="b-pw" data-i="chpw"></button>
@@ -87,7 +91,8 @@ dialog h2{margin:0 0 12px;font-size:19px}
   <div class="warn noprint" id="storewarn" hidden data-i="storeWarn"></div>
   <div class="layout">
     <aside id="side" class="box">
-      <div class="row" style="justify-content:space-between"><b data-i="patients"></b><button class="btn small primary" type="button" id="b-newp" data-i="newPatient"></button></div>
+      <div class="row" style="justify-content:space-between"><b data-i="patients"></b>
+        <span class="row"><button class="btn small" type="button" id="b-impn" data-i="importNames"></button><button class="btn small primary" type="button" id="b-newp" data-i="newPatient"></button></span></div>
       <input type="search" id="q" data-ph="search" style="margin-top:10px" aria-label="search">
       <div class="row" style="margin-top:8px"><label class="chk" style="margin:0"><input type="checkbox" id="only-due"><span data-i="onlyDue"></span></label></div>
       <div class="plist" id="plist"></div>
@@ -142,6 +147,28 @@ dialog h2{margin:0 0 12px;font-size:19px}
     <button class="btn small" type="button" id="dv-del" data-i="delVisit" hidden></button>
   </div>
 </form></dialog>
+
+<!-- daily post dialog -->
+<dialog id="dpo"><form method="dialog" id="fpo">
+  <h2 data-i="newPost"></h2>
+  <div class="grid2">
+    <div><label data-i="pDate"></label><input id="po-date" type="date" required></div>
+    <div><label data-i="pAud"></label><select id="po-aud"><option value="parents" data-i="aud_parents"></option><option value="teachers" data-i="aud_teachers"></option><option value="both" data-i="aud_both"></option></select></div>
+    <div><label data-i="pLang"></label><select id="po-lang"><option value="ar" data-i="langAr"></option><option value="en" data-i="langEn"></option></select></div>
+  </div>
+  <div style="margin-top:12px"><label data-i="pTitle"></label><input id="po-title" required></div>
+  <div style="margin-top:12px"><label data-i="pBody"></label><textarea id="po-body" style="min-height:150px" required></textarea></div>
+  <div class="row" style="margin-top:16px"><button class="btn primary" value="save" type="submit" data-i="save"></button><button class="btn" type="button" id="dpo-cancel" data-i="cancel"></button></div>
+</form></dialog>
+
+<!-- import names dialog -->
+<dialog id="di"><div class="dpad">
+  <h2 data-i="impTitle"></h2>
+  <p class="note" id="imp-msg" data-i="impHint"></p>
+  <div class="row"><button type="button" class="btn small" id="imp-pick" data-i="impChoose"></button><input type="file" id="imp-file" accept=".xlsx,.xls,.csv,.pdf" hidden></div>
+  <div id="imp-list" style="max-height:50vh;overflow:auto;margin-top:10px"></div>
+  <div class="row" style="margin-top:14px;justify-content:space-between"><button class="btn primary" type="button" id="imp-add" hidden data-i="impAdd"></button><button class="btn" type="button" id="imp-cancel" data-i="cancel"></button></div>
+</div></dialog>
 </div>
 
 <script>
@@ -155,9 +182,9 @@ ar:{
  hintOpen:"أدخلي كلمة السر لفتح الملفات.",
  warnNew:"لا يمكن استرجاع كلمة السر. إذا نُسيت تضيع البيانات. احتفظي بنسخة احتياطية مشفّرة من زر «نسخة احتياطية».",
  create:"إنشاء وفتح", open:"فتح", wrong:"كلمة السر غير صحيحة", short:"كلمة السر قصيرة (٨ أحرف على الأقل)", nomatch:"كلمتا السر غير متطابقتين", nocrypto:"المتصفح لا يدعم التشفير. استخدمي متصفحًا حديثًا ورابطًا آمنًا (https).",
- export:"نسخة احتياطية", import:"استعادة", chpw:"تغيير كلمة السر", lock:"قفل",
+ export:"نسخة احتياطية", import:"استعادة", chpw:"تغيير كلمة السر", lock:"قفل", lang:"English", home:"الصفحة الرئيسية",
  storeWarn:"تعذّر الحفظ في هذا المتصفح (وضع خاص أو منع التخزين). لن تُحفظ التغييرات. استخدمي «نسخة احتياطية» قبل الإغلاق.",
- patients:"المرضى", newPatient:"+ مريض", search:"بحث بالاسم أو الرمز", onlyDue:"المتابعات المستحقة فقط",
+ patients:"المرضى", newPatient:"+ مريض", importNames:"استيراد أسماء", search:"بحث بالاسم أو الرمز", onlyDue:"المتابعات المستحقة فقط",
  foot:"البيانات مشفّرة ومحفوظة في هذا المتصفح فقط. خذي نسخة احتياطية بانتظام. لا تظهر هذه الصفحة في محركات البحث.",
  noPatients:"لا يوجد مرضى بعد.", pickOne:"اختاري مريضًا من القائمة أو أضيفي مريضًا جديدًا.",
  fName:"الاسم", fCode:"رمز الملف", fDob:"تاريخ الميلاد", fSex:"الجنس", female:"أنثى", male:"ذكر", fGuardian:"ولي الأمر", fPhone:"هاتف ولي الأمر", fSchool:"المدرسة / الصف", fRef:"جهة الإحالة", fFirst:"تاريخ أول زيارة", fStatus:"الحالة",
@@ -167,10 +194,18 @@ ar:{
  types:["تقييم أولي","متابعة","علاج سلوكي / جلسات","إرشاد الأهل","مراجعة دواء","تنسيق مع المدرسة","استشارة عن بُعد","أخرى"],
  prog:["—","1 تراجع","2 دون تحسن","3 مستقر","4 تحسن","5 تحسن كبير"],
  visits:"الزيارات", addVisit:"+ زيارة", noVisits:"لا توجد زيارات.", cDate:"التاريخ", cType:"النوع", cProg:"التقدّم", cNotes:"العلاج والملاحظات", cNext:"المتابعة",
- edit:"تعديل", print:"طباعة الملف", chart:"منحنى التقدّم", age:"العمر", yrs:"سنة", mo:"شهر", due:"متابعة", late:"متأخرة", noconsent:"لا توجد موافقة مسجلة",
+ edit:"تعديل", print:"تصدير PDF", chart:"منحنى التقدّم", yrs:"سنة", mo:"شهر", due:"متابعة", late:"متأخرة", noconsent:"لا توجد موافقة مسجلة",
  pPhone:"الهاتف", pGuardian:"ولي الأمر", pSchool:"المدرسة", pRef:"الإحالة", pFirst:"أول زيارة", pDx:"التشخيص", pMeds:"الأدوية", pAllergy:"الحساسية", pEss:"معلومات أساسية", pStatus:"الحالة",
  imported:"تمت الاستعادة", badfile:"ملف غير صالح أو كلمة سر مختلفة", impConfirm:"سيستبدل هذا كل البيانات الحالية بالنسخة الاحتياطية. متابعة؟", impPw:"كلمة سر النسخة الاحتياطية:",
- newpw:"كلمة السر الجديدة (٨ أحرف على الأقل):", pwChanged:"تم تغيير كلمة السر", lang:"English"
+ newpw:"كلمة السر الجديدة (٨ أحرف على الأقل):", pwChanged:"تم تغيير كلمة السر",
+ posts:"المنشورات اليومية", newPost:"+ منشور جديد", postsNote:"منشورات قصيرة للأهل والمعلمين. تُحفظ مشفّرة مع الملفات. انسخي النص أو حمّليه لنشره في واتساب أو على الموقع.",
+ pDate:"التاريخ", pAud:"الموجّه إلى", pLang:"اللغة", pTitle:"العنوان", pBody:"نص المنشور",
+ aud_parents:"للأهل", aud_teachers:"للمعلمين", aud_both:"للأهل والمعلمين", langAr:"العربية", langEn:"English",
+ copy:"نسخ", copied:"تم النسخ ✓", download:"تحميل", delPost:"حذف", confirmDelPost:"حذف هذا المنشور؟", noPosts:"لا توجد منشورات بعد. أضيفي منشور اليوم.",
+ xlsx:"تصدير Excel", pdfAll:"تصدير PDF (الكل)", xlsxWarn:"ملف Excel غير مشفّر. احفظيه في مكان آمن ولا تشاركيه عبر وسائل غير آمنة. متابعة؟",
+ sheetP:"المرضى", sheetV:"الزيارات", vTreatH:"العلاج", confPdf:"سرّي — للاستخدام المهني فقط", popup:"المتصفح منع النافذة. اسمحي بالنوافذ المنبثقة لهذا الموقع.",
+ impTitle:"استيراد أسماء المرضى", impHint:"من ملف Excel (.xlsx، .xls، .csv) أو PDF. كل سطر أو صف يصبح مريضًا. راجعي القائمة وعدّليها قبل الإضافة.", impChoose:"اختيار الملف",
+ impNone:"لم يتم العثور على أسماء في الملف.", impAdd:"إضافة المحدد", impDone:"تمت إضافة {n} مريض", libErr:"تعذّر تحميل المكتبة أو قراءة الملف."
 },
 en:{
  title:"Patient case sheets (private)", pass:"Passphrase", pass2:"Repeat passphrase",
@@ -178,9 +213,9 @@ en:{
  hintOpen:"Enter your passphrase to open the files.",
  warnNew:"The passphrase cannot be recovered. If it is forgotten the data is lost. Keep an encrypted copy with the Backup button.",
  create:"Create and open", open:"Open", wrong:"Wrong passphrase", short:"Passphrase too short (at least 8 characters)", nomatch:"The passphrases do not match", nocrypto:"This browser has no encryption support. Use a modern browser over https.",
- export:"Backup", import:"Restore", chpw:"Change passphrase", lock:"Lock",
+ export:"Backup", import:"Restore", chpw:"Change passphrase", lock:"Lock", lang:"العربية", home:"Home page",
  storeWarn:"Saving is blocked in this browser (private mode or storage disabled). Changes will not be kept. Use Backup before closing.",
- patients:"Patients", newPatient:"+ Patient", search:"Search name or code", onlyDue:"Follow-ups due only",
+ patients:"Patients", newPatient:"+ Patient", importNames:"Import names", search:"Search name or code", onlyDue:"Follow-ups due only",
  foot:"Data is encrypted and stored in this browser only. Back up regularly. This page is not listed in search engines.",
  noPatients:"No patients yet.", pickOne:"Pick a patient from the list or add a new one.",
  fName:"Name", fCode:"File code", fDob:"Date of birth", fSex:"Sex", female:"Female", male:"Male", fGuardian:"Guardian", fPhone:"Guardian phone", fSchool:"School / grade", fRef:"Referred by", fFirst:"First visit date", fStatus:"Status",
@@ -190,10 +225,18 @@ en:{
  types:["Initial assessment","Follow-up","Therapy / behavioural sessions","Parent guidance","Medication review","School liaison","Online consultation","Other"],
  prog:["—","1 Worse","2 No change","3 Stable","4 Improving","5 Much better"],
  visits:"Visits", addVisit:"+ Visit", noVisits:"No visits yet.", cDate:"Date", cType:"Type", cProg:"Progress", cNotes:"Treatment & notes", cNext:"Follow-up",
- edit:"Edit", print:"Print sheet", chart:"Progress curve", age:"Age", yrs:"y", mo:"m", due:"Follow-up", late:"overdue", noconsent:"No consent recorded",
+ edit:"Edit", print:"Export PDF", chart:"Progress curve", yrs:"y", mo:"m", due:"Follow-up", late:"overdue", noconsent:"No consent recorded",
  pPhone:"Phone", pGuardian:"Guardian", pSchool:"School", pRef:"Referral", pFirst:"First visit", pDx:"Diagnosis", pMeds:"Medication", pAllergy:"Allergies", pEss:"Essential info", pStatus:"Status",
  imported:"Restored", badfile:"Invalid file or different passphrase", impConfirm:"This replaces all current data with the backup. Continue?", impPw:"Passphrase of the backup:",
- newpw:"New passphrase (at least 8 characters):", pwChanged:"Passphrase changed", lang:"العربية"
+ newpw:"New passphrase (at least 8 characters):", pwChanged:"Passphrase changed",
+ posts:"Daily posts", newPost:"+ New post", postsNote:"Short posts for parents and teachers. Saved encrypted with the files. Copy or download the text to share on WhatsApp or the website.",
+ pDate:"Date", pAud:"Written for", pLang:"Language", pTitle:"Title", pBody:"Post text",
+ aud_parents:"Parents", aud_teachers:"Teachers", aud_both:"Parents & teachers", langAr:"العربية", langEn:"English",
+ copy:"Copy", copied:"Copied ✓", download:"Download", delPost:"Delete", confirmDelPost:"Delete this post?", noPosts:"No posts yet. Add today's post.",
+ xlsx:"Export Excel", pdfAll:"Export PDF (all)", xlsxWarn:"The Excel file is not encrypted. Store it safely and do not share it over insecure channels. Continue?",
+ sheetP:"Patients", sheetV:"Visits", vTreatH:"Treatment", confPdf:"Confidential — for professional use only", popup:"The browser blocked the window. Allow pop-ups for this site.",
+ impTitle:"Import patient names", impHint:"From an Excel (.xlsx, .xls, .csv) or PDF file. Each line or row becomes a patient. Review and edit the list before adding.", impChoose:"Choose file",
+ impNone:"No names found in the file.", impAdd:"Add selected", impDone:"Added {n} patients", libErr:"Could not load the library or read the file."
 }};
 let LANG = "ar"; try { LANG = localStorage.getItem("drsally-cases-lang") || "ar"; } catch(e){}
 const t = k => T[LANG][k];
@@ -224,19 +267,17 @@ let storeOK = true;
 function writeBlob(b){ try { localStorage.setItem(KEYNAME, JSON.stringify(b)); storeOK = true; } catch(e){ storeOK = false; } $("storewarn").hidden = storeOK; }
 
 /* ---------- state ---------- */
-let KEY = null, SALT = null, DB = { patients: [] }, curId = null, idle = null;
+let KEY = null, SALT = null, DB = { patients: [], posts: [] }, curId = null, idle = null, view = "patients";
 const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
 async function persist(){ if (!KEY) return; writeBlob(await seal(KEY, SALT, DB)); }
 const today = () => new Date().toISOString().slice(0, 10);
-const fmt = d => d || "";
 function ageOf(dob){
   if (!dob) return ""; const b = new Date(dob), n = new Date(); let m = (n.getFullYear() - b.getFullYear()) * 12 + n.getMonth() - b.getMonth(); if (n.getDate() < b.getDate()) m--;
   if (m < 0) return ""; return m >= 24 ? Math.floor(m / 12) + " " + t("yrs") : m + " " + t("mo");
 }
-function nextDue(p){ // latest visit's next date
-  const v = (p.visits || []).slice().sort((a, b) => a.date < b.date ? 1 : -1)[0];
-  return v && v.next ? v.next : "";
-}
+const sortVisits = p => (p.visits || []).slice().sort((a, b) => a.date < b.date ? -1 : 1);
+function nextDue(p){ const v = sortVisits(p).pop(); return v && v.next ? v.next : ""; }
+const STATUS_KEY = { active:"stActive", paused:"stPaused", closed:"stClosed" };
 
 /* ---------- lock screen ---------- */
 function applyLang(){
@@ -263,15 +304,17 @@ async function unlock(){
     if (!blob){
       if (pw.length < 8){ $("lock-msg").textContent = t("short"); return; }
       if (pw !== $("pw2").value){ $("lock-msg").textContent = t("nomatch"); return; }
-      SALT = crypto.getRandomValues(new Uint8Array(16)); KEY = await deriveKey(pw, SALT); DB = { patients: [] }; await persist();
+      SALT = crypto.getRandomValues(new Uint8Array(16)); KEY = await deriveKey(pw, SALT); DB = { patients: [], posts: [] }; await persist();
     } else {
-      const r = await unseal(pw, blob); KEY = r.key; SALT = r.salt; DB = r.data; if (!DB.patients) DB.patients = [];
+      const r = await unseal(pw, blob); KEY = r.key; SALT = r.salt; DB = r.data;
     }
+    if (!DB.patients) DB.patients = [];
+    if (!DB.posts) DB.posts = [];
   } catch(e){ $("lock-msg").textContent = t("wrong"); return; }
   $("pw").value = $("pw2").value = ""; $("lock").hidden = true; $("main").hidden = false; $("storewarn").hidden = storeOK;
-  curId = null; render(); bump();
+  curId = null; view = "patients"; render(); bump();
 }
-function lockNow(){ KEY = SALT = null; DB = { patients: [] }; curId = null; $("main").hidden = true; $("lock").hidden = false; $("detail").innerHTML = ""; $("plist").innerHTML = ""; applyLang(); clearTimeout(idle); }
+function lockNow(){ KEY = SALT = null; DB = { patients: [], posts: [] }; curId = null; view = "patients"; $("main").hidden = true; $("lock").hidden = false; $("detail").innerHTML = ""; $("plist").innerHTML = ""; applyLang(); clearTimeout(idle); }
 $("lock-go").onclick = unlock;
 ["pw","pw2"].forEach(i => $(i).addEventListener("keydown", e => { if (e.key === "Enter") unlock(); }));
 $("b-lock").onclick = lockNow;
@@ -280,19 +323,19 @@ function bump(){ clearTimeout(idle); if (KEY) idle = setTimeout(lockNow, 5 * 60 
 document.addEventListener("visibilitychange", () => { if (document.hidden && KEY) { clearTimeout(idle); idle = setTimeout(lockNow, 60 * 1000); } else bump(); });
 
 /* ---------- list + detail ---------- */
-function render(){ renderList(); renderDetail(); }
+function render(){ renderList(); if (view === "posts") renderPosts(); else renderDetail(); $("b-posts").setAttribute("aria-pressed", String(view === "posts")); }
 function renderList(){
   const q = $("q").value.trim().toLowerCase(), od = $("only-due").checked, td = today();
   let list = DB.patients.filter(p => (!q || (p.name + " " + (p.code || "")).toLowerCase().includes(q)) && (!od || (nextDue(p) && nextDue(p) <= td && p.status !== "closed")));
   list.sort((a, b) => (nextDue(a) || "9999") < (nextDue(b) || "9999") ? -1 : 1);
   $("plist").innerHTML = list.length ? list.map(p => {
     const nd = nextDue(p), late = nd && nd < td, soon = nd && nd >= td && nd <= new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10);
-    return `<button type="button" class="pi${p.id === curId ? " on" : ""}" data-id="${p.id}"><b>${esc(p.name)}</b>${p.code ? " · " + esc(p.code) : ""}<small>${esc(ageOf(p.dob))} ${esc(p.dx || "")}</small>${nd && p.status !== "closed" ? `<span class="due${late ? " late" : ""}">${late ? t("late") + " · " : (soon ? t("due") + " · " : "")}${esc(nd)}</span>` : ""}</button>`;
+    return `<button type="button" class="pi${p.id === curId && view === "patients" ? " on" : ""}" data-id="${p.id}"><b>${esc(p.name)}</b>${p.code ? " · " + esc(p.code) : ""}<small>${esc(ageOf(p.dob))} ${esc(p.dx || "")}</small>${nd && p.status !== "closed" ? `<span class="due${late ? " late" : ""}">${late ? t("late") + " · " : (soon ? t("due") + " · " : "")}${esc(nd)}</span>` : ""}</button>`;
   }).join("") : `<div class="empty">${t("noPatients")}</div>`;
-  $("plist").querySelectorAll(".pi").forEach(b => b.onclick = () => { curId = b.dataset.id; render(); });
+  $("plist").querySelectorAll(".pi").forEach(b => b.onclick = () => { curId = b.dataset.id; view = "patients"; render(); });
 }
 function chartSvg(vs){
-  const pts = vs.filter(v => +v.prog > 0).sort((a, b) => a.date < b.date ? -1 : 1);
+  const pts = vs.filter(v => +v.prog > 0);
   if (pts.length < 2) return "";
   const W = 560, H = 120, pad = 22, n = pts.length;
   const xy = pts.map((v, i) => [pad + (W - 2 * pad) * (i / (n - 1)), H - pad - (H - 2 * pad) * ((+v.prog - 1) / 4)]);
@@ -305,9 +348,9 @@ function chartSvg(vs){
 function renderDetail(){
   const box = $("detail"), p = DB.patients.find(x => x.id === curId);
   if (!p){ box.innerHTML = `<div class="box empty">${t("pickOne")}</div>`; return; }
-  const vs = (p.visits || []).slice().sort((a, b) => a.date < b.date ? 1 : -1);
+  const vs = sortVisits(p).reverse();
   const fld = (k, v) => v ? `<div><label>${t(k)}</label><div>${esc(v).replace(/\n/g, "<br>")}</div></div>` : "";
-  const st = { active:t("stActive"), paused:t("stPaused"), closed:t("stClosed") }[p.status || "active"];
+  const st = t(STATUS_KEY[p.status || "active"]);
   box.innerHTML = `
   <div class="box">
     <div class="row" style="justify-content:space-between"><h2 style="margin:0">${esc(p.name)}${p.code ? " · " + esc(p.code) : ""}</h2>
@@ -318,16 +361,46 @@ function renderDetail(){
   </div>
   <div class="box">
     <div class="row" style="justify-content:space-between"><h3 style="margin:0">${t("visits")} (${vs.length})</h3><button class="btn small primary noprint" type="button" id="d-addv">${t("addVisit")}</button></div>
-    ${chartSvg(vs)}
+    ${chartSvg(sortVisits(p))}
     ${vs.length ? `<div style="overflow:auto;margin-top:8px"><table class="v"><thead><tr><th>${t("cDate")}</th><th>${t("cType")}</th><th>${t("cProg")}</th><th>${t("cNotes")}</th><th>${t("cNext")}</th><th class="noprint"></th></tr></thead><tbody>${vs.map(v => `<tr>
       <td dir="ltr">${esc(v.date)}</td><td>${esc(T[LANG].types[v.type] || "")}</td><td>${+v.prog ? `<span class="prog">${v.prog}</span>` : ""}</td>
       <td>${esc(v.treat).replace(/\n/g, "<br>")}${v.prognote ? `<br><span class="note">${esc(v.prognote).replace(/\n/g, "<br>")}</span>` : ""}${v.meds ? `<br><span class="note">💊 ${esc(v.meds)}</span>` : ""}</td>
       <td dir="ltr">${esc(v.next)}</td><td class="noprint"><button class="btn small" type="button" data-ev="${v.id}">${t("edit")}</button></td></tr>`).join("")}</tbody></table></div>` : `<div class="empty">${t("noVisits")}</div>`}
   </div>`;
-  $("d-edit").onclick = () => openPatient(p); $("d-print").onclick = () => window.print(); $("d-addv").onclick = () => openVisit(p, null);
+  $("d-edit").onclick = () => openPatient(p); $("d-print").onclick = () => pdfExport([p]); $("d-addv").onclick = () => openVisit(p, null);
   box.querySelectorAll("[data-ev]").forEach(b => b.onclick = () => openVisit(p, (p.visits || []).find(v => v.id === b.dataset.ev)));
 }
+function renderPosts(){
+  const box = $("detail");
+  const ps = (DB.posts || []).slice().sort((a, b) => a.date < b.date ? 1 : -1);
+  box.innerHTML = `<div class="box">
+    <div class="row" style="justify-content:space-between"><h2 style="margin:0">${t("posts")}</h2><button class="btn small primary noprint" type="button" id="np">${t("newPost")}</button></div>
+    <p class="note">${t("postsNote")}</p>
+    ${ps.length ? ps.map(p => `<article class="post">
+      <div class="row" style="justify-content:space-between"><span class="tag">${esc(t("aud_" + p.aud))} · ${esc(p.lang === "en" ? "English" : "العربية")}</span><span class="note" dir="ltr">${esc(p.date)}</span></div>
+      <h3>${esc(p.title)}</h3><p style="white-space:pre-wrap">${esc(p.body)}</p>
+      <div class="row noprint"><button class="btn small" type="button" data-cp="${p.id}">${t("copy")}</button><button class="btn small" type="button" data-dl="${p.id}">${t("download")}</button><button class="btn small" type="button" data-dp="${p.id}">${t("delPost")}</button></div>
+    </article>`).join("") : `<div class="empty">${t("noPosts")}</div>`}
+  </div>`;
+  $("np").onclick = openPost;
+  const find = id => (DB.posts || []).find(x => x.id === id);
+  box.querySelectorAll("[data-cp]").forEach(b => b.onclick = async () => {
+    const p = find(b.dataset.cp); const txt = p.title + "\n\n" + p.body;
+    try { await navigator.clipboard.writeText(txt); b.textContent = t("copied"); } catch(e){ alert(txt); }
+  });
+  box.querySelectorAll("[data-dl]").forEach(b => b.onclick = () => {
+    const p = find(b.dataset.dl);
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["﻿" + p.title + "\n\n" + p.body], { type:"text/plain;charset=utf-8" }));
+    a.download = "post-" + p.date + ".txt"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+  box.querySelectorAll("[data-dp]").forEach(b => b.onclick = async () => {
+    if (!confirm(t("confirmDelPost"))) return;
+    DB.posts = DB.posts.filter(x => x.id !== b.dataset.dp); await persist(); render();
+  });
+}
 $("q").oninput = renderList; $("only-due").onchange = renderList;
+$("b-posts").onclick = () => { view = view === "posts" ? "patients" : "posts"; render(); };
 
 /* ---------- patient dialog ---------- */
 const PF = { name:"p-name", code:"p-code", dob:"p-dob", sex:"p-sex", guardian:"p-guardian", phone:"p-phone", school:"p-school", ref:"p-ref", first:"p-first", status:"p-status", dx:"p-dx", meds:"p-meds", allergy:"p-allergy", ess:"p-ess" };
@@ -344,7 +417,7 @@ $("fp").onsubmit = async e => {
   const o = editP || { id: uid(), visits: [] };
   Object.entries(PF).forEach(([k, id]) => o[k] = $(id).value.trim()); o.consent = $("p-consent").checked;
   if (!editP) DB.patients.push(o);
-  curId = o.id; await persist(); $("dp").close(); render();
+  curId = o.id; view = "patients"; await persist(); $("dp").close(); render();
 };
 $("dp-del").onclick = async () => { if (editP && confirm(t("confirmDelP"))){ DB.patients = DB.patients.filter(x => x !== editP); curId = null; await persist(); $("dp").close(); render(); } };
 
@@ -369,6 +442,120 @@ $("fv").onsubmit = async e => {
 };
 $("dv-del").onclick = async () => { if (editV && confirm(t("confirmDelV"))){ visitP.visits = visitP.visits.filter(x => x !== editV); await persist(); $("dv").close(); render(); } };
 
+/* ---------- daily posts dialog ---------- */
+function openPost(){
+  $("po-date").value = today(); $("po-aud").value = "parents"; $("po-lang").value = LANG; $("po-title").value = ""; $("po-body").value = ""; $("dpo").showModal();
+}
+$("dpo-cancel").onclick = () => $("dpo").close();
+$("fpo").onsubmit = async e => {
+  e.preventDefault();
+  const title = $("po-title").value.trim(), body = $("po-body").value.trim();
+  if (!title || !body) return;
+  DB.posts = DB.posts || [];
+  DB.posts.push({ id: uid(), date: $("po-date").value || today(), aud: $("po-aud").value, lang: $("po-lang").value, title, body });
+  await persist(); $("dpo").close(); view = "posts"; render();
+};
+
+/* ---------- exports ---------- */
+const LIBS = { xlsx:"/assets/vendor/xlsx.full.min.js", pdf:"/assets/vendor/pdf.min.js", pdfw:"/assets/vendor/pdf.worker.min.js" };
+const loaded = {};
+function lib(url){
+  if (loaded[url]) return loaded[url];
+  return loaded[url] = new Promise((ok, no) => { const s = document.createElement("script"); s.src = url; s.onload = ok; s.onerror = () => { delete loaded[url]; no(new Error("load")); }; document.head.appendChild(s); });
+}
+function pdfExport(list){
+  if (!list.length) return;
+  const w = window.open("", "_blank");
+  if (!w){ alert(t("popup")); return; }
+  const L = LANG, row = (k, v) => v ? `<tr><th>${esc(t(k))}</th><td>${esc(v).replace(/\n/g, "<br>")}</td></tr>` : "";
+  const sec = p => `<section class="pt"><h2>${esc(p.name)}${p.code ? " · " + esc(p.code) : ""}</h2>
+    <table>${row("fDob", p.dob)}${row("fSex", p.sex === "F" ? t("female") : p.sex === "M" ? t("male") : "")}${row("fGuardian", p.guardian)}${row("fPhone", p.phone)}${row("fSchool", p.school)}${row("fRef", p.ref)}${row("fFirst", p.first)}${row("fStatus", t(STATUS_KEY[p.status || "active"]))}${row("fDx", p.dx)}${row("fMeds", p.meds)}${row("fAllergy", p.allergy)}${row("fEssential", p.ess)}</table>
+    <h3>${t("visits")}</h3>
+    ${(p.visits || []).length ? `<table class="v"><thead><tr><th>${t("cDate")}</th><th>${t("cType")}</th><th>${t("cProg")}</th><th>${t("cNotes")}</th><th>${t("cNext")}</th></tr></thead><tbody>${sortVisits(p).map(v => `<tr><td>${esc(v.date)}</td><td>${esc(T[L].types[v.type] || "")}</td><td>${+v.prog ? v.prog : ""}</td><td>${esc(v.treat)}${v.prognote ? "<br><i>" + esc(v.prognote) + "</i>" : ""}${v.meds ? "<br>💊 " + esc(v.meds) : ""}</td><td>${esc(v.next)}</td></tr>`).join("")}</tbody></table>` : `<p>${t("noVisits")}</p>`}
+  </section>`;
+  w.document.write(`<!doctype html><html lang="${L}" dir="${L === "en" ? "ltr" : "rtl"}"><head><meta charset="utf-8"><title>${esc(t("title"))}</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap">
+  <style>body{font-family:Vazirmatn,Tahoma,Arial,sans-serif;color:#25364A;padding:24px;font-size:13px}h1{font-size:18px}h2{font-size:16px;margin:0 0 6px;border-bottom:2px solid #3F729B;padding-bottom:4px}h3{font-size:14px;margin:12px 0 4px}table{width:100%;border-collapse:collapse;margin-bottom:8px}th,td{border:1px solid #cfdbe6;padding:5px 7px;text-align:start;vertical-align:top}th{background:#E4F0FA;width:22%}table.v th{width:auto}.pt{break-inside:avoid;margin-bottom:22px}.conf{color:#566B81;font-size:11px}</style></head>
+  <body><h1>${esc(t("title"))}</h1><p class="conf">${esc(t("confPdf"))} · ${today()}</p>${list.map(sec).join("")}
+  <script>window.onload=function(){setTimeout(function(){window.print();},300);};<\/script></body></html>`);
+  w.document.close();
+}
+async function xlsxExport(list){
+  try { await lib(LIBS.xlsx); } catch(e){ alert(t("libErr")); return; }
+  const X = window.XLSX;
+  const pr = list.map(p => ({ [t("fName")]: p.name, [t("fCode")]: p.code || "", [t("fDob")]: p.dob || "", [t("fSex")]: p.sex === "F" ? t("female") : p.sex === "M" ? t("male") : "",
+    [t("fGuardian")]: p.guardian || "", [t("fPhone")]: p.phone || "", [t("fSchool")]: p.school || "", [t("fRef")]: p.ref || "", [t("fFirst")]: p.first || "",
+    [t("fStatus")]: t(STATUS_KEY[p.status || "active"]), [t("fDx")]: p.dx || "", [t("fMeds")]: p.meds || "", [t("fAllergy")]: p.allergy || "", [t("fEssential")]: p.ess || "", [t("fConsent")]: p.consent ? "✓" : "" }));
+  const vr = [];
+  list.forEach(p => sortVisits(p).forEach(v => vr.push({ [t("fName")]: p.name, [t("fCode")]: p.code || "", [t("cDate")]: v.date, [t("cType")]: T[LANG].types[v.type] || "",
+    [t("cProg")]: +v.prog || "", [t("vTreatH")]: v.treat || "", [t("vProgNote")]: v.prognote || "", [t("vMeds")]: v.meds || "", [t("cNext")]: v.next || "" })));
+  const wb = X.utils.book_new();
+  X.utils.book_append_sheet(wb, X.utils.json_to_sheet(pr), t("sheetP"));
+  X.utils.book_append_sheet(wb, X.utils.json_to_sheet(vr.length ? vr : [{ [t("fName")]: "" }]), t("sheetV"));
+  X.writeFile(wb, "case-sheets-" + today() + ".xlsx");
+}
+$("b-xlsx").onclick = () => { if (confirm(t("xlsxWarn"))) xlsxExport(DB.patients); };
+$("b-pdf").onclick = () => pdfExport(DB.patients);
+
+/* ---------- import names (Excel / CSV / PDF) ---------- */
+const HDR = /^(name|full name|patient|الاسم|اسم|ناو|ناوی|نام)$/i;
+function parseLine(s){
+  s = s.replace(/\s+/g, " ").trim();
+  let code = "";
+  if (s.includes("|")){ const parts = s.split("|").map(x => x.trim()).filter(Boolean); s = parts[0] || ""; code = parts[1] || ""; }
+  s = s.replace(/^\d+\s*[.)\-–:]\s*/, "").replace(/(\s+[\d٠-٩\/\-.:]+)+$/, "").trim();
+  if (!s || s.length < 2 || s.length > 80 || !/\p{L}/u.test(s) || HDR.test(s)) return null;
+  if (code.length > 20) code = "";
+  return { name: s, code };
+}
+async function readCandidates(file){
+  const ext = file.name.split(".").pop().toLowerCase(), out = [];
+  if (ext === "pdf"){
+    await lib(LIBS.pdf);
+    const pdfjs = window.pdfjsLib; pdfjs.GlobalWorkerOptions.workerSrc = LIBS.pdfw;
+    const doc = await pdfjs.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
+    for (let i = 1; i <= doc.numPages; i++){
+      const c = await (await doc.getPage(i)).getTextContent();
+      const rows = new Map();
+      c.items.forEach(it => { if (!it.str.trim()) return; const y = Math.round(it.transform[5] / 3); if (!rows.has(y)) rows.set(y, []); rows.get(y).push(it.str); });
+      [...rows.keys()].sort((a, b) => b - a).forEach(y => { const r = parseLine(rows.get(y).join(" ")); if (r) out.push(r); });
+    }
+  } else {
+    await lib(LIBS.xlsx);
+    const X = window.XLSX, wb = X.read(await file.arrayBuffer(), { type:"array" });
+    wb.SheetNames.forEach(sn => X.utils.sheet_to_json(wb.Sheets[sn], { header:1, defval:"" }).forEach(r => {
+      const cells = r.map(c => String(c).trim()).filter(Boolean); if (!cells.length) return;
+      const x = parseLine(cells.join(" | ")); if (x) out.push(x);
+    }));
+  }
+  return out;
+}
+let impItems = [];
+function drawImp(){
+  $("imp-msg").textContent = impItems.length ? "" : t("impNone");
+  $("imp-list").innerHTML = impItems.map((c, i) => `<label class="imp-row"><input type="checkbox" checked data-idx="${i}" aria-label="select"><input type="text" value="${esc(c.name)}" data-nm="${i}" aria-label="name"><span class="note" dir="ltr">${esc(c.code)}</span></label>`).join("");
+  $("imp-add").hidden = !impItems.length;
+}
+$("b-impn").onclick = () => { impItems = []; $("imp-list").innerHTML = ""; $("imp-msg").textContent = t("impHint"); $("imp-add").hidden = true; $("di").showModal(); };
+$("imp-pick").onclick = () => $("imp-file").click();
+$("imp-cancel").onclick = () => $("di").close();
+$("imp-file").onchange = async e => {
+  const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+  $("imp-msg").textContent = "…";
+  try { impItems = await readCandidates(f); drawImp(); }
+  catch(err){ impItems = []; drawImp(); $("imp-msg").textContent = t("libErr"); }
+};
+$("imp-add").onclick = async () => {
+  let n = 0;
+  $("imp-list").querySelectorAll("input[type=checkbox]").forEach(cb => {
+    if (!cb.checked) return;
+    const i = +cb.dataset.idx, name = $("imp-list").querySelector(`input[data-nm="${i}"]`).value.trim();
+    if (!name || DB.patients.some(p => p.name.toLowerCase() === name.toLowerCase())) return;
+    DB.patients.push({ id: uid(), name, code: impItems[i].code || "", status: "active", consent: false, visits: [], first: "" }); n++;
+  });
+  await persist(); $("di").close(); view = "patients"; render(); alert(t("impDone").replace("{n}", n));
+};
+
 /* ---------- backup / restore / change passphrase ---------- */
 $("b-export").onclick = async () => {
   const blob = await seal(KEY, SALT, DB);
@@ -382,7 +569,7 @@ $("f-import").onchange = async e => {
     const blob = JSON.parse(await f.text()); const pw = prompt(t("impPw")); if (pw == null) return;
     const r = await unseal(pw, blob);
     if (!confirm(t("impConfirm"))) return;
-    KEY = r.key; SALT = r.salt; DB = r.data; await persist(); curId = null; render(); alert(t("imported"));
+    KEY = r.key; SALT = r.salt; DB = r.data; if (!DB.posts) DB.posts = []; await persist(); curId = null; view = "patients"; render(); alert(t("imported"));
   } catch(err){ alert(t("badfile")); }
 };
 $("b-pw").onclick = async () => {
