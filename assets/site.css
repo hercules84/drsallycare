@@ -404,3 +404,9 @@ header.site{background:linear-gradient(180deg,color-mix(in srgb,#E4F1FB 85%,tran
 .stars{min-height:1.6em}.stars:not(:empty){animation:pop .35s ease-out}
 .breath{background:radial-gradient(circle at 35% 30%,#fff,#BBDCF4 45%,var(--c))}
 @media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none}.hero::before,.hero::after,.cta::before,.hero-photo,.fab,.brand-mark{animation:none}}
+
+/* hero photo rotation */
+.hero-photo{position:relative}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:0;transition:opacity 1.4s ease}
+.hero-photo img.on{opacity:1}
+.hero-photo img:first-child{position:relative}
