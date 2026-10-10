@@ -18,3 +18,15 @@ Public since 2026-10-07 (indexable, sitemap at /sitemap.xml).
 - Specialty and registration number (hidden until confirmed); her title currently reads "physician in child & adolescent mental health".
 - Kurdish review; long topic content shows Arabic with a note in the Kurdish view.
 - Bump the `?v=` number on asset links in every page after changing CSS/JS.
+
+## Stories database (visitor experiences)
+
+Visitors post at /stories/. Posts are stored as "pending" and shown only after Dr. Sally approves them.
+
+One-time setup on Cloudflare (Pages project):
+1. Create a D1 database (for example `drsally-stories`) and run `migrations/0001_stories.sql` against it.
+2. Pages → Settings → Bindings: add a **D1 database** binding named `DB` pointing to that database.
+3. Settings → Environment variables: `CASES_PASSWORD` (access code for staff pages) and optionally `IP_SALT` (any random text, used to hash visitor IPs for rate limiting).
+4. Approval page (access code required): https://drsallycare.com/private-254f50cabe4785fd/stories.html
+
+Routes: `GET/POST /api/stories` (public), `/api/admin/*` (access code). Nothing is published automatically.

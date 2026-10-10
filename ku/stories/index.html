@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تجارب الأهالي | د. سالي رزقو</title>
+<link rel="canonical" href="https://drsallycare.com/ku/stories/">
+<!--hreflang--><link rel="alternate" hreflang="ar" href="https://drsallycare.com/stories/">
+<link rel="alternate" hreflang="ku" href="https://drsallycare.com/ku/stories/">
+<link rel="alternate" hreflang="en" href="https://drsallycare.com/en/stories/">
+<link rel="alternate" hreflang="x-default" href="https://drsallycare.com/stories/">
+<!--/hreflang-->
+<meta name="description" content="Experiences of other families and what has helped. Published after review, without identifying details.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Sally R. Mekha">
+<meta property="og:title" content="تجارب الأهالي | د. سالي رزقو">
+<meta property="og:description" content="Experiences of other families and what has helped. Published after review, without identifying details.">
+<meta property="og:url" content="https://drsallycare.com/ku/stories/">
+<meta name="theme-color" content="#3F729B">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=28">
+</head>
+<body>
+<main id="main" class="wrap">
+  <section style="padding-top:24px">
+    <span class="eyebrow" data-i18n="sTitle"></span>
+    <h1 data-i18n="sTitle"></h1>
+    <p class="lead" data-i18n="sLead"></p>
+    <div class="stories-list" id="stories-list"><p class="small-note">…</p></div>
+  </section>
+  <section id="share">
+    <span class="eyebrow" data-i18n="shEyebrow"></span>
+    <h2 data-i18n="shTitle"></h2>
+    <p class="lead" data-i18n="shLead"></p>
+    <form class="card share-form" id="share-form" onsubmit="return false">
+      <label for="sh-name" data-i18n="shName"></label>
+      <input type="text" id="sh-name" name="name" maxlength="60" autocomplete="given-name">
+      <label for="sh-age" data-i18n="shAge"></label>
+      <select id="sh-age" name="age">
+        <option value="" data-i18n="shA0"></option>
+        <option value="under3" data-i18n="shA1"></option><option value="3-6" data-i18n="shA2"></option><option value="7-12" data-i18n="shA3"></option><option value="13-18" data-i18n="shA4"></option><option value="over18" data-i18n="shA5"></option><option value="private" data-i18n="shA6"></option>
+      </select>
+      <label for="sh-text" data-i18n="shText"></label>
+      <textarea id="sh-text" name="text" rows="6" minlength="20" maxlength="2000" required data-i18n-ph="shTextPh"></textarea>
+      <label class="share-consent"><input type="checkbox" id="sh-anon" name="anon"> <span data-i18n="shAnon"></span></label>
+      <label class="share-consent"><input type="checkbox" id="sh-consent" name="consent"> <span data-i18n="shConsent"></span></label>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+      <p class="small-note" data-i18n="shNote"></p>
+      <p class="share-err" id="share-err" role="alert" hidden></p>
+      <p class="share-ok" id="share-ok" role="status" hidden></p>
+      <p class="share-emerg" data-i18n="shEmerg"></p>
+      <div class="btns"><button type="button" class="btn primary" id="share-send"><span data-i18n="shSend"></span></button></div>
+    </form>
+  </section>
+</main>
+<script>window.PAGE={id:"stories",t:{"ar": {"pageTitle": "تجارب الأهالي | د. سالي رزقو", "sTitle": "تجارب الأهالي", "sLead": "تجارب أهالٍ آخرين مع أطفالهم، وصعوبات قد تشبه ما تمرّون به، وما ساعدهم. تُنشر النصوص بعد مراجعة الدكتورة، دون أسماء أو تفاصيل تعرّف بصاحبها.", "sEmpty": "لا توجد تجارب منشورة بعد.", "sLoadErr": "تعذّر تحميل التجارب الآن. حاولوا لاحقًا.", "sAnonLabel": "مجهول", "sAgeLabel": "عمر الطفل:", "shEyebrow": "شاركونا", "shTitle": "اكتبوا تجربتكم", "shLead": "ما تكتبونه يُراجَع من الدكتورة قبل النشر، ولا يظهر على الموقع إلا بعد موافقتها.", "shName": "اسمكم (اختياري)", "shAge": "عمر الطفل", "shA0": "اختر", "shA1": "أقل من 3 سنوات", "shA2": "من 3 إلى 6 سنوات", "shA3": "من 7 إلى 12 سنة", "shA4": "من 13 إلى 18 سنة", "shA5": "أكبر من 18 سنة", "shA6": "أفضّل عدم الذكر", "shText": "اكتبوا تجربتكم أو ما تعانونه مع طفلكم", "shTextPh": "مثلًا: ما الذي تلاحظونه؟ وما الذي جرّبتموه؟ وكيف تشعرون؟", "shAnon": "أرغب في إخفاء هويتي: لن يظهر اسمي ولا عمر طفلي مع التجربة", "shConsent": "أوافق على نشر ما أكتبه على الموقع بعد مراجعته، دون أي بيانات تعرّف بي.", "shNote": "لا نعرض رقم هاتفكم أو بياناتكم الشخصية. تُحفظ التجربة للمراجعة فقط.", "shSend": "أرسل التجربة", "shErr": "اكتبوا تجربتكم في سطرين على الأقل، ووافقوا على النشر لإرسالها.", "shOk": "شكرًا. استلمنا تجربتكم وستُنشر بعد المراجعة.", "shLimit": "أرسلتم عدة تجارب قبل قليل. حاولوا بعد ساعة.", "shFail": "تعذّر الإرسال الآن، حاولوا لاحقًا.", "shEmerg": "إذا كان طفلكم في خطر الآن، لا تنتظروا النشر أو الرد: اتصلوا بالطوارئ أو توجّهوا إلى أقرب مستشفى.", "shCta": "اقرأ التجارب وشارك تجربتك"}, "ku": {"pageTitle": "ئەزموونێن دایکان و باڤان | د. سالی ڕزقۆ", "sTitle": "ئەزموونێن دایک و باڤان", "sLead": "ئەزموونێن باڤان و دایکێن دی ل گەل زارۆکێن خۆ، و زەحمەتیێن ئەوا دبیت وەکی ئەوا هوین دبۆرن بن، و ئەوا ئالیکاریا وان کریە. دەق ب دویڤ پێداچوونا دکتۆرێ دهێنە بڵاوکرن، بێ ناڤ و زانیاریێن نیاسینێ.", "sEmpty": "هێشتا ئەزموون نەهاتینە بڵاوکرن.", "sLoadErr": "نەشیا ئەزموون نوکە بێنە بارکرن. دووبارە هەوڵ بدەن.", "sAnonLabel": "نەناسراو", "sAgeLabel": "تەمەنێ زارۆکی:", "shEyebrow": "بەشداری بکەن", "shTitle": "ئەزموونا خۆ بنڤیسن", "shLead": "ئەوا هوین دنڤیسن بەری بڵاوکرنێ ژ لایێ دکتۆرێ ڤە دهێتە پێداچوون، و تەنێ پشتی رەزامەندیا وێ ل ماڵپەڕی دیار دبیت.", "shName": "ناڤێ تە (نە پێدڤی)", "shAge": "تەمەنێ زارۆکی", "shA0": "هەلبژێرە", "shA1": "ژ ٣ سالان کێمتر", "shA2": "ژ ٣ هەتا ٦ سال", "shA3": "ژ ٧ هەتا ١٢ سال", "shA4": "ژ ١٣ هەتا ١٨ سال", "shA5": "ژ ١٨ سالان زێدەتر", "shA6": "ئەز ناخوازم ئاماژە بکەم", "shText": "ئەزموونا خۆ یان ئەوا تو ل گەل زارۆکێ خۆ دبینی بنڤیسە", "shTextPh": "بۆ نموونە: تو چی دبینی؟ چی تاقی کرییە؟ چاوا هەست دکەی؟", "shAnon": "ئەز دخوازم ناسنامەیا خۆ شارم: ناڤ و تەمەنێ زارۆکێ من ل گەل ئەزموونێ ناهێنە نیشاندان", "shConsent": "ئەز رازیمە کو ئەوا ئەز دنڤیسم ل ماڵپەڕی بهێتە بڵاوکرن پشتی پێداچوونێ، بێ چ زانیاریێن نیاسینێ.", "shNote": "ژمارا تەلەفونا تە یان زانیاریێن تە یێن کەسی نیشان نادین. ئەزموون تەنێ بۆ پێداچوونێ دهێتە پاراستن.", "shSend": "ئەزموونێ بنێرە", "shErr": "ئەزموونا خۆ ب کێمترین دوو دێران بنڤیسن، و رەزامەندیێ بدەن.", "shOk": "سوپاس. مە ئەزموونا تە وەرگرت و پشتی پێداچوونێ دێ بهێتە بڵاوکرن.", "shLimit": "چەند ئەزموون بەری هندەک هاتینە ناردن. پشتی سەعەتەکێ هەوڵ بدەن.", "shFail": "نەشیا بهێتە ناردن نوکە. دووبارە هەوڵ بدەن.", "shEmerg": "ئەگەر زارۆکێ هوین نوکە د مەترسیدا یە، چاوەڕێ بڵاوکرن یان وەلامێ نەکەن: پەیوەندی ب فریاکەفتنێ بکەن یان بچنە نێزیکترین نەخۆشخانە.", "shCta": "ئەزموونان بخوێنە و ئەزموونا خۆ بنڤیسە"}, "en": {"pageTitle": "Families' experiences | Dr. Sally R. Mekha", "sTitle": "Families' experiences", "sLead": "Experiences of other families with their children: difficulties that may resemble yours, and what has helped. Stories are published after Dr. Sally reviews them, without names or details that identify the writer.", "sEmpty": "No stories have been published yet.", "sLoadErr": "Stories could not be loaded right now. Please try again later.", "sAnonLabel": "Anonymous", "sAgeLabel": "Child's age:", "shEyebrow": "Share with us", "shTitle": "Write your experience", "shLead": "Dr. Sally reviews what you write before it is published. It appears on the site only after she approves it.", "shName": "Your name (optional)", "shAge": "Child's age", "shA0": "Choose", "shA1": "Under 3 years", "shA2": "3 to 6 years", "shA3": "7 to 12 years", "shA4": "13 to 18 years", "shA5": "Over 18", "shA6": "Prefer not to say", "shText": "Write about your experience or what you are struggling with", "shTextPh": "For example: what have you noticed? What have you tried? How are you feeling?", "shAnon": "Keep my identity hidden: my name and my child's age will not appear with my experience", "shConsent": "I agree that what I write may be published on the site after review, with no details that identify me.", "shNote": "We do not show your phone number or personal details. Your story is kept only for review.", "shSend": "Send my story", "shErr": "Please write at least two lines and agree to publication before sending.", "shOk": "Thank you. We have received your story and it will be published after review.", "shLimit": "You have sent several stories recently. Please try again in an hour.", "shFail": "Sending failed right now. Please try again later.", "shEmerg": "If your child is in danger right now, do not wait for publication or a reply: call emergency services or go to the nearest hospital.", "shCta": "Read stories and share yours"}}};</script>
+<!--lang--><script>window.SITE_LANG="ku";window.LOC=function(p){return "/ku"+p};</script>
+<!--/lang--><script src="/assets/site.js?v=28"></script>
+<script src="/assets/share.js?v=28"></script>
+</body>
+</html>

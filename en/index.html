@@ -21,7 +21,7 @@
 <link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=27">
+<link rel="stylesheet" href="/assets/site.css?v=28">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Sally Rizqo","alternateName":"د. سالي رزقو","url":"https://drsallycare.com/","telephone":"+9647738919655","availableLanguage":["Arabic","Kurdish","English"],"areaServed":["Duhok","Kurdistan Region of Iraq","Online"],"description":"Online consultations and guides for children's and teenagers' emotional wellbeing: autism, ADHD, learning difficulties and adolescence."}</script>
 </head>
 <body>
@@ -162,23 +162,7 @@
     <span class="eyebrow" data-i18n="shEyebrow"></span>
     <h2 data-i18n="shTitle"></h2>
     <p class="lead" data-i18n="shLead"></p>
-    <form class="card share-form" id="share-form" onsubmit="return false">
-      <label for="sh-name" data-i18n="shName"></label>
-      <input type="text" id="sh-name" name="name" maxlength="60" autocomplete="given-name">
-      <label for="sh-age" data-i18n="shAge"></label>
-      <select id="sh-age" name="age">
-        <option value="" data-i18n="shA0"></option>
-        <option data-i18n="shA1"></option><option data-i18n="shA2"></option><option data-i18n="shA3"></option><option data-i18n="shA4"></option><option data-i18n="shA5"></option><option data-i18n="shA6"></option>
-      </select>
-      <label for="sh-text" data-i18n="shText"></label>
-      <textarea id="sh-text" name="text" rows="6" minlength="20" maxlength="2000" required></textarea>
-      <label class="share-consent"><input type="checkbox" id="sh-anon" name="anon"> <span data-i18n="shAnon"></span></label>
-      <label class="share-consent"><input type="checkbox" id="sh-consent" name="consent"> <span data-i18n="shConsent"></span></label>
-      <p class="small-note" data-i18n="shNote"></p>
-      <p class="share-err" id="share-err" role="alert" hidden></p>
-      <p class="share-emerg" data-i18n="shEmerg"></p>
-      <div class="btns"><button type="button" class="btn primary" id="share-send"><span data-i18n="shSend"></span></button></div>
-    </form>
+    <div class="btns"><a class="btn primary" href="/en/stories/" data-i18n="shCta"></a></div>
   </section>
 
   <section id="community">
@@ -235,7 +219,8 @@ ar:{
  how2:"اختاروا الموعد", how2p:"نؤكد معكم الوقت المناسب بتوقيت العراق.",
  how3:"استشارة فيديو", how3p:"جلسة خاصة، ثم خطة واضحة للخطوات التالية.",
  aboutEyebrow:"عن الدكتورة",
- shEyebrow:"شاركونا", shTitle:"شارك تجربة طفلك أو معاناتك معنا", shLead:"كتابة تجربتك تساعدنا على فهم ما تمرّون به. ما تكتبونه يُرسل إلى الدكتورة سالي بشكل خاص عبر واتساب، ولا يُنشر على الموقع.", shName:"اسمك (اختياري)", shAge:"عمر الطفل", shA0:"اختر", shA1:"أقل من 3 سنوات", shA2:"من 3 إلى 6 سنوات", shA3:"من 7 إلى 12 سنة", shA4:"من 13 إلى 18 سنة", shA5:"أكبر من 18 سنة", shA6:"أفضّل عدم الذكر", shText:"اكتب تجربتك أو ما تعانيه مع طفلك", shTextPh:"مثلًا: ما الذي تلاحظونه؟ وما الذي جرّبتموه؟ وكيف تشعرون؟", shAnon:"أرغب في إخفاء هويتي: لن يظهر اسمي ولا عمر طفلي مع التجربة", shMsgAnon:"مشاركة مجهولة من موقع الدكتورة سالي", shConsent:"أفهم أن ما أكتبه سيُرسل بشكل خاص إلى الدكتورة سالي، ولن يُنشر دون موافقتي الكتابية.", shSend:"أرسل بشكل خاص عبر واتساب", shErr:"اكتبوا تجربتكم في سطرين على الأقل، ووافقوا على الشروط لإرسالها.", shMsgHead:"مشاركة من موقع الدكتورة سالي", shEmerg:"إذا كان طفلكم في خطر الآن، لا تنتظروا الرسالة: اتصلوا بالطوارئ أو توجّهوا إلى أقرب مستشفى.", shNote:"لا نحفظ ما تكتبونه على الموقع.",
+ shCta:"اقرأ التجارب وشارك تجربتك",
+ shEyebrow:"شاركونا", shTitle:"شارك تجربة طفلك أو معاناتك معنا", shLead:"ما تكتبونه يُراجَع من الدكتورة قبل النشر، ولا يظهر على الموقع إلا بعد موافقتها.", shName:"اسمك (اختياري)", shAge:"عمر الطفل", shA0:"اختر", shA1:"أقل من 3 سنوات", shA2:"من 3 إلى 6 سنوات", shA3:"من 7 إلى 12 سنة", shA4:"من 13 إلى 18 سنة", shA5:"أكبر من 18 سنة", shA6:"أفضّل عدم الذكر", shText:"اكتب تجربتك أو ما تعانيه مع طفلك", shTextPh:"مثلًا: ما الذي تلاحظونه؟ وما الذي جرّبتموه؟ وكيف تشعرون؟", shAnon:"أرغب في إخفاء هويتي: لن يظهر اسمي ولا عمر طفلي مع التجربة", shMsgAnon:"مشاركة مجهولة من موقع الدكتورة سالي", shConsent:"أفهم أن ما أكتبه سيُرسل بشكل خاص إلى الدكتورة سالي، ولن يُنشر دون موافقتي الكتابية.", shSend:"أرسل بشكل خاص عبر واتساب", shErr:"اكتبوا تجربتكم في سطرين على الأقل، ووافقوا على الشروط لإرسالها.", shMsgHead:"مشاركة من موقع الدكتورة سالي", shEmerg:"إذا كان طفلكم في خطر الآن، لا تنتظروا الرسالة: اتصلوا بالطوارئ أو توجّهوا إلى أقرب مستشفى.", shNote:"لا نحفظ ما تكتبونه على الموقع.",
  evEyebrow:"الأحداث والمشاركات", evTitle:"من نشاطات الدكتورة والمركز", evLead:"منشورات من صفحة مركز الصحة النفسية في دهوك، بالتواريخ كما وردت فيها.", evList:"<ul><li><b>تعيينها مديرة لمركز صحة الطفل والمراهق النفسية</b>: منشور يهنئ الدكتورة سالي رزقو بتولّي منصب المديرة. التاريخ غير مذكور في النص المرئي.</li><li><b>معرض رعاية الصحة النفسية</b>، الجامعة الأمريكية في دهوك، 27–28 نيسان 2024: شاركت كوادر المركز بحضور وزير الصحة ورؤساء الجامعات.</li><li><b>اليوم العالمي للصحة النفسية</b>، دهوك: فعالية بحضور وزير الصحة ومسؤولين محليين، منشورة في 31 تشرين الأول 2024.</li><li><b>المؤتمر العلمي الأول لنقابة الأطباء في دهوك</b>، 11–12 أيار 2023: شاركت كوادر المركز في المؤتمر.</li></ul>", evSrc:"المصدر: منشورات صفحة مركز الصحة النفسية في دهوك على فيسبوك.",
  aboutP:"تخرجت الدكتورة سالي في كلية الطب، جامعة الموصل (طب نينوى) عام 2009، وبدأت ممارسة الطب النفسي عام 2017. تعمل منذ عام 2021 مديرةً لمركز نفسية الطفل في دهوك، وقد قابلت وعالجت أكثر من 2000 حالة من التوحد وفرط الحركة وتشتت الانتباه وصعوبات التعلم ومشكلات المراهقة. أدارت عددًا من الدورات التدريبية، وشاركت مع منظمات المجتمع المدني في زيارات لمخيمات المهجّرين والنازحين.",
  sCases:"حالة قابلتها وعالجتها: توحد، فرط حركة، صعوبات تعلم، ومراهقة", sSince:"بداية ممارسة الطب النفسي", sCenter:"مديرة مركز نفسية الطفل في دهوك",
@@ -300,7 +285,8 @@ ku:{
  how2:"دەمێ هەلبژێرە", how2p:"دەمێ گونجای ب دەمژمێرا عێراقێ پشتڕاست دکەین.",
  how3:"شێوەرا ڤیدیۆیی", how3p:"دانیشتنەکا تایبەت، پاشی پلانەکا ئاشکرا.",
  aboutEyebrow:"دەربارەی دکتۆرێ",
- shEyebrow:"بەشداری بکەن", shTitle:"ئەزموونا زارۆکێ خۆ یان زەحمەتیا خۆ ل گەل مە پارڤە بکەن", shLead:"نڤیسینا ئەزموونا ئێکێ دبیت مە ئارمانجێ هەلبگریت کا هوین چ دبۆرن. ئەوا هوین دنڤیسن ب تایبەتی ب واتسئاپێ بۆ دکتۆرە سالی دهێتە ناردن، و ل سەر ماڵپەڕی نەهێتە بڵاڤکرن.", shName:"ناڤێ تە (نە پێدڤی)", shAge:"تەمەنێ زارۆکی", shA0:"هەلبژێرە", shA1:"ژ ٣ سالان کێمتر", shA2:"ژ ٣ هەتا ٦ سال", shA3:"ژ ٧ هەتا ١٢ سال", shA4:"ژ ١٣ هەتا ١٨ سال", shA5:"ژ ١٨ سالان زێدەتر", shA6:"ئەز ناخوازم ئاماژە بکەم", shText:"ئەزموونا خۆ یان ئەوا تو ل گەل زارۆکێ خۆ دبینی بنڤیسە", shTextPh:"بۆ نموونە: تو چی دبینی؟ چی تاقی کریە؟ چاوا هەست دکەی؟", shAnon:"ئەز دخوازم ناسنامەیا خۆ شارم: ناڤ و تەمەنێ زارۆکێ من ل گەل ئەزموونێ ناهێنە نیشاندان", shMsgAnon:"بەشداریا نەناسراو ژ ماڵپەڕێ دکتۆرە سالی", shConsent:"ئەز وێ دبینم کو ئەوا ئەز دنڤیسم ب تایبەتی بۆ دکتۆرە سالی دێ هێتە ناردن، و بێ رەزامەندیا من دێ نەهێتە بڵاوکرن.", shSend:"ب تایبەتی ب واتسئاپێ بنێرە", shErr:"ئەزموونا خۆ ب کێمترین دوو دێران بنڤیسن و رەزامەندیێ بدەن.", shMsgHead:"بەشداری ژ ماڵپەڕێ دکتۆرە سالی", shEmerg:"ئەگەر زارۆکێ هوین نوکە د مەترسیدا یە، چاوەڕێ نەکەن: پەیوەندی ب فریاکەفتنێ بکەن یان بچنە نێزیکترین نەخۆشخانە.", shNote:"ئەوا هوین لێرە دنڤیسن ل سەر ماڵپەڕی نایێنە پاراستن.",
+ shCta:"ئەزموونان بخوێنە و ئەزموونا خۆ بنڤیسە",
+ shEyebrow:"بەشداری بکەن", shTitle:"ئەزموونا زارۆکێ خۆ یان زەحمەتیا خۆ ل گەل مە پارڤە بکەن", shLead:"ئەوا هوین دنڤیسن بەری بڵاوکرنێ ژ لایێ دکتۆرێ ڤە دهێتە پێداچوون، و تەنێ پشتی رەزامەندیا وێ ل ماڵپەڕی دیار دبیت.", shName:"ناڤێ تە (نە پێدڤی)", shAge:"تەمەنێ زارۆکی", shA0:"هەلبژێرە", shA1:"ژ ٣ سالان کێمتر", shA2:"ژ ٣ هەتا ٦ سال", shA3:"ژ ٧ هەتا ١٢ سال", shA4:"ژ ١٣ هەتا ١٨ سال", shA5:"ژ ١٨ سالان زێدەتر", shA6:"ئەز ناخوازم ئاماژە بکەم", shText:"ئەزموونا خۆ یان ئەوا تو ل گەل زارۆکێ خۆ دبینی بنڤیسە", shTextPh:"بۆ نموونە: تو چی دبینی؟ چی تاقی کریە؟ چاوا هەست دکەی؟", shAnon:"ئەز دخوازم ناسنامەیا خۆ شارم: ناڤ و تەمەنێ زارۆکێ من ل گەل ئەزموونێ ناهێنە نیشاندان", shMsgAnon:"بەشداریا نەناسراو ژ ماڵپەڕێ دکتۆرە سالی", shConsent:"ئەز وێ دبینم کو ئەوا ئەز دنڤیسم ب تایبەتی بۆ دکتۆرە سالی دێ هێتە ناردن، و بێ رەزامەندیا من دێ نەهێتە بڵاوکرن.", shSend:"ب تایبەتی ب واتسئاپێ بنێرە", shErr:"ئەزموونا خۆ ب کێمترین دوو دێران بنڤیسن و رەزامەندیێ بدەن.", shMsgHead:"بەشداری ژ ماڵپەڕێ دکتۆرە سالی", shEmerg:"ئەگەر زارۆکێ هوین نوکە د مەترسیدا یە، چاوەڕێ نەکەن: پەیوەندی ب فریاکەفتنێ بکەن یان بچنە نێزیکترین نەخۆشخانە.", shNote:"ئەوا هوین لێرە دنڤیسن ل سەر ماڵپەڕی نایێنە پاراستن.",
  evEyebrow:"ڕووداو و بەشداری", evTitle:"ژ چالاکیێن دکتۆرێ و ناڤەندی", evLead:"ڕاگەهاندنێن ژ لاپەڕا ناڤەندا ساخلەمیا دەروونی یا دهۆکێ، ب ڕێکەفتێن وەکو خۆ.", evList:"<ul><li><b>دانانا وێ وەک بەرێڤەبەرا ناڤەندا ساخلەمیا دەروونی یا زارۆک و سنێلان</b>: ڕاگەهاندن پیرۆزباهیێ ل دکتۆرە سالی ڕزقۆ دکەت. ڕێکەفت د دەقی بەرچاڤ دا نینە.</li><li><b>پێشانگەها چاڤدێریا ساخلەمیێ</b>، زانکویا ئەمریکی د دهۆکێ، 27–28ی نیسانا 2024: ستافێ ناڤەندی بەشدار بوون، ب ئامادەبوونا وەزیرێ ساخلەمیێ.</li><li><b>ڕۆژا جیهانی یا ساخلەمیا دەروونی</b>، دهۆک: چالاکی ب ئامادەبوونا وەزیرێ ساخلەمیێ و بەرپرسێن هەرێمی، ب ڕێکەفتا 31ی تشرینا ئێکێ 2024 هاتیە بڵاڤکرن.</li><li><b>کۆنفرانسا زانستی یا ئێکێ یا سەندیکا نۆشداران د دهۆکێ</b>، 11–12ی نیسانا 2023: ستافێ ناڤەندی د کۆنفرانسێ دا بەشدار بوون.</li></ul>", evSrc:"سەرچاوە: ڕاگەهاندنێن لاپەڕا ناڤەندا ساخلەمیا دەروونی یا دهۆکێ ل فەیسبوکێ.",
  aboutP:"دکتۆرە سالی ل ساڵا 2009 ژ کۆلیژا پزیشکی یا زانکۆیا مووسڵ (پزیشکیا نەینەوا) دەرچوویە، و ل ساڵا 2017 دەستپێکریە ب پراکتیزەکرنا پزیشکیا دەروونی. ژ ساڵا 2021 ڤە ڕێڤەبەرا سەنتەرێ دەروونیا زارۆکان ل دهۆکێ یە، و زێدەتر ژ 2000 حالەتێن ئۆتیزم، زێدە-جوولە، زەحمەتیێن فێربوونێ و ئاریشێن هەرزەکاریێ ڤەکۆلین و چارەسەر کرینە. گەلەک خولێن ڕاهێنانێ بڕێڤەبرینە، و دگەل ڕێکخراوێن جڤاکا مەدەنی سەرەدانا کەمپێن ئاوارە و دەربەدەران کریە.",
  sCases:"حالەتێن ڤەکۆلای و چارەسەرکری: ئۆتیزم، زێدە-جوولە، زەحمەتیێن فێربوونێ و هەرزەکاری", sSince:"دەستپێکا پراکتیزەکرنا پزیشکیا دەروونی", sCenter:"ڕێڤەبەرا سەنتەرێ دەروونیا زارۆکان ل دهۆکێ",
@@ -365,7 +351,8 @@ en:{
  how2:"Choose a time", how2p:"We confirm a suitable time in Iraq time.",
  how3:"Video consultation", how3p:"A private session, followed by a clear plan for next steps.",
  aboutEyebrow:"About",
- shEyebrow:"Share with us", shTitle:"Share your child's experience or your struggle", shLead:"Writing about your experience helps us understand what you are going through. What you write is sent privately to Dr. Sally on WhatsApp. It is not published on the site.", shName:"Your name (optional)", shAge:"Child's age", shA0:"Choose", shA1:"Under 3 years", shA2:"3 to 6 years", shA3:"7 to 12 years", shA4:"13 to 18 years", shA5:"Over 18", shA6:"Prefer not to say", shText:"Write about your experience or what you are struggling with", shTextPh:"For example: what have you noticed? What have you tried? How are you feeling?", shAnon:"Keep my identity hidden: my name and my child's age will not appear with my experience", shMsgAnon:"Anonymous share from Dr. Sally's website", shConsent:"I understand that what I write will be sent privately to Dr. Sally, and will not be published without my written consent.", shSend:"Send privately on WhatsApp", shErr:"Please write at least two lines and agree to the statement before sending.", shMsgHead:"Shared from Dr. Sally's website", shEmerg:"If your child is in danger right now, do not wait for a reply: call emergency services or go to the nearest hospital.", shNote:"We do not store what you write on this website.",
+ shCta:"Read stories and share yours",
+ shEyebrow:"Share with us", shTitle:"Share your child's experience or your struggle", shLead:"Dr. Sally reviews what you write before it is published. It appears on the site only after she approves it.", shName:"Your name (optional)", shAge:"Child's age", shA0:"Choose", shA1:"Under 3 years", shA2:"3 to 6 years", shA3:"7 to 12 years", shA4:"13 to 18 years", shA5:"Over 18", shA6:"Prefer not to say", shText:"Write about your experience or what you are struggling with", shTextPh:"For example: what have you noticed? What have you tried? How are you feeling?", shAnon:"Keep my identity hidden: my name and my child's age will not appear with my experience", shMsgAnon:"Anonymous share from Dr. Sally's website", shConsent:"I understand that what I write will be sent privately to Dr. Sally, and will not be published without my written consent.", shSend:"Send privately on WhatsApp", shErr:"Please write at least two lines and agree to the statement before sending.", shMsgHead:"Shared from Dr. Sally's website", shEmerg:"If your child is in danger right now, do not wait for a reply: call emergency services or go to the nearest hospital.", shNote:"We do not store what you write on this website.",
  evEyebrow:"Events & participation", evTitle:"From the practice and the centre", evLead:"Posts from the Mental Health Center in Duhok’s Facebook page, with the dates as they appear in them.", evList:"<ul><li><b>Appointed director of the Child and Adolescent Mental Health Center</b>: a post congratulates Dr. Sally Rizqo on taking up the post. The date is not stated in the visible text.</li><li><b>Mental health care exhibition</b>, American University of Duhok, 27–28 April 2024: centre staff took part, with the Minister of Health and university presidents attending.</li><li><b>World Mental Health Day event</b>, Duhok: attended by the Minister of Health and local officials; posted 31 October 2024.</li><li><b>First scientific conference of the Duhok Kurdistan Medical Association</b>, 11–12 May 2023: centre staff took part.</li></ul>", evSrc:"Source: posts on the Mental Health Center in Duhok’s Facebook page.",
  aboutP:"Dr. Sally graduated from the College of Medicine, University of Mosul (Nineveh Medicine) in 2009 and began practising psychiatry in 2017. Since 2021 she has directed the Child Psychology Centre in Duhok, and she has seen and treated more than 2,000 children and teenagers with autism, ADHD, learning difficulties and adolescent challenges. She has led training courses and worked with civil-society organisations on visits to camps for displaced families.",
  sCases:"cases seen and treated: autism, ADHD, learning difficulties, adolescence", sSince:"began practising psychiatry", sCenter:"director of the Child Psychology Centre, Duhok",
@@ -419,28 +406,8 @@ en:{
  } };
 </script>
 <!--lang--><script>window.SITE_LANG="en";window.LOC=function(p){return "/en"+p};</script>
-<!--/lang--><script src="/assets/articles-data.js?v=27"></script>
-<script src="/assets/articles-ui.js?v=27"></script>
-<script src="/assets/site.js?v=27"></script>
-<script>
-(function(){
-  const f = document.getElementById("share-form"); if (!f) return;
-  const send = document.getElementById("share-send"), err = document.getElementById("share-err");
-  const anon = document.getElementById("sh-anon");
-  function syncAnon(){ f.name.disabled = anon.checked; f.age.disabled = anon.checked; if (anon.checked){ f.name.value = ""; f.age.selectedIndex = 0; } }
-  anon.addEventListener("change", syncAnon);
-  send.addEventListener("click", function(){
-    const text = f.text.value.trim();
-    if (text.length < 20 || !f.consent.checked){ err.hidden = false; err.textContent = window.tx("shErr"); return; }
-    err.hidden = true;
-    const isAnon = anon.checked;
-    const name = isAnon ? "" : f.name.value.trim();
-    const age = (!isAnon && f.age.selectedIndex > 0) ? f.age.options[f.age.selectedIndex].text : "";
-    const head = isAnon ? window.tx("shMsgAnon") : window.tx("shMsgHead");
-    const msg = [head, name, age ? ("· " + age) : "", "", text].filter(Boolean).join("\n");
-    if (typeof WHATSAPP_NUMBER !== "undefined" && WHATSAPP_NUMBER) window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
-  });
-})();
-</script>
+<!--/lang--><script src="/assets/articles-data.js?v=28"></script>
+<script src="/assets/articles-ui.js?v=28"></script>
+<script src="/assets/site.js?v=28"></script>
 </body>
 </html>

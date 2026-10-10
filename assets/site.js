@@ -152,6 +152,7 @@ function setLang(lang){
   document.querySelectorAll("[data-i18n]").forEach(el => {
     el.innerHTML = String(tx(el.dataset.i18n)).replace(/\{(\w+)\}/g, (m, k) => tx(k) || m);
   });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = tx(el.dataset.i18nPh); });
   document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
   document.querySelectorAll(".ku-note").forEach(el => { el.hidden = lang !== "ku"; el.textContent = COMMON.ku.kuFallback; });
   const has = WHATSAPP_NUMBER.trim() !== "";
@@ -179,7 +180,7 @@ function wireSide(){
   side.querySelectorAll(".side-nav a").forEach(a => a.addEventListener("click", () => setSide(false)));
   const q = document.getElementById("side-q"), res = document.getElementById("side-res");
   let loading = false;
-  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=27"; s.onload = () => draw(q.value); document.head.appendChild(s); };
+  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=28"; s.onload = () => draw(q.value); document.head.appendChild(s); };
   function draw(v){
     const term = (v || "").trim().toLowerCase();
     if (!term){ res.innerHTML = ""; return; }

@@ -23,7 +23,7 @@ function collect(dir, out = []) {
   return out;
 }
 const SKIP = ["private-254f50cabe4785fd/", "ku/", "en/", "functions/", "tools/"];
-const pages = ["index.html", ...collect("autism"), ...collect("adhd"), ...collect("adolescence"), ...collect("play"), ...collect("resources"), ...collect("learn")]
+const pages = ["index.html", ...collect("autism"), ...collect("adhd"), ...collect("adolescence"), ...collect("play"), ...collect("resources"), ...collect("learn"), ...collect("stories")]
   .filter(p => !SKIP.some(s => p.startsWith(s)));
 
 // Path of a page in the Arabic (root) tree, e.g. "learn/x/index.html" -> "/learn/x/"

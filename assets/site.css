@@ -501,3 +501,10 @@ html[lang="ar"] .brand-en{text-align:start}
 .share-consent input{margin-top:4px;flex:none}
 .share-err{color:var(--coral);font-weight:700;margin:0}
 .share-emerg{background:var(--sun-soft);color:var(--sun);border-radius:12px;padding:10px 12px;font-weight:700;margin:4px 0 0}
+
+/* visitor stories list */
+.story-meta{font-size:13px;color:var(--muted);margin:0 0 6px;font-weight:700}
+.story-body{white-space:pre-line;margin:0}
+.share-ok{background:var(--ok-soft);color:var(--ok);border-radius:12px;padding:10px 12px;font-weight:700;margin:0}
+.stories-list{display:grid;gap:12px;margin-top:12px}
+.share-form button:disabled{opacity:.6;cursor:wait}
