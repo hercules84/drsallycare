@@ -179,7 +179,7 @@ function wireSide(){
   side.querySelectorAll(".side-nav a").forEach(a => a.addEventListener("click", () => setSide(false)));
   const q = document.getElementById("side-q"), res = document.getElementById("side-res");
   let loading = false;
-  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=26"; s.onload = () => draw(q.value); document.head.appendChild(s); };
+  const loadArticles = () => { if (window.ARTICLES || loading) return; loading = true; const s = document.createElement("script"); s.src = "/assets/articles-data.js?v=27"; s.onload = () => draw(q.value); document.head.appendChild(s); };
   function draw(v){
     const term = (v || "").trim().toLowerCase();
     if (!term){ res.innerHTML = ""; return; }
