@@ -491,3 +491,13 @@ html[lang="ar"] .brand-ar{font-family:"Amiri",serif;font-weight:700;font-size:22
 .brand-en{font-family:"Nunito Sans","Segoe UI",sans-serif;font-weight:700;font-size:11.5px;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted);direction:ltr;white-space:nowrap;line-height:1.1}
 html[lang="ar"] .brand-en{text-align:start}
 @media (max-width:520px){html[lang="ar"] .brand-ar{font-size:20px}.brand-en{font-size:10.5px;letter-spacing:.9px}}
+
+/* share section (visitor stories, sent privately) */
+.share-form{display:grid;gap:8px;max-width:640px}
+.share-form label{font-weight:700;font-size:14px;margin-top:6px}
+.share-form input[type=text],.share-form select,.share-form textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink)}
+.share-form textarea{resize:vertical}
+.share-consent{display:flex;gap:8px;align-items:flex-start;font-weight:600}
+.share-consent input{margin-top:4px;flex:none}
+.share-err{color:var(--coral);font-weight:700;margin:0}
+.share-emerg{background:var(--sun-soft);color:var(--sun);border-radius:12px;padding:10px 12px;font-weight:700;margin:4px 0 0}
