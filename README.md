@@ -24,7 +24,7 @@ Public since 2026-10-07 (indexable, sitemap at /sitemap.xml).
 Visitors post at /stories/. Posts are stored as "pending" and shown only after Dr. Sally approves them.
 
 One-time setup on Cloudflare (Pages project):
-1. Create a D1 database (for example `drsally-stories`) and run `migrations/0001_stories.sql` against it.
+1. D1 database `drsally-stories` (ID `77909622-5431-4523-8843-ac5337513561`) is created and the `stories` table is set up. If you ever recreate it, run `migrations/0001_stories.sql` against it.
 2. Pages → Settings → Bindings: add a **D1 database** binding named `DB` pointing to that database.
 3. Settings → Environment variables: `CASES_PASSWORD` (access code for staff pages) and optionally `IP_SALT` (any random text, used to hash visitor IPs for rate limiting).
 4. Approval page (access code required): https://drsallycare.com/private-254f50cabe4785fd/stories.html
