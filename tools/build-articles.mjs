@@ -2,11 +2,12 @@
 // from tools/articles.json.   Run:  node tools/build-articles.mjs   (no dependencies, no Cloudflare build step)
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const articles = JSON.parse(fs.readFileSync(path.join(root, "tools/articles.json"), "utf8"));
 const DATE = "2026-10-08";
-const V = "28"; // asset version, must match the ?v= used in the other pages
+const V = "29"; // asset version, must match the ?v= used in the other pages
 
 const TAGKEY = { autism:"tagAutism", adhd:"tagAdhd", adolescence:"tagAdolescence", learning:"tagLearning",
   teachers:"tagTeachers", community:"tagCommunity", wellbeing:"tagWellbeing", consultation:"tagConsultation" };
@@ -52,7 +53,7 @@ fs.writeFileSync(path.join(root, "assets/articles-ui.js"), `/* Renders article c
   window.artCard = function(a){
     const L = window.getLang(), d = a[L] || a.ar;
     const kuAr = L === "ku" ? " lang=\\"ar\\"" : "";
-    return '<a class="art-card" href="/learn/' + a.slug + '/" data-topic="' + a.topic + '"><span class="art-tag">' + window.tx(TAG[a.topic]) +
+    return '<a class="art-card" href="' + window.LOC('/learn/' + a.slug + '/') + '" data-topic="' + a.topic + '"><span class="art-tag">' + window.tx(TAG[a.topic]) +
       '</span><h3' + kuAr + '>' + d.title + '</h3><p' + kuAr + '>' + d.sum + '</p><span class="art-min">' + a.min + ' ' + window.tx("minWord") + '</span></a>';
   };
   window.artTag = t => window.tx(TAG[t]);
@@ -151,3 +152,4 @@ fs.writeFileSync(path.join(root, "learn/index.html"), head({
 
 // ---------- languages, hreflang and sitemap (tools/build-langs.mjs) ----------
 await import("./build-langs.mjs");
+

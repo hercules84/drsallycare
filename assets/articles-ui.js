@@ -4,8 +4,9 @@
   window.artCard = function(a){
     const L = window.getLang(), d = a[L] || a.ar;
     const kuAr = L === "ku" ? " lang=\"ar\"" : "";
-    return '<a class="art-card" href="/learn/' + a.slug + '/" data-topic="' + a.topic + '"><span class="art-tag">' + window.tx(TAG[a.topic]) +
+    return '<a class="art-card" href="' + window.LOC('/learn/' + a.slug + '/') + '" data-topic="' + a.topic + '"><span class="art-tag">' + window.tx(TAG[a.topic]) +
       '</span><h3' + kuAr + '>' + d.title + '</h3><p' + kuAr + '>' + d.sum + '</p><span class="art-min">' + a.min + ' ' + window.tx("minWord") + '</span></a>';
   };
   window.artTag = t => window.tx(TAG[t]);
 })();
+
